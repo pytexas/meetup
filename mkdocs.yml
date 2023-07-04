@@ -1,0 +1,100 @@
+site_name: PyTexas Meetup
+site_author: PyTexas
+theme:
+  name: material
+  logo: assets/images/favicon.png
+  custom_dir: overrides
+  features:
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
+    - content.tooltips
+    - navigation.indexes
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    - toc.integrate
+  palette:
+    primary: blue
+    accent: yellow
+copyright: Copyright &copy; 2015-2023 - PyTexas Foundation
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.details
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:materialx.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tilde
+
+nav:
+  - Home: index.md
+  - Past Meetups: 
+    - past_meetups/index.md
+  - Join: https://discord.gg/jNPAbcNukj
+
+plugins:
+  - search
+  - blog:
+      blog_dir: past_meetups
+      blog_toc: true
+      post_url_format: "{slug}"
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/pytexas
+      name: Twitter
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/pytexas-foundation
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/c/pytexas
+    - icon: fontawesome/brands/github
+      link: https://github.com/pytexas
+
+#extra:
+#  analytics:
+#    provider: google
+#    property: G-885F33V7K6
