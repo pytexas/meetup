@@ -30,5 +30,5 @@ Lorem Ipsum
 Mason is currently Sr. Technical Curriculum Developer at Temporal.io who specializes building community, developer-focused educational content, distributed systems, and Python. Prior to his work at Temporal he launched Developer Relations at Gretel.ai as the Lead Developer Advocate, and was a Developer Advocate at DigitalOcean specializing in Infrastructure-as-a-Service technologies. His engineering experience includes time as an SRE helping build and maintain a highly available hybrid multi-cloud PaaS. He's an avid programmer, speaker, educator, and writer/blogger. He is an organizer of PyTexas, President of the PyTexas Foundation, and actively contributes to open source projects. In his spare time, he enjoys reading, camping, kayaking, and exploring new places.
 
 ### Josh Schneider
-![Josh Schneider Avatar](https://www.gravatar.com/avatar/4fd8d11f5cc00e1fa20dc9a596b16088){: style="height:150px;width:150px" align=left}
-Test Automation architect at Dell Technologies. Geeky dad with 1+ years in Improv comedy training and performing.
+![Josh Schneider Avatar](https://github.com/dijital20.png){: style="height:150px;width:150px" align=left}
+Test Automation Architect, Python nerd, Improv comedy nerd, father, drinker of coffee, and quoter of movies. I love sharing ideas with people, and I am action packed with opinions like an 80's action movie.
