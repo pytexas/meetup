@@ -22,8 +22,9 @@ Lorem Ipsum
 Lorem Ipsum
 
 ### Matt Criswell
+![Matt Criswell Headshot](https://github.com/matthewcriswell.png){: style="height:150px;width:150px" align=left}
+Matt works at a startup as a DevOps Engineer. He has previously worked at Mirantis and Rackspace holding various titles such as SRE, Ops Engineer, and Linux Admin.  With a coding style that can only be described as "effortless" he puts newbies at ease by proving anyone can learn Python.
 
-Lorem Ipsum
 
 ### Mason Egger
 ![Mason Egger Headshot](https://github.com/masonegger.png){: style="height:150px;width:150px" align=left}
