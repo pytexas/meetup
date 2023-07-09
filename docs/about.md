@@ -7,16 +7,23 @@ were people who lived in a major Texas metropolitan area that were unable to att
 their local cities meetup because it would take hours of travel time to get there.
 
 For those of you unaware of the sheer size of Texas, it can take anywhere of up
-to 3-5 hours to cross from one side of a major Texas city to the other. 
+to 3-5 hours to cross from one side of a major Texas city to the other.
 
-However, the PyTexas meetup is welcome to everyone! Not just Texans! 
+However, the PyTexas meetup is welcome to everyone! Not just Texans!
 
 We hope to see **y'all** there!
 
 ## Current Organizers
 
 ### Brad Brown
-Lorem Ipsum
+![Brad Brown](https://github.com/bradsbrown.png){: style="height:150px;width:150px" alight=left}
+Brad is currently a Fullstack Developer at Habitat Energy,
+specializing in Python and Infrastructure work across his career.
+He describes himself as a Python Engineer born from the ashes
+of a restaurant operator.
+When not working, you'll most often find him either
+curled up with a good book
+or trying to get his teenagers to go do something fun.
 
 ### Josh Cannon
 Lorem Ipsum
