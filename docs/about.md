@@ -26,7 +26,12 @@ curled up with a good book
 or trying to get his teenagers to go do something fun.
 
 ### Josh Cannon
-Lorem Ipsum
+![Josh Cannon Headshot](https://github.com/thejcannon.png){: style="height:150px;width:150px" align=left}
+Josh is a Build Engineer by day, and maintainer of the Pantsbuild Open Source Build System also by day. 
+And sometimes participates in other open source projects, Python community discussions, and conference speaking... also by day
+(what? there's a lot of hours in the daytime).
+
+At night you'll catch him speding time with his wife and kids, obsessively reading Brandon Sanderson, playing Frosthaven, and laser cutting/engraving.
 
 ### Matt Criswell
 ![Matt Criswell Headshot](https://github.com/matthewcriswell.png){: style="height:150px;width:150px" align=left}
