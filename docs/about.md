@@ -16,7 +16,7 @@ We hope to see **y'all** there!
 ## Current Organizers
 
 ### Brad Brown
-![Brad Brown](https://github.com/bradsbrown.png){: style="height:150px;width:150px" alight=left}
+![Brad Brown](https://github.com/bradsbrown.png){: style="height:150px;width:150px" align=left}
 Brad is currently a Fullstack Developer at Habitat Energy,
 specializing in Python and Infrastructure work across his career.
 He describes himself as a Python Engineer born from the ashes
@@ -24,6 +24,8 @@ of a restaurant operator.
 When not working, you'll most often find him either
 curled up with a good book
 or trying to get his teenagers to go do something fun.
+
+<br>
 
 ### Josh Cannon
 ![Josh Cannon Headshot](https://github.com/thejcannon.png){: style="height:150px;width:150px" align=left}
@@ -37,6 +39,7 @@ At night you'll catch him speding time with his wife and kids, obsessively readi
 ![Matt Criswell Headshot](https://github.com/matthewcriswell.png){: style="height:150px;width:150px" align=left}
 Matt works at a startup as a DevOps Engineer. He has previously worked at Mirantis and Rackspace holding various titles such as SRE, Ops Engineer, and Linux Admin.  With a coding style that can only be described as "effortless" he puts newbies at ease by proving anyone can learn Python.
 
+<br>
 
 ### Mason Egger
 ![Mason Egger Headshot](https://github.com/masonegger.png){: style="height:150px;width:150px" align=left}

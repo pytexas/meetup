@@ -71,18 +71,18 @@ markdown_extensions:
 nav:
   - Home: index.md
   - About: about.md
-  - Past Meetups: 
-    - past_meetups/index.md
+  #- Past Meetups: 
+  #  - past_meetups/index.md
   - FAQ: faq.md
   - Code of Conduct: code-of-conduct.md
   - Join: https://discord.gg/jNPAbcNukj
 
 plugins:
   - search
-  - blog:
-      blog_dir: past_meetups
-      blog_toc: true
-      post_url_format: "{slug}"
+  #- blog:
+  #    blog_dir: past_meetups
+  #    blog_toc: true
+  #    post_url_format: "{slug}"
 
 extra:
   generator: false
@@ -97,6 +97,8 @@ extra:
       link: https://www.linkedin.com/company/pytexas-foundation
     - icon: fontawesome/brands/youtube
       link: https://www.youtube.com/c/pytexas
+    - icon: fontawesome/brands/meetup
+      link: https://www.meetup.com/pytexas-virtual-meetup/
     - icon: fontawesome/brands/github
       link: https://github.com/pytexas
 
