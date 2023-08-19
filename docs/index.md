@@ -9,9 +9,10 @@ of Texas and beyond.
 
 ## Upcoming PyTexas Meetups
 
+
 ### _Inaugural Meetup - September 12, 2023_
 
-#### _Talk:_ Writing Software for Others to Maintain - Josh Schneider 
+#### _Talk:_  Writing Code for Other People to Use - Josh Schneider 
 ![Josh Schneider Avatar](https://github.com/dijital20.png){: style="height:150px;width:150px" align=left}
 
 Josh has opinions! In this session, those opinions are focused on turning out code, any code, for anyone to use. We'll talk about who we mean by "other people", what we mean by "use", a recap of "Josh's 3 (make that 4) UX Design Rules", and a veritable host of suggestions and hot takes. Let's discuss, commiserate, dissent, and disagree!
