@@ -13,7 +13,7 @@ throughout the state. Join yours today!
 ??? question "How do you determine if a Meetup is inactive?"
 
     Active/Inactive designation is set if a meetup hasn't scheduled an
-    event in over a year. If you see anything on this list that is innacruate
+    event in over a year. If you see anything on this list that is inaccruate
     please let us know.
 
 ## Austin-based Meetups
