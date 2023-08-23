@@ -1,10 +1,15 @@
 site_name: PyTexas Meetup
 site_author: PyTexas
+repo_url: https://github.com/pytexas/meetup-site
+repo_name: pytexas/meetup-site
+edit_uri: edit/main/docs/
 theme:
   name: material
   logo: assets/images/favicon.png
   custom_dir: overrides
   features:
+    - content.action.edit
+    - content.action.view
     - content.code.annotate
     - content.code.copy
     - content.code.select
@@ -42,6 +47,7 @@ markdown_extensions:
   - md_in_html
   - toc:
       permalink: true
+      toc_depth: 3
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.caret
@@ -71,18 +77,19 @@ markdown_extensions:
 nav:
   - Home: index.md
   - About: about.md
-  #- Past Meetups: 
-  #  - past_meetups/index.md
-  - FAQ: faq.md
+#  - Past Meetups: 
+#    - past_meetups/index.md
+  - Local Meetups: local-meetups.md
   - Code of Conduct: code-of-conduct.md
+  - FAQ: faq.md
   - Join: https://discord.gg/jNPAbcNukj
 
 plugins:
   - search
-  #- blog:
-  #    blog_dir: past_meetups
-  #    blog_toc: true
-  #    post_url_format: "{slug}"
+#  - blog:
+#      blog_dir: past_meetups
+#      blog_toc: true
+#      post_url_format: "{slug}"
 
 extra:
   generator: false
