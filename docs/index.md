@@ -15,23 +15,23 @@ of Texas and beyond.
 #### _Talk:_  Oh the (Methods) You Can (Make): By Dunder Seuss - Josh Cannon
 ![Josh Cannon Avatar](https://github.com/thejcannon.png){: style="height:150px;width:150px" align=left}
 
-You can make many methods
-Over 100 to be exact
-That start with two underscores
-What do you think of that?
+You can make many methods  
+Over 100 to be exact  
+That start with two underscores  
+What do you think of that?  
 
-The runtime, it calls these
-At points A or B
-To do special magic
-At runtime, you see.
+The runtime, it calls these  
+At points A or B  
+To do special magic  
+At runtime, you see.  
 
-You may have seen \_\_getattr\_\_ or \_\_init\_\_
-But \_\_rfloordiv\_\_? What’s the point of it?
+You may have seen \_\_getattr\_\_ or \_\_init\_\_  
+But \_\_rfloordiv\_\_? What’s the point of it?  
 
-Come take a quick tour, your mother won’t mind
-And hear a talk that’s one-of-a-kind
-About how Python uses them under-the-hood
-And how you can use them to write code that's real good
+Come take a quick tour, your mother won’t mind  
+And hear a talk that’s one-of-a-kind  
+About how Python uses them under-the-hood  
+And how you can use them to write code that's real good  
 
 _TJosh is an avid lover of tooling that accelerates developers, including being a maintainer of the Polyglot Open-Source Build System: Pants. In his free time, Josh enjoys laser cutting/engraving and his wonderful family._
 
