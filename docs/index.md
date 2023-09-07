@@ -13,7 +13,7 @@ of Texas and beyond.
 ### _Inaugural Meetup - September 12, 2023_
 
 #### _Talk:_  Oh the (Methods) You Can (Make): By Dunder Seuss - Josh Cannon
-![Josh Cannon Avatar](https://github.com/dijital20.png)](https://github.com/thejcannon.png){: style="height:150px;width:150px" align=left}
+![Josh Cannon Avatar](https://github.com/thejcannon.png){: style="height:150px;width:150px" align=left}
 
 You can make many methods
 Over 100 to be exact
