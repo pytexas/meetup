@@ -19,3 +19,7 @@
 ???+ question "Are y'all associated with the PyTexas Conference?"
 
     Yes we are! The PyTexas Meetup and PyTexas Conference are both run by the [PyTexas Foundation](https://pytexas.org). 
+
+???+ question "Can I speak at the PyTexas Meetup?"
+
+    Yes! We encourage everyone to fill out the [CFP form](https://forms.gle/a9WrW7wJSkPCCG437) and we'll reach out to you to get you scheduled!
