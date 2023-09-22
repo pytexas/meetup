@@ -83,6 +83,7 @@ nav:
   - Code of Conduct: code-of-conduct.md
   - FAQ: faq.md
   - Join: https://discord.gg/jNPAbcNukj
+  - Sponsors: sponsors.md
 
 plugins:
   - search
