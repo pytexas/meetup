@@ -77,8 +77,8 @@ markdown_extensions:
 nav:
   - Home: index.md
   - About: about.md
-#  - Past Meetups: 
-#    - past_meetups/index.md
+  - Past Meetups: 
+    - past_meetups/index.md
   - Local Meetups: local-meetups.md
   - Code of Conduct: code-of-conduct.md
   - FAQ: faq.md
@@ -87,10 +87,10 @@ nav:
 
 plugins:
   - search
-#  - blog:
-#      blog_dir: past_meetups
-#      blog_toc: true
-#      post_url_format: "{slug}"
+  - blog:
+      blog_dir: past_meetups
+      blog_toc: true
+      post_url_format: "{slug}"
 
 extra:
   generator: false

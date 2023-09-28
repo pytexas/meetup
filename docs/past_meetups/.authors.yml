@@ -1,8 +1,9 @@
-masonegger:
-  name: Mason Egger
-  description: Developer, Educator, Community Organizer
-  avatar: https://github.com/masonegger.png
-josh-schneider:
-  name: Josh Schneider
-  description: Test Automation Architect, Python nerd, Improv comedy nerd, father, drinker of coffee, and quoter of movies.
-  avatar: https://github.com/dijital20.png
+authors:
+  masonegger:
+    name: Mason Egger
+    description: Developer, Educator, Community Organizer
+    avatar: https://github.com/masonegger.png
+  thejcannon:
+    name: Josh Cannon
+    description: "Josh is an avid lover of tooling that accelerates developers, including being a maintainer of the Polyglot Open-Source Build System: Pants. In his free time, Josh enjoys laser cutting/engraving and his wonderful family."
+    avatar: https://github.com/thejcannon.png
