@@ -7,10 +7,6 @@ authors:
     name: Josh Cannon
     description: "Josh is an avid lover of tooling that accelerates developers, including being a maintainer of the Polyglot Open-Source Build System: Pants. In his free time, Josh enjoys laser cutting/engraving and his wonderful family."
     avatar: https://github.com/thejcannon.png
-  pizzapanther:
-    name: Paul Bailey
-    description: "Father, web developer, pizza maker"
-    avatar: https://github.com/pizzapanther.png
   charliermarsh:
     name: Charlie Marsh
     description: "Building astral-sh: high-performance developer tools for Python, starting with Ruff."
