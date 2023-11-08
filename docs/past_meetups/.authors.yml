@@ -11,3 +11,12 @@ authors:
     name: Charlie Marsh
     description: "Building astral-sh: high-performance developer tools for Python, starting with Ruff."
     avatar: https://github.com/charliermarsh.png
+  dijital20:
+    name: Josh Schneider
+    description: Test Automation Architect, Python nerd, Improv comedy nerd, father, drinker of coffee, and quoter of movies.
+    avatar: https://github.com/dijital20.png
+  mariatta:
+    name: Mariatta
+    description: Mariatta is a Python core developer where she focuses on improving the workflow and documentation. She is active in the Python community as an advisor for the Global PyLadies, co-founder of PyCascades, and is currently chairing PyCon US conference.
+    avatar: https://github.com/mariatta.png
+  
