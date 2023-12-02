@@ -26,6 +26,7 @@ throughout the state. Join yours today!
 ## Dallas-based Meetups
 
 * [DFW Pythoneers](https://www.meetup.com/dfwpython/) _(Active)_
+* [Python Code Buddies](https://www.meetup.com/pythonpracticegroup/) _(Active)_
 * [Python for Everyone](https://www.meetup.com/python4e/) _(Inactive)_
 
 ## Houston-based Meetups
