@@ -19,4 +19,7 @@ authors:
     name: Mariatta
     description: Mariatta is a Python core developer where she focuses on improving the workflow and documentation. She is active in the Python community as an advisor for the Global PyLadies, co-founder of PyCascades, and is currently chairing PyCon US conference.
     avatar: https://github.com/mariatta.png
-  
+  automationpanda:
+    name: Pandy Knight
+    description: I'm the Automation Panda! I build solutions to testing problems.
+    avatar: https://github.com/automationpanda.png
