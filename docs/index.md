@@ -22,7 +22,7 @@ Python makes the advanced computer science of making computers produce speech an
 _Author of Automate the Boring Stuff with Python and other programming books._
 
 ### _February Meetup - February 6, 2023_
-![Al Sweigart Avatar](../../assets/images/piper-thunstrom.jpg){: style="height:200px;width:150px" align=left}
+![Piper Thunstrom Avatar](assets/images/piper-thunstrom.jpg){: style="height:200px;width:150px" align=left}
 
 #### _Talk_: A Guided Tour of PPB - Piper Thunstrom
 
