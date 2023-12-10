@@ -87,6 +87,7 @@ nav:
 
 plugins:
   - search
+  - social
   - blog:
       blog_dir: past_meetups
       blog_toc: true
