@@ -12,18 +12,20 @@ of Texas and beyond.
 
 ## Upcoming PyTexas Meetups
 
-### _December Meetup - December 5, 2023_
+### _January Meetup - January 9, 2023_
 
-#### _Talk:_  The Enters and Exits of Context Managers - Mason Egger
-![Mason Egger Avatar](https://github.com/masonegger.png){: style="height:150px;width:150px" align=left}
+#### _Talk:_  Text-To-Speech, Speech Recognition, and OCR in a Dozen Lines of Python - Al Sweigart
+![Al Sweigart Avatar](https://github.com/asweigart.png){: style="height:150px;width:150px" align=left}
 
-Have you ever opened a file using the with keyword in Python? That little keyword is one of the many fascinating parts of the Python programming language, the Context Manager. The Python Context Manager is a tool that allows the programmer to reliably create and tear down temporary contexts within a program. This allows programmers to reduce duplicate code, improving the maintainability and reliability of the code. This talk will cover all things Context Manager, from what they are, how to build them, when to use them, and more.
+Python makes the advanced computer science of making computers produce speech and recognize text in images and audio available to you in just a few lines of code. This talk shows you how to add these incredible features to your scripts.
 
-_Mason is currently Sr. Technical Curriculum Developer at Temporal Technologies who specializes building community, developer-focused educational content, distributed systems, and Python. Prior to his work at Temporal he launched Developer Relations at Gretel.ai as the Lead Developer Advocate, and was a Developer Advocate at DigitalOcean specializing in Infrastructure-as-a-Service technologies. His engineering experience includes time as an SRE helping build and maintain a highly available hybrid multi-cloud PaaS. He's an avid programmer, speaker, educator, and writer/blogger. He is an organizer of PyTexas, President of the PyTexas Foundation, and actively contributes to open source projects. In his spare time, he enjoys reading, camping, kayaking, and exploring new places.._
+_Author of Automate the Boring Stuff with Python and other programming books._
 
-#### _Talk:_ `def test_crash_course_with_pytest():` - Andy (Pandy) Knight
-![Andy Knight Avatar](https://github.com/AndyLPK247.png){: style="height:150px;width:150px" align=left}
+### _February Meetup - February 6, 2023_
+![Al Sweigart Avatar](../../assets/images/piper-thunstrom.jpg){: style="height:200px;width:150px" align=left}
 
-What, you mean to tell me that you don't test your code?! Let's fix that right quick! In this session, let's learn how to start testing our code with pytest, Python's most popular test framework. We'll cover how to add pytest to a project, leverage mechanics like parameters and fixtures, and write tests at different levels. Bring your laptops, too, because this whole session will be live-coded!
+#### _Talk_: A Guided Tour of PPB - Piper Thunstrom
 
-_Andrew Knight, also known as “Pandy,” is the Automation Panda. He’s a software quality champion who loves to help people build better quality software. Currently, he works as the Principal Software Architect at Cycle Labs, focusing on test automation excellence for supply chains and warehouse management. An avid supporter of open source software, Pandy is a Playwright Ambassador as well as the lead developer for Boa Constrictor, the .NET Screenplay Pattern. On the side, he is writing a book on software testing with Manning Publications. Apart from software, Pandy works on vintage Volkswagens. Check out his tech blog at AutomationPanda.com, and follow him on Twitter at @AutomationPanda.._
+PPB is an education focused game engine intended to get you up and running as fast as possible. Follow along (or just listen in) as the author guides you through the building blocks of building games with the library.
+
+_Piper is a pythonista, game enthusiast, and web developer. You might know her from her talks given at conferences around the United States, a local tech meetup, or her open source work. She speaks on community building, game development, CS education, and trans identity in tech. She's been involved in the Python community since 2014 with previous experience as an organizer in the NYC Python user groups. You can follow her work at [piper.thunstrom.dev](https://piper.thunstrom.dev)_
