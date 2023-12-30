@@ -1,5 +1,5 @@
 # About
-The PyTexas Meetup was started in the Summer of 2023 by Brad Brown, Josh Cannon,
+The PyTexas Meetup was started in the Summer of 2023 by Brad Brown, Josh Cannon, Josh Schneider
 Mason Egger, and Matt Criswell. The goal of this meetup was to create a space
 for Texas Pythonistas to be able to meet, network, and learn from the comfort
 of their own home. This idea for this meetup came about when we heard that there
