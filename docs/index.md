@@ -12,16 +12,6 @@ of Texas and beyond.
 
 ## Upcoming PyTexas Meetups
 
-### _January Meetup - January 9, 2023_
-
-#### _Talk:_  Text-To-Speech, Speech Recognition, and OCR in a Dozen Lines of Python - Al Sweigart
-![Al Sweigart Avatar](https://github.com/asweigart.png){: style="height:150px;width:150px" align=left}
-
-Python makes the advanced computer science of making computers produce speech and recognize text in images and audio available to you in just a few lines of code. This talk shows you how to add these incredible features to your scripts.
-
-_Author of Automate the Boring Stuff with Python and other programming books._
-
-<br clear=all>
 
 ### _February Meetup - February 6, 2023_
 ![Piper Thunstrom Avatar](assets/images/piper-thunstrom.jpg){: style="height:200px;width:150px" align=left}

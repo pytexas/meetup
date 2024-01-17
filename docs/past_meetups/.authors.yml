@@ -23,3 +23,7 @@ authors:
     name: Pandy Knight
     description: I'm the Automation Panda! I build solutions to testing problems.
     avatar: https://github.com/automationpanda.png
+  asweigart:
+    name: Al Sweigart
+    description: Author of Automate the Boring Stuff with Python and other programming books
+    avatar: https://github.com/asweigart.png
