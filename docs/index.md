@@ -12,16 +12,6 @@ of Texas and beyond.
 
 ## Upcoming PyTexas Meetups
 
-
-### _March Meetup - March 5, 2024_
-![Ado Kukic Avatar](https://pbs.twimg.com/profile_images/1438992084413730817/uvvipF4M_400x400.jpg){: style="height:200px;width:175px" align=left}
-
-#### _Talk_: Building an AI Podcast Co-Host with Python, Assembly AI, and Cody - Ado Kukic
-
-Learn how I built an AI Co-host for a trial podcast with Python, Assembly AI, and Cody. This talk will primarily focus on how to leverage Gen AI tools to quickly build applications.
-
-_Ado is a full-stack software engineer and developer relations professional currently leading the Sourcegraph Developer Experience team. He is passionate about building awesome products and helping developers succeed._
-
 ### _April Meetup - April 2, 2024_
 ![Julius Boakye Avatar](https://avatars.githubusercontent.com/u/66005635?v=4){: style="height:200px;width:175px" align=left}
 
