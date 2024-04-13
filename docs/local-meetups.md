@@ -40,7 +40,7 @@ throughout the state. Join yours today!
 
 ## San Antonio-based Meetups
 
-* [Alamo Code Learners](https://www.meetup.com/alamo-code-learners/) _(Active)_
+* [Alamo Python Learners](https://www.meetup.com/alamo-python-learners/) _(Active)_
 
 ??? question "Did We Miss One?"
 
