@@ -13,7 +13,7 @@ of Texas and beyond.
 ## Upcoming PyTexas Meetups
 
 ### _June Meetup - June 4, 2024_
-![Moshe Zadka Avatar](https://github.com/moshez.png){: style="height:200px;width:175px" align=left}
+![Zvi Boshernitzan Avatar](./assets/images/ZviBoshernitzan.jpg){: style="height:200px;width:175px" align=left}
 
 #### _Talk_:  Chuck Norris vs AI - Zvi Boshernitzan
 
