@@ -19,4 +19,4 @@ of Texas and beyond.
 
 I'll be sharing my journey through a first project using using text embeddings, which can often be a great way to enhance an unconventional data set with dated references.
 
-Zvi Boshernitzan is a software engineer and technologist based in Austin and focuses on emerging startups.
+_Zvi Boshernitzan is a software engineer and technologist based in Austin and focuses on emerging startups._
