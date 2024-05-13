@@ -12,11 +12,11 @@ of Texas and beyond.
 
 ## Upcoming PyTexas Meetups
 
-### _May Meetup - May 7, 2024_
-![Moshe Zadka Avatar](https://github.com/moshez.png){: style="height:200px;width:175px" align=left}
+### _June Meetup - June 4, 2024_
+![Zvi Boshernitzan Avatar](./assets/images/ZviBoshernitzan.jpg){: style="height:200px;width:175px" align=left}
 
-#### _Talk_:  Python :heart: Rust - Moshe Zadka
+#### _Talk_:  Chuck Norris vs AI - Zvi Boshernitzan
 
-Introduction to Rust and how to use PyO3 to integrate Python with Rust.
+I'll be sharing my journey through a first project using using text embeddings, which can often be a great way to enhance an unconventional data set with dated references.
 
-_Moshe has been involved in the Linux community since 1998, helping in Linux "installation parties". They have been programming Python since 1999, and has contributed to the core Python interpreter. Moshe has been a DevOps/SRE since before those terms existed, caring deeply about software reliability, build reproducibility and other such things. They have worked in companies as small as three people and as big as tens of thousands -- usually some place around where software meets infrastructure._
+_Zvi Boshernitzan is a software engineer and technologist based in Austin and focuses on emerging startups._
