@@ -12,11 +12,13 @@ of Texas and beyond.
 
 ## Upcoming PyTexas Meetups
 
-### _June Meetup - June 4, 2024_
-![Zvi Boshernitzan Avatar](./assets/images/ZviBoshernitzan.jpg){: style="height:200px;width:175px" align=left}
+### _July Meetup - July 2, 2024_
 
-#### _Talk_:  Chuck Norris vs AI - Zvi Boshernitzan
+#### Lightning Talk Meetup
 
-I'll be sharing my journey through a first project using using text embeddings, which can often be a great way to enhance an unconventional data set with dated references.
+Join us for an evening of lightning talks! 
 
-_Zvi Boshernitzan is a software engineer and technologist based in Austin and focuses on emerging startups._
+_Lightning talks are 5 minute presentations on anything you want to talk about,
+so long as it respects our Code of Conduct._
+
+[Submit your Lightning Talk by June 26 :fontawesome-solid-bolt-lightning:](https://forms.gle/17tK6f9BRYSouKoQ7){ .md-button .md-button--primary}
