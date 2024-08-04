@@ -26,17 +26,17 @@ throughout the state. Join yours today!
 ## Dallas-based Meetups
 
 * [DFW Pythoneers](https://www.meetup.com/dfwpython/) _(Active)_
-* [Python Code Buddies](https://www.meetup.com/pythonpracticegroup/) _(Active)_
+* [Python Code Buddies](https://www.meetup.com/pythonpracticegroup/) _(Inactive)_
 * [Python for Everyone](https://www.meetup.com/python4e/) _(Inactive)_
 
 ## Houston-based Meetups
 
 * [PyHou - Houston Python Enthusiasts!](https://www.meetup.com/python-14/) _(Inactive)_
-* [Houston Data Science](https://www.meetup.com/houston-data-science/) _(Active)_
+* [Houston Data Science](https://www.meetup.com/houston-data-science/) _(Inactive)_
 * [Houston PyLadies](https://www.meetup.com/houston_pyladies/) _(Inactive)_
 * [Django Houston](https://www.meetup.com/django-houston/) _(Inactive)_
 * [Katy Python Coders](https://www.meetup.com/katy-python-coders/) _(Active)_
-* [North Houston Python Coders](https://www.meetup.com/north-houston-python-coders/) _(Active)_
+* [North Houston Python Coders](https://www.meetup.com/north-houston-python-coders/) _(Inactive)_
 
 ## San Antonio-based Meetups
 
