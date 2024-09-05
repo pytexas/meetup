@@ -12,12 +12,20 @@ of Texas and beyond.
 
 ## Upcoming PyTexas Meetups
 
-### _September Meetup - September 3, 2024_
+### _October Meetup - October 1, 2024_
 
-![Jim Vogel Avatar](https://vogelcc.com/headshot_2023.jpg){: style="height: 200px; width: 200px;" align="left"}
+![Marcelo Sacchetin Avatar](https://images.squarespace-cdn.com/content/v1/5a60c2ed017db2e8dedb82b7/1596464328366-LATX12LSPIG51T2W4QF5/Marcelo.jpg?format=1500w){: style="height: 200px; width: 200px;" align="left"}
 
-#### Beanie Babies: API Edition
+#### Open-source Data Loss Prevention tool: n0s1
 
-> Explore the synergy between Beanie, Pydantic, FastAPI, and MongoDB, focusing on how Pydantic ties everything together. This talk will highlight how mastering Pydantic allows you to use consistent syntax across database models and API results, leveraging Python typing throughout. Learn how these technologies seamlessly integrate to streamline data modeling, validation, and API creation, making development more efficient and cohesive.
+> "Are you monitoring your code base for leaked secrets? What about your project management and ticketing systems?
+>
+> While most of us use secret scanners for source code, the SDLC begins before coding. Leaks may already be present in project management platforms like Jira, Confluence, and Asana.
+>
+> `n0s1` (github.com/spark1security) is an open-source secret scanner designed for Data Loss Prevention during the early SDLC stages. It integrates with existing CI security scanners and supports GitHub Actions, GitLab CI, and Docker."
 
-*Jim Vogel, Lead Architect at Gravitate, brings two decades of software development experience and currently works in the oil and gas industry. He's the brain behind a supply and dispatch system used by 20% of the fuel trucks in the USA. A frequent speaker at DFW Pythoneers, Jim loves discussing all things tech, especially Python, process improvement, linear programming and optimization, and Vim. In his downtime, he indulges in 3D printing, home automation, and being a dad of two little girls.*
+*"Marcelo Sacchetin has been helping software developers over a decade to write secure code across multiple start-ups and Fortune 500 companies. He mainly focuses on building automation for SDL and empowering developers to master cybersecurity.*
+
+*When he is not preventing secret leaks with n0s1 (pronunciation nosy), he can also be found having fun with car hacking, anti-virus evasion or building Python coding bots with his kids.*
+
+*He founded spark1.us with the mission of helping companies to build secure software by leveraging open-source and automation."*
