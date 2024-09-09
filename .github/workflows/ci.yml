@@ -19,13 +19,6 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-<<<<<<< HEAD
       - run: sudo apt install libcairo2
       - run: pip install -r requirements.txt
       - run: mkdocs gh-deploy --force
-=======
-      - run: pip install "mkdocs-material[imaging] @ git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git"
-      - run: mkdocs gh-deploy --force
-env:
-  GH_TOKEN: ${{ secrets.GH_TOKEN }}
->>>>>>> 988fd2e (ci(cards): enable install of opt deps for social cards)
