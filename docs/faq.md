@@ -1,3 +1,8 @@
+---
+title: FAQ
+description: Answers to some frequently asked questions
+---
+
 # Frequently Asked Questions
 
 ???+ question "When do y'all meet?"

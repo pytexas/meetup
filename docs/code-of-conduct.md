@@ -1,3 +1,8 @@
+---
+title: Code of Conduct
+description: Please review our Code of Conduct
+---
+
 # Code of Conduct
 
 PyTexas is dedicated to providing a harassment-free conference experience for

@@ -1,3 +1,8 @@
+---
+title: Sponsors
+description: Thank you to our sponsors for making this possible
+---
+
 # Sponsors
 
 Sponsorship for the PyTexas Virtual Meetup's been wrangled up by these fine organizations below. We're as grateful as a longhorn in spring grass! A big Texas-sized THANK YOU to each one of 'em.
