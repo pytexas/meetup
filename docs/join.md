@@ -1,3 +1,8 @@
+---
+title: Join the PyTexas Meetup
+description: Join the PyTexas Discord server to get access to the meetup
+---
+
 # Join the PyTexas Meetup
 
 The PyTexas Meetup is open to _anyone_, not just Texans! We hold our meetings in

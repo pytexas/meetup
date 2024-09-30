@@ -1,3 +1,8 @@
+---
+title: Local Meetups
+description: Find local meetups in your area
+---
+
 # Join Your Local Meetup
 
 Want to meetup with people in your home city? Texas has various Python meetups

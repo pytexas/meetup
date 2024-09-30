@@ -1,3 +1,8 @@
+---
+title: PyTexas Meetup
+description: Welcome to the PyTexas Meetup! Happy to see y'all!
+---
+
 # PyTexas Meetup
 
 

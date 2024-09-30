@@ -1,4 +1,10 @@
-# About
+---
+title: About Us
+description: Learn more about the PyTexas Meetup
+---
+
+# About Us
+
 The PyTexas Meetup was started in the Summer of 2023 by Brad Brown, Josh Cannon, Josh Schneider
 Mason Egger, and Matt Criswell. The goal of this meetup was to create a space
 for Texas Pythonistas to be able to meet, network, and learn from the comfort
@@ -39,11 +45,12 @@ At night you'll catch him speding time with his wife and kids, obsessively readi
 ![Matt Criswell Headshot](https://github.com/matthewcriswell.png){: style="height:150px;width:150px" align=left}
 Matt works at a startup as a DevOps Engineer. He has previously worked at Mirantis and Rackspace holding various titles such as SRE, Ops Engineer, and Linux Admin.  With a coding style that can only be described as "effortless" he puts newbies at ease by proving anyone can learn Python.
 
-<br>
+<br clear=all>
 
 ### Mason Egger
 ![Mason Egger Headshot](https://github.com/masonegger.png){: style="height:150px;width:150px" align=left}
 Mason is currently Sr. Technical Curriculum Developer at Temporal.io who specializes building community, developer-focused educational content, distributed systems, and Python. Prior to his work at Temporal he launched Developer Relations at Gretel.ai as the Lead Developer Advocate, and was a Developer Advocate at DigitalOcean specializing in Infrastructure-as-a-Service technologies. His engineering experience includes time as an SRE helping build and maintain a highly available hybrid multi-cloud PaaS. He's an avid programmer, speaker, educator, and writer/blogger. He is an organizer of PyTexas, President of the PyTexas Foundation, and actively contributes to open source projects. In his spare time, he enjoys reading, camping, kayaking, and exploring new places.
+
 
 ### Josh Schneider
 ![Josh Schneider Avatar](https://github.com/dijital20.png){: style="height:150px;width:150px" align=left}
