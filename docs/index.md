@@ -17,20 +17,10 @@ of Texas and beyond.
 
 ## Upcoming PyTexas Meetups
 
-### _October Meetup - October 1, 2024_
+### _November Meetup - November 12, 2024_
 
-![Marcelo Sacchetin Avatar](https://images.squarespace-cdn.com/content/v1/5a60c2ed017db2e8dedb82b7/1596464328366-LATX12LSPIG51T2W4QF5/Marcelo.jpg?format=1500w){: style="height: 200px; width: 200px;" align="left"}
+#### Python and .NET - A Match Almost Made in Heaven - Larry Allan Jones
 
-#### Open-source Data Loss Prevention tool: n0s1
+I created a Python API for a .NET system using Python.NET. This API had a Pythonic layer which transformed Python class methods to a .NET API using a number of functional programming techniques. The goal of the API was to allow our customers to leverage existing Python resources to access a robust .NET API in order to solve their specific problems in a cost-effective way. Along the way, we were able to leverage the Python API to perform integration testing of our entire product.
 
-Are you monitoring your code base for leaked secrets? What about your project management and ticketing systems?
-
-While most of us use secret scanners for source code, the SDLC begins before coding. Leaks may already be present in project management platforms like Jira, Confluence, and Asana.
-
-`n0s1` (github.com/spark1security) is an open-source secret scanner designed for Data Loss Prevention during the early SDLC stages. It integrates with existing CI security scanners and supports GitHub Actions, GitLab CI, and Docker.
-
-*Marcelo Sacchetin has been helping software developers over a decade to write secure code across multiple start-ups and Fortune 500 companies. He mainly focuses on building automation for SDL and empowering developers to master cybersecurity.*
-
-*When he is not preventing secret leaks with n0s1 (pronunciation nosy), he can also be found having fun with car hacking, anti-virus evasion or building Python coding bots with his kids.*
-
-*He founded spark1.us with the mission of helping companies to build secure software by leveraging open-source and automation.*
+*Software Architect with over 10 years experience architecting, building, and maintaining complex applications. Designed and developed retail web applications, internal web applications for a multi-national company, seismic processing on computing clusters, and desktop applications with near-real-time data streams. Proficient in languages like C#, Python, Elixir, Clojure / ClojureScript and JavaScript / TypeScript, front-end technologies like React, and databases like PostgreSQL and MongoDB. Seeking a position to engage my passion for learning and for improving the software experience for customers, managers, and developers.*
