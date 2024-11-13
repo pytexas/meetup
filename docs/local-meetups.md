@@ -36,7 +36,7 @@ throughout the state. Join yours today!
 
 ## Houston-based Meetups
 
-* [PyHou - Houston Python Enthusiasts!](https://www.meetup.com/python-14/) _(Inactive)_
+* [PyHou - Houston Python Enthusiasts!](https://www.meetup.com/python-14/) _(Active)_
 * [Houston Data Science](https://www.meetup.com/houston-data-science/) _(Inactive)_
 * [Houston PyLadies](https://www.meetup.com/houston_pyladies/) _(Inactive)_
 * [Django Houston](https://www.meetup.com/django-houston/) _(Inactive)_
