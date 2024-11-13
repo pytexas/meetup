@@ -23,4 +23,6 @@ of Texas and beyond.
 
 Have you resorted to Spark or Dask because your Pandas script was crashing on a larger-than-memory dataset or regretted the complexity and overhead that Spark can incur when deployed on a medium-sized dataset? Have you longed for a single-node library that combines the syntactical simplicity of SQL and Python without sacrificing performance or functionality? If you sympathize with any of these sentiments, then Polars might be the library for you!
 
+![Jonathan Scofield Avatar](https://jonathanscofield1.github.io/jonathanscofield/images/profile.png){: style="height: 200px; width: 200px;" align="left"}
+
 *Jonathan Scofield is a data analyst and engineer in the music publishing industry. He regularly uses Pandas, Polars, and PySpark to build pipelines for asset metadata and transaction reports. Jonathan's journey with Polars began a year ago when he needed to migrate data between an on-premise database and a cloud-based solution. His entire team was awed by its rare combination of speed, flexibility, and simplicity. Since then, Polars has been a vital tool in his data toolbox and will continue to be for the foreseeable future. When he is not geeking out about data, he enjoys playing the piano and attempting to learn Mandarin.*
