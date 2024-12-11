@@ -17,12 +17,14 @@ of Texas and beyond.
 
 ## Upcoming PyTexas Meetups
 
-### _December Meetup - December 3, 2024_
+### January Meetup - January 7, 2025_
 
-#### Polars: The Ultimate DataFrame Library? - Jonathan Scofield
+#### Diagrams and You - Josh Schneider
 
-Have you resorted to Spark or Dask because your Pandas script was crashing on a larger-than-memory dataset or regretted the complexity and overhead that Spark can incur when deployed on a medium-sized dataset? Have you longed for a single-node library that combines the syntactical simplicity of SQL and Python without sacrificing performance or functionality? If you sympathize with any of these sentiments, then Polars might be the library for you!
+Before and After you code, you have to be able to communicate your ideas, both to yourself and to others. With humans being the visual creatures that we are, one of the most effective ways to communicate complex ideas is with a diagram. I mean, cave drawings worked for early man, why can't they work for engineers, right?
 
-![Jonathan Scofield Avatar](https://jonathanscofield1.github.io/jonathanscofield/images/profile.png){: style="height: 200px; width: 200px;" align="left"}
+Come along as Josh talks about several types of diagrams, their properties, their faults, and what they're good for!
 
-*Jonathan Scofield is a data analyst and engineer in the music publishing industry. He regularly uses Pandas, Polars, and PySpark to build pipelines for asset metadata and transaction reports. Jonathan's journey with Polars began a year ago when he needed to migrate data between an on-premise database and a cloud-based solution. His entire team was awed by its rare combination of speed, flexibility, and simplicity. Since then, Polars has been a vital tool in his data toolbox and will continue to be for the foreseeable future. When he is not geeking out about data, he enjoys playing the piano and attempting to learn Mandarin.*
+![Josh Schneider Avatar](https://github.com/dijital20.png){: style="height:150px;width:150px" align=left}
+
+*Josh Schneider is an Application Security Engineer, recovering Test Automation Engineer, movie nerd, and PyTexas organizer. When he's not hanging out with his boys, playing video games, drinking coffee, or talking comedy; he's probably talking code!*
