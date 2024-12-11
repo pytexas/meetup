@@ -63,4 +63,8 @@ authors:
     name: Lawrence Allan Jones
     description: Software Architect with over 10 years experience architecting, building, and maintaining complex applications. Designed and developed retail web applications, internal web applications for a multi-national company, seismic processing on computing clusters, and desktop applications with near-real-time data streams.
     avatar: ../assets/images/LawrenceAllanJones.jpg
+  jonathanscofield:
+    name: Jonathan Scofield
+    description: Jonathan Scofield is a data analyst and engineer in the music publishing industry. He regularly uses Pandas, Polars, and PySpark to build pipelines for asset metadata and transaction reports. Jonathan's journey with Polars began a year ago when he needed to migrate data between an on-premise database and a cloud-based solution. His entire team was awed by its rare combination of speed, flexibility, and simplicity. Since then, Polars has been a vital tool in his data toolbox and will continue to be for the foreseeable future. When he is not geeking out about data, he enjoys playing the piano and attempting to learn Mandarin.
+    avatar: https://jonathanscofield1.github.io/jonathanscofield/images/profile.png
     
