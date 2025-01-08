@@ -1,5 +1,5 @@
 ---
-title: Local Meetups
+title: Local Meetups & Communities
 description: Find local meetups in your area
 ---
 
@@ -26,26 +26,25 @@ throughout the state. Join yours today!
 * [Austin Python User Group](https://www.meetup.com/austinpython/) _(Active)_
 * [PyLadies ATX](https://www.meetup.com/pyladies-atx/) _(Inactive)_
 * [Austin Practical Data Science](https://www.meetup.com/austin-practical-data-science/) _(Active)_
-* [North Austin Pythonistas](https://www.meetup.com/north-austin-pythonistas/) _(Inactive)_
+
+Looking for tech meetups in Austin? Join the [Austin Meetup Discord](https://discord.gg/3EyGMBd4a8)
 
 ## Dallas-based Meetups
 
 * [DFW Pythoneers](https://www.meetup.com/dfwpython/) _(Active)_
-* [Python Code Buddies](https://www.meetup.com/pythonpracticegroup/) _(Inactive)_
-* [Python for Everyone](https://www.meetup.com/python4e/) _(Inactive)_
 
 ## Houston-based Meetups
 
 * [PyHou - Houston Python Enthusiasts!](https://www.meetup.com/python-14/) _(Active)_
 * [Houston Data Science](https://www.meetup.com/houston-data-science/) _(Inactive)_
 * [Houston PyLadies](https://www.meetup.com/houston_pyladies/) _(Inactive)_
-* [Django Houston](https://www.meetup.com/django-houston/) _(Inactive)_
 * [Katy Python Coders](https://www.meetup.com/katy-python-coders/) _(Active)_
-* [North Houston Python Coders](https://www.meetup.com/north-houston-python-coders/) _(Inactive)_
 
 ## San Antonio-based Meetups
 
-* [Alamo Python Learners](https://www.meetup.com/alamo-python-learners/) _(Active)_
+* [Alamo Python Learners](https://www.meetup.com/alamo-python) _(Active)_
+
+Looking for tech meetups in San Antonio? Join the [Dev San Antonio Discord](https://discord.gg/HVqeTPmreG)
 
 ??? question "Did We Miss One?"
 
