@@ -17,12 +17,13 @@ of Texas and beyond.
 
 ## Upcoming PyTexas Meetups
 
-### March Meetup - March 4, 2025
+### April Meetup - April 1, 2025
 
-#### Accelerate your pandas application with FireDucks; A multi-threaded DataFrame library with JIT Compiler - Sourav Saha
+#### Boosting Python’s Performance With Multiprocessing to Bypass the GIL - Pavan Reddy
 
-In this talk, I will introduce [FireDucks](https://fireducks-dev.github.io), that comes with a multithreaded kernel backend written in C++, a JIT compiler to auto-detect and optimize the existing performance issues involved in a user program, and a pure python frontend highly compatible with pandas allowing a native pandas application to be executed as it is without any manual changes. With the promise of highly compatible pandas APIs and the revved-up performance, FireDucks can serve the demands of this digital age and transform the arduous task of data wrangling into a more efficient and less taxing endeavor. It can be simply installed on any Linux system using pip.
+This talk explores Python’s Global Interpreter Lock (GIL), a limitation that restricts true parallel execution in multi-threaded programs. We examine how multiprocessing enables parallelism by bypassing the GIL, resulting in significant performance gains for CPU-bound tasks. Attendees will learn practical techniques to use multiprocessing effectively for scalable, high-performance Python applications.
 
-![Sourav Saha Avatar](assets/images/Sourav_Saha.jpg){: style="height:150px;width:150px" align=left}
+![Pavan Reddy Avatar](assets/images/PavanReddy.jpeg){: style="height:150px;width:150px" align=left}
 
-*Sourav has 11 years of professional experience at NEC Corporation, Japan in the diverse fields of High-Performance Computing, Distributed Programming, and Data Science. He holds a bachelor’s degree in Computer Science and is currently affiliated with the Digital Technology Development Laboratories at NEC as a Senior Research Engineer. Blending the mixture of different niche technologies related to compiler framework, high performance computing, and multi-threaded programming, his team is developing a high-performance compiler accelerated DataFrame library, named FireDucks. He is mostly passionate about program optimization, public speaking and has been speaking in several technical conferences, meetups etc.*
+*Pavan earned his M.S. in Computer Science from George Washington University, where he also served as a teaching assistant, delivering lectures on Computer Vision concepts in the context of Augmented Reality (AR) and Virtual Reality (VR). Currently, he works as a software engineer specializing in Artificial Intelligence (AI) and Machine Learning (ML), with a focus on Adversarial Attacks and Explainable AI. Driven by a deep passion for ML and its transformative potential, Pavan became an educator to share his knowledge and help others understand ML in intuitive ways. Through his popular Instagram page, he has amassed a dedicated following of over 90,000 enthusiasts, making complex ML concepts accessible and empowering individuals to engage with technology that can contribute to a better, more
+impactful world.*
