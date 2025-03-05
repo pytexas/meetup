@@ -71,4 +71,7 @@ authors:
     name: Dishant Sethi
     description: I’m Dishant! I’m a computer science graduate with over 5 years of experience in software development, cloud infrastructure, and AI/ML pipelines. I’ve had the opportunity to work with a few early-stage startups in Boston and New York, providing software consultancy. These days, I’m focused on building AI applications, helping teams solve technical challenges and build scalable solutions. When I’m not working on tech, you’ll probably find me in the kitchen, experimenting with new recipes. Feel free to reach out if you would like to talk about product engineering, AI, or cooking.
     avatar: https://avatars.githubusercontent.com/u/31399916
-    
+  souravsaha:
+    name: Sourav Saha
+    description: Sourav has 11 years of professional experience at NEC Corporation, Japan in the diverse fields of High-Performance Computing, Distributed Programming, and Data Science. He holds a bachelor’s degree in Computer Science and is currently affiliated with the Digital Technology Development Laboratories at NEC as a Senior Research Engineer. Blending the mixture of different niche technologies related to compiler framework, high performance computing, and multi-threaded programming, his team is developing a high-performance compiler accelerated DataFrame library, named FireDucks. He is mostly passionate about program optimization, public speaking and has been speaking in several technical conferences, meetups etc.
+    avatar: ../assets/images/Sourav_Saha.jpg
