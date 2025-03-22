@@ -46,11 +46,11 @@ authors:
   zviboshernitzan:
     name: Zvi Boshernitzan
     description: Software engineer and technologist based in Austin.
-    avatar: ../../assets/images/ZviBoshernitzan.jpg
+    avatar: assets/images/ZviBoshernitzan.jpg
   marissaskudlarek:
     name: Marissa Skudlarek
     description: Marissa Skudlarek is a Senior Software Engineer at Lex Machina and an accomplished playwright and translator.
-    avatar: ../../assets/images/MarissaSkudlarek.jpg
+    avatar: assets/images/MarissaSkudlarek.jpg
   jimvogel:
     name: Jim Vogel
     description: Jim Vogel, Lead Architect at Gravitate, brings two decades of software development experience and currently works in the oil and gas industry.
@@ -62,7 +62,7 @@ authors:
   lawrenceallanjones:
     name: Lawrence Allan Jones
     description: Software Architect with over 10 years experience architecting, building, and maintaining complex applications. Designed and developed retail web applications, internal web applications for a multi-national company, seismic processing on computing clusters, and desktop applications with near-real-time data streams.
-    avatar: ../../assets/images/LawrenceAllanJones.jpg
+    avatar: assets/images/LawrenceAllanJones.jpg
   jonathanscofield:
     name: Jonathan Scofield
     description: Jonathan Scofield is a data analyst and engineer in the music publishing industry. He regularly uses Pandas, Polars, and PySpark to build pipelines for asset metadata and transaction reports. Jonathan's journey with Polars began a year ago when he needed to migrate data between an on-premise database and a cloud-based solution. His entire team was awed by its rare combination of speed, flexibility, and simplicity. Since then, Polars has been a vital tool in his data toolbox and will continue to be for the foreseeable future. When he is not geeking out about data, he enjoys playing the piano and attempting to learn Mandarin.
@@ -74,4 +74,4 @@ authors:
   souravsaha:
     name: Sourav Saha
     description: Sourav has 11 years of professional experience at NEC Corporation, Japan in the diverse fields of High-Performance Computing, Distributed Programming, and Data Science. He holds a bachelor’s degree in Computer Science and is currently affiliated with the Digital Technology Development Laboratories at NEC as a Senior Research Engineer. Blending the mixture of different niche technologies related to compiler framework, high performance computing, and multi-threaded programming, his team is developing a high-performance compiler accelerated DataFrame library, named FireDucks. He is mostly passionate about program optimization, public speaking and has been speaking in several technical conferences, meetups etc.
-    avatar: ../../assets/images/Sourav_Saha.jpg
+    avatar: assets/images/Sourav_Saha.jpg
