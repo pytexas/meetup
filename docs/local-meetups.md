@@ -32,6 +32,7 @@ Looking for tech meetups in Austin? Join the [Austin Meetup Discord](https://dis
 ## Dallas-based Meetups
 
 * [DFW Pythoneers](https://www.meetup.com/dfwpython/) _(Active)_
+* [DFW Pythoneers](https://www.meetup.com/dfwpython/events/307947550/?eventOrigin=attendee_list) _(Active)_
 
 ## Houston-based Meetups
 
