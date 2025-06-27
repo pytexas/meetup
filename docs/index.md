@@ -17,18 +17,8 @@ of Texas and beyond.
 
 ## Upcoming PyTexas Meetups
 
-### June Meetup - June 3, 2025
+### July Meetup - July 1, 2025
 
-#### X Architectures and Counting - Piper Thunstrom
+#### Lightning Talks!
 
-Lots of folks wait to start their "dream" project, hoping to develop the right skill set to execute it perfectly. Through the lens of the architecture if ppb, Piper will share the lessons she learned over its decade of development and why you should just get started and level up as you go.
-
-[RSVP Here :fontawesome-solid-ticket:](https://discord.gg/jNPAbcNukj?event=1375955432342032415){ .md-button .md-button--primary}
-
-![Piper Thunstrom Avatar](assets/images/piper-thunstrom.jpg){: style="height:150px;width:125px" align=left}
-
-*Piper is a pythonista, game enthusiast, and web developer. 
-You might know her from her talks given at conferences around the United States, a local tech meetup, or her open source work. 
-She speaks on community building, game development, CS education, and trans identity in tech. 
-She's been involved in the Python community since 2014 with previous experience as an organizer in the NYC Python user groups. 
-You can follow her work at [piper.thunstrom.dev](https://piper.thunstrom.dev)*
+We're bringing back our community lightning talks for July! Submission ends 6/28 @ 5:00pm, check out our [Discord](https://discord.gg/jNPAbcNukj) server for more information!
