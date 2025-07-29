@@ -1,17 +1,27 @@
 name: ci
-on:  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
+on: 
+  workflow_run:
+    workflows: ["Check Links"]
+    types:
+      - completed
     branches: [ "main" ]
 permissions:
   contents: write
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: "Set up Python"
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.x
+          python-version-file: ".python-version"
+
       - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
       - uses: actions/cache@v3
         with:
@@ -19,6 +29,6 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: sudo apt install libcairo2
-      - run: pip install -r requirements.txt
-      - run: mkdocs gh-deploy --force
+      - run: sudo apt install libcairo2 zlib1g-dev libjpeg-dev
+      - run: uv sync
+      - run: uv run mkdocs gh-deploy --force
