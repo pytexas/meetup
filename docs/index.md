@@ -17,24 +17,17 @@ of Texas and beyond.
 
 ## Upcoming PyTexas Meetups
 
-### September Meetup - September 2, 2025
+### October Meetup - October 7, 2025
 
-#### Events are the Wrong Abstraction - Mason Egger
+#### Exploring Claude Code and Agentic Frameworks -- Jeff Triplett
 
-Modern software applications are distributed systems. 
-Applications need to connect and communicate with services, data repositories, users, etc., all over a network. 
-Event-Driven Architecture is a common pattern for facilitating this connectivity, using Events as the communication abstraction. 
-However, this pattern introduces complexities as well, such as fragmented logic, increased latency, decreased observability, and more. 
-But what if there were a way to get the benefits of Event-Driven Architecture without the complexities? Enter Durable Execution. 
-In this talk, we'll discuss the pitfalls of Event-Driven Architecture, how Durable Execution solves these issues, and why Durable Execution, not Events, is the correct abstraction for building software.
+In an era where enterprises generate massive, complex streams of unstructured data from documents and logs to images, audio, and video, traditional search and analytics fall short. This session explores a transformative, production-ready framework for Multimodal Retrieval-Augmented Generation (RAG), designed to redefine how organizations unlock insights from every data modality. Discover how an intelligent agent, built using cutting-edge encoders and composable AI models, empowers organizations to understand, retrieve, and reason over diverse information in real time.
 
-[RSVP Here :fontawesome-solid-ticket:](#){ .md-button .md-button--primary }
+We’ll dive into a practical architecture that orchestrates advanced feature extraction, hybrid semantic and metadata-based retrieval, and large language model reasoning to deliver contextually rich, accurate answers - even for complex, cross-modal queries. Learn how real-world enterprises are leveraging this approach for intelligent surveillance, anomaly detection, and next-generation search, and see actionable metrics on recall, latency, and system robustness. Finally, we will also discuss how Multimodal RAG is setting the new standard for the future of computing and enterprise intelligence.
 
-![Mason Egger Headshot](https://github.com/masonegger.png){: style="height:150px;width:150px" align=left}
+[RSVP Here :fontawesome-solid-ticket:](https://discord.gg/7nNEh4B3hP?event=1422373041316303029){ .md-button .md-button--primary }
 
-*Mason is currently a Solutions Architect at Temporal Technologies who specializes in building community, developer-focused educational content, distributed systems, and Python. Prior to his work at Temporal he worked in Developer Relations at DigitalOcean and as a backend engineer at various companies. He’s an avid programmer, speaker, educator, and writer/blogger. He is President of the PyTexas Foundation, Conference Chair of the PyTexas Conference, and a founding organizer of the PyTexas Meetup.*
-<br>
-<br>
+![Jeff Triplett Headshot](assets/images/jeff.jpg){: style="height:150px;width:150px" align=left}
 
+*Data Leader for Emerging Technologies, transforming enterprises with latest trending AI/ML technologies.*
 
-> "On my business card, I am a Solutions Architect. In my mind, I am a programmer. But in my heart, I am a teacher." - paraphrased, original quote from Satoru Iwata
