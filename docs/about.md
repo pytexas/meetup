@@ -55,3 +55,7 @@ Mason is currently Sr. Technical Curriculum Developer at Temporal.io who special
 ### Josh Schneider
 ![Josh Schneider Avatar](https://github.com/dijital20.png){: style="height:150px;width:150px" align=left}
 Test Automation Architect, Python nerd, Improv comedy nerd, father, drinker of coffee, and quoter of movies. I love sharing ideas with people, and I am action packed with opinions like an 80's action movie.
+
+### Jesse Flippen
+![Jesse Flippen Avatar](https://github.com/jesseflip.png){: style="height:150px;width:150px" align=left}
+Business Development pro and process automation enthusiast. Jesse uses Python and modern AI tools to solve practical business challenges. In his current role, he builds automations—from simple scripts to AI agents using frameworks from Anthropic and Microsoft—that save hours of manual work every week. As community chair, he is dedicated to fostering community growth and making PyTexas a valuable resource for developers at every stage of their journey.
