@@ -84,3 +84,7 @@ authors:
     name: Akshay Mittal
     description: Akshay Mittal is a seasoned IT professional with over a decade of experience as a full-stack developer and a growing footprint in technology leadership. He currently serves as a Staff Software Engineer at PayPal, where he builds scalable, resilient systems in high-performance cloud environments. In parallel, Akshay is pursuing a PhD at the University of the Cumberlands, focusing his research on the convergence of cloud-native architectures and AI/ML-driven automation.
     avatar: assets/images/AkshayMittal.jpeg
+  jefftriplett:
+    name: Jeff Triplett
+    description: Data Leader for Emerging Technologies, transforming enterprises with latest trending AI/ML technologies.
+    avatar: assets/images/jeff.jpg

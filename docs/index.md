@@ -17,17 +17,9 @@ of Texas and beyond.
 
 ## Upcoming PyTexas Meetups
 
-### October Meetup - October 7, 2025
+### November Meetup - November 4, 2025
 
-#### Exploring Claude Code and Agentic Frameworks -- Jeff Triplett
+#### Fireside Chat -- PyTexas Organizers
 
-In an era where enterprises generate massive, complex streams of unstructured data from documents and logs to images, audio, and video, traditional search and analytics fall short. This session explores a transformative, production-ready framework for Multimodal Retrieval-Augmented Generation (RAG), designed to redefine how organizations unlock insights from every data modality. Discover how an intelligent agent, built using cutting-edge encoders and composable AI models, empowers organizations to understand, retrieve, and reason over diverse information in real time.
-
-We’ll dive into a practical architecture that orchestrates advanced feature extraction, hybrid semantic and metadata-based retrieval, and large language model reasoning to deliver contextually rich, accurate answers - even for complex, cross-modal queries. Learn how real-world enterprises are leveraging this approach for intelligent surveillance, anomaly detection, and next-generation search, and see actionable metrics on recall, latency, and system robustness. Finally, we will also discuss how Multimodal RAG is setting the new standard for the future of computing and enterprise intelligence.
-
-[RSVP Here :fontawesome-solid-ticket:](https://discord.gg/7nNEh4B3hP?event=1422373041316303029){ .md-button .md-button--primary }
-
-![Jeff Triplett Headshot](assets/images/jeff.jpg){: style="height:150px;width:150px" align=left}
-
-*Data Leader for Emerging Technologies, transforming enterprises with latest trending AI/ML technologies.*
+Ever been curious about how all this PyTexas stuff comes together? Want to take a peek behind the curtain and see what's going on? Join us for a Fireside Chat this month as our organizers come together to show you our processes, answer your questions, and tell amazing stories of PyTexas past.
 
