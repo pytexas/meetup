@@ -17,9 +17,16 @@ of Texas and beyond.
 
 ## Upcoming PyTexas Meetups
 
-### November Meetup - November 4, 2025
+### December Meetup - December 2, 2025
 
-#### Fireside Chat -- PyTexas Organizers
+**Python Decorators** - Landon Jurgens
 
-Ever been curious about how all this PyTexas stuff comes together? Want to take a peek behind the curtain and see what's going on? Join us for a Fireside Chat this month as our organizers come together to show you our processes, answer your questions, and tell amazing stories of PyTexas past.
+Python Decorators are a cool, pythonic way to inject context into your Python code. 
+In this talk we'll walk through some interesting ways to leverage them and a couple places where you're better off not using them.
+
+[RSVP Here :fontawesome-solid-ticket:](https://discord.com/events/1012382914035597372/1440362095794458704){ .md-button .md-button--primary }
+
+![Landon Jurgens Headshot](assets/images/landon-jurgens.jpg){: style="height:150px;width:150px" align=left}
+
+_Software developer working in Python since 2008._
 
