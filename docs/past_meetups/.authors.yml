@@ -88,3 +88,11 @@ authors:
     name: Jeff Triplett
     description: Data Leader for Emerging Technologies, transforming enterprises with latest trending AI/ML technologies.
     avatar: assets/images/jeff.jpg
+  landonjurgens:
+    name: Landon Jurgens
+    description: Software developer working in Python since 2008.
+    avatar: assets/images/landon-jurgens.jpg
+  miguelvargas:
+    name: Miguel Vargas
+    description: Miguel Vargas is a software engineer with over 10 years of experience in front-end and back-end development, working with Python and TypeScript. He has collaborated with startups across industries such as finance, healthcare, real estate, and logistics, helping them scale their platforms with clean, reliable, and secure code. Currently, he works at Moxie, a health-tech startup.
+    avatar: assets/images/miguel.jpg

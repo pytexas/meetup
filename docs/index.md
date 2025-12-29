@@ -17,16 +17,15 @@ of Texas and beyond.
 
 ## Upcoming PyTexas Meetups
 
-### December Meetup - December 2, 2025
+### January Meetup - January 6, 2026
 
-**Python Decorators** - Landon Jurgens
+**Lint Fast, Type Hard: Elevate your code quality in Python with modern, ultra-fast tooling** - Miguel Vargas
 
-Python Decorators are a cool, pythonic way to inject context into your Python code. 
-In this talk we'll walk through some interesting ways to leverage them and a couple places where you're better off not using them.
+Learn how to maintain code quality without sacrificing performance. This presentation explores SAST, SCAT, and SCA concepts, then introduces modern tools like Ruff and Pyright that make formatting, linting, and type checking simple and almost instantaneous.
 
-[RSVP Here :fontawesome-solid-ticket:](https://discord.com/events/1012382914035597372/1440362095794458704){ .md-button .md-button--primary }
+[RSVP Here :fontawesome-solid-ticket:](https://discord.com/events/1012382914035597372/1455269701541298227){ .md-button .md-button--primary }
 
-![Landon Jurgens Headshot](assets/images/landon-jurgens.jpg){: style="height:150px;width:150px" align=left}
+![Miguel Vargas Headshot](assets/images/miguel.jpg){: style="height:150px;width:150px" align=left}
 
-_Software developer working in Python since 2008._
+_Miguel Vargas is a software engineer with over 10 years of experience in front-end and back-end development, working with Python and TypeScript. He has collaborated with startups across industries such as finance, healthcare, real estate, and logistics, helping them scale their platforms with clean, reliable, and secure code. Currently, he works at Moxie, a health-tech startup._
 
