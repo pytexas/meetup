@@ -96,3 +96,7 @@ authors:
     name: Miguel Vargas
     description: Miguel Vargas is a software engineer with over 10 years of experience in front-end and back-end development, working with Python and TypeScript. He has collaborated with startups across industries such as finance, healthcare, real estate, and logistics, helping them scale their platforms with clean, reliable, and secure code. Currently, he works at Moxie, a health-tech startup.
     avatar: assets/images/miguel.jpg
+  advityagemawat:
+    name: Advitya Gemawat
+    description: Advitya is an ML Engineer at Microsoft, specializing in scalable machine learning systems and Responsible AI. He has authored publications, holds patents, and received awards from leading venues such as VLDB, ACM SIGMOD, and CIDR.
+    avatar: assets/images/advitya.jpg

@@ -17,15 +17,15 @@ of Texas and beyond.
 
 ## Upcoming PyTexas Meetups
 
-### January Meetup - January 6, 2026
+### February Meetup - February 3, 2026
 
-**Lint Fast, Type Hard: Elevate your code quality in Python with modern, ultra-fast tooling** - Miguel Vargas
+**LLM-powered Merge Conflict Resolution** - Advitya Gemawat
 
-Learn how to maintain code quality without sacrificing performance. This presentation explores SAST, SCAT, and SCA concepts, then introduces modern tools like Ruff and Pyright that make formatting, linting, and type checking simple and almost instantaneous.
+Merge Conflicts in software programming occur in 20% of all merges in open-source projects, incurring a median resolution time of ~6 minutes for a single conflict at best, or multiple days at worst. This talk will touch upon LLM Evaluations, Azure OpenAI Fine-Tuning, AI-generated resolution explanations, and usage of multiple Python SDKs to craft a scalable LLM-powered Merge Conflict Resolver. Our results indicate up to 125% performance improvement over vanilla LLM resolution accuracy.
 
-[RSVP Here :fontawesome-solid-ticket:](https://discord.com/events/1012382914035597372/1455269701541298227){ .md-button .md-button--primary }
+[RSVP Here :fontawesome-solid-ticket:](https://discord.com/events/1012382914035597372/PLACEHOLDER){ .md-button .md-button--primary }
 
-![Miguel Vargas Headshot](assets/images/miguel.jpg){: style="height:150px;width:150px" align=left}
+![Advitya Gemawat Headshot](assets/images/advitya.jpg){: style="height:150px;width:150px" align=left}
 
-_Miguel Vargas is a software engineer with over 10 years of experience in front-end and back-end development, working with Python and TypeScript. He has collaborated with startups across industries such as finance, healthcare, real estate, and logistics, helping them scale their platforms with clean, reliable, and secure code. Currently, he works at Moxie, a health-tech startup._
+_Advitya is an ML Engineer at Microsoft, specializing in scalable machine learning systems and Responsible AI (RAI). He has authored publications, holds patents, and received awards from leading venues such as VLDB, ACM SIGMOD, and CIDR. At Microsoft, Advitya has worked with Azure Edge & Platform, Gray Systems Lab, and Windows, building ML and LLM services to enhance developer productivity. He also developed Azure ML's RAI tooling for computer vision models and Azure OpenAI Evaluations, released at Microsoft Build (2023-2025). He was a technical reviewer of the Amazon bestseller 'Ace the Data Science Interview' and was recognized as a "25 under 25: Top Data Science Contributor & Thought Leader."_
 
