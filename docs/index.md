@@ -23,7 +23,7 @@ of Texas and beyond.
 
 Merge Conflicts in software programming occur in 20% of all merges in open-source projects, incurring a median resolution time of ~6 minutes for a single conflict at best, or multiple days at worst. This talk will touch upon LLM Evaluations, Azure OpenAI Fine-Tuning, AI-generated resolution explanations, and usage of multiple Python SDKs to craft a scalable LLM-powered Merge Conflict Resolver. Our results indicate up to 125% performance improvement over vanilla LLM resolution accuracy.
 
-[RSVP Here :fontawesome-solid-ticket:](https://discord.com/events/1012382914035597372/PLACEHOLDER){ .md-button .md-button--primary }
+[RSVP Here :fontawesome-solid-ticket:](https://discord.com/events/1012382914035597372/1455269701541298227){ .md-button .md-button--primary }
 
 ![Advitya Gemawat Headshot](assets/images/advitya.jpg){: style="height:150px;width:150px" align=left}
 
