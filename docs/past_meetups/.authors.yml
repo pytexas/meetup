@@ -100,3 +100,7 @@ authors:
     name: Advitya Gemawat
     description: Advitya is an ML Engineer at Microsoft, specializing in scalable machine learning systems and Responsible AI. He has authored publications, holds patents, and received awards from leading venues such as VLDB, ACM SIGMOD, and CIDR.
     avatar: assets/images/advitya.jpg
+  dippukumarsingh:
+    name: Dippu Kumar Singh
+    description: Dippu is a strategic Data & Analytics leader and thought leader in emerging solutions, including Computer Vision and Generative AI/LLMs. He has deep expertise in multi-cloud platforms, Big Data frameworks, and Enterprise architecture, with certifications including Azure Solution Architect, Databricks Engineer Expert, and Palantir Foundry Expert.
+    avatar: assets/images/dippu.jpeg

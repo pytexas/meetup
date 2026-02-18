@@ -17,15 +17,15 @@ of Texas and beyond.
 
 ## Upcoming PyTexas Meetups
 
-### February Meetup - February 3, 2026
+### March Meetup - March 3, 2026
 
-**LLM-powered Merge Conflict Resolution** - Advitya Gemawat
+**Multimodal RAG for the Future of Intelligent Enterprise Search** - Dippu Kumar Singh
 
-Merge Conflicts in software programming occur in 20% of all merges in open-source projects, incurring a median resolution time of ~6 minutes for a single conflict at best, or multiple days at worst. This talk will touch upon LLM Evaluations, Azure OpenAI Fine-Tuning, AI-generated resolution explanations, and usage of multiple Python SDKs to craft a scalable LLM-powered Merge Conflict Resolver. Our results indicate up to 125% performance improvement over vanilla LLM resolution accuracy.
+In an era where enterprises generate massive, complex streams of unstructured data from documents and logs to images, audio, and video, traditional search and analytics fall short. This session explores a transformative, production-ready framework for Multimodal Retrieval-Augmented Generation (RAG), designed to redefine how organizations unlock insights from every data modality. Discover how an intelligent agent, built using cutting-edge encoders and composable AI models, empowers organizations to understand, retrieve, and reason over diverse information in real time.
 
-[RSVP Here :fontawesome-solid-ticket:](https://discord.com/events/1012382914035597372/1455269701541298227){ .md-button .md-button--primary }
+[RSVP Here :fontawesome-solid-ticket:](https://pytexas.org/meetup/join){ .md-button .md-button--primary }
 
-![Advitya Gemawat Headshot](assets/images/advitya.jpg){: style="height:150px;width:150px" align=left}
+![Dippu Kumar Singh Headshot](assets/images/dippu.jpeg){: style="height:150px;width:200px" align=left}
 
-_Advitya is an ML Engineer at Microsoft, specializing in scalable machine learning systems and Responsible AI (RAI). He has authored publications, holds patents, and received awards from leading venues such as VLDB, ACM SIGMOD, and CIDR. At Microsoft, Advitya has worked with Azure Edge & Platform, Gray Systems Lab, and Windows, building ML and LLM services to enhance developer productivity. He also developed Azure ML's RAI tooling for computer vision models and Azure OpenAI Evaluations, released at Microsoft Build (2023-2025). He was a technical reviewer of the Amazon bestseller 'Ace the Data Science Interview' and was recognized as a "25 under 25: Top Data Science Contributor & Thought Leader."_
+_Dippu is a strategic Data & Analytics leader and thought leader in emerging solutions, including Computer Vision and Generative AI/LLMs. Dippu has deep expertise in multi-cloud platforms, Big Data frameworks and Enterprise architecture. He possesses extensive experience in designing, implementing comprehensive Data & Analytics solutions from ingestion and ETL to advanced analytics and presentation across multiple domains. His technical prowess is underscored by certifications like Azure Solution Architect, Databricks Engineer Expert, and Palantir Foundry Expert. Furthermore, he is a key global member of the AI Ethics & Compliance Assessment team, and consistently translates cutting-edge technology into tangible business value for C-level executives._
 
