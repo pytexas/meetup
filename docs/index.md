@@ -17,15 +17,17 @@ of Texas and beyond.
 
 ## Upcoming PyTexas Meetups
 
-### March Meetup - March 3, 2026
+### April Meetup - April 7, 2026
 
-**Multimodal RAG for the Future of Intelligent Enterprise Search** - Dippu Kumar Singh
+**Disentangling Formatted Strings with t-strings** - Simon Merrick
 
-In an era where enterprises generate massive, complex streams of unstructured data from documents and logs to images, audio, and video, traditional search and analytics fall short. This session explores a transformative, production-ready framework for Multimodal Retrieval-Augmented Generation (RAG), designed to redefine how organizations unlock insights from every data modality. Discover how an intelligent agent, built using cutting-edge encoders and composable AI models, empowers organizations to understand, retrieve, and reason over diverse information in real time.
+In October 2025, Python 3.14 was released and with it a cool new way to create t-strings, which promise to help python developers write better, and safer python code. While on the surface, they share a similar name to f-strings, the way we use them is quite different. This talk explores what they are, how they work, who they are for and how they will help python developers write safer code.
 
 [RSVP Here :fontawesome-solid-ticket:](https://pytexas.org/meetup/join){ .md-button .md-button--primary }
 
-![Dippu Kumar Singh Headshot](assets/images/dippu.jpeg){: style="height:150px;width:200px" align=left}
+![Simon Merrick Headshot](assets/images/simonmerrick.jpg){: style="height:150px;width:150px" align=left}
 
-_Dippu is a strategic Data & Analytics leader and thought leader in emerging solutions, including Computer Vision and Generative AI/LLMs. Dippu has deep expertise in multi-cloud platforms, Big Data frameworks and Enterprise architecture. He possesses extensive experience in designing, implementing comprehensive Data & Analytics solutions from ingestion and ETL to advanced analytics and presentation across multiple domains. His technical prowess is underscored by certifications like Azure Solution Architect, Databricks Engineer Expert, and Palantir Foundry Expert. Furthermore, he is a key global member of the AI Ethics & Compliance Assessment team, and consistently translates cutting-edge technology into tangible business value for C-level executives._
+_Simon is a Senior SRE experienced in building and securing cloud native software and infrastructure in the Payments Industry. His passion is the intersection of technological and interpersonal challenges of getting code from commit to production, safely, securely and on demand - especially in regulated sectors such as Payments._
+
+_Simon serves as Secretary on the Committee of Python New Zealand and is part of the Kiwi PyCon core team in 2024 and 2025._
 
