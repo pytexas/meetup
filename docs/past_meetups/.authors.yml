@@ -104,3 +104,7 @@ authors:
     name: Dippu Kumar Singh
     description: Dippu is a strategic Data & Analytics leader and thought leader in emerging solutions, including Computer Vision and Generative AI/LLMs. He has deep expertise in multi-cloud platforms, Big Data frameworks, and Enterprise architecture, with certifications including Azure Solution Architect, Databricks Engineer Expert, and Palantir Foundry Expert.
     avatar: assets/images/dippu.jpeg
+  simonmerrick:
+    name: Simon Merrick
+    description: Simon is a Senior SRE experienced in building and securing cloud native software and infrastructure in the Payments Industry. He serves as Secretary on the Committee of Python New Zealand and is part of the Kiwi PyCon core team.
+    avatar: assets/images/simonmerrick.jpg

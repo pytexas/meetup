@@ -4,10 +4,12 @@ description: >-
   This skill should be used when the user asks to "update the meetup",
   "do the monthly update", "archive the meetup", "add the next meetup",
   "update for [month] meetup", "set up the new meetup", "prepare next
-  month's meetup", or provides speaker submission data for an upcoming
-  meetup. Guides the complete monthly transition workflow for the PyTexas
-  Meetup website including archiving the current meetup, adding the new
-  speaker, and updating the homepage.
+  month's meetup", provides speaker submission data for an upcoming
+  meetup, or provides a meetup.com event URL. Also available via the
+  `/update-meetup` command with a meetup.com URL. Guides the complete
+  monthly transition workflow for the PyTexas Meetup website including
+  archiving the current meetup, adding the new speaker, and updating
+  the homepage.
 ---
 
 # Monthly Meetup Update
@@ -29,7 +31,18 @@ Additionally, one manual step is flagged for the user:
 
 ## Input Data
 
-The user typically provides raw speaker submission data containing:
+Input can come from two sources:
+
+### Option A: Meetup.com Event URL
+
+When given a meetup.com URL (or invoked via `/update-meetup <url>`), use WebFetch to retrieve
+the event page and extract: event date, talk title, speaker name, talk description, speaker bio,
+and speaker headshot URL. Present the extracted data to the user for confirmation before proceeding.
+If any required fields are missing from the page, ask the user to provide them.
+
+### Option B: Raw Speaker Submission Data
+
+The user provides speaker submission data directly containing:
 
 - Speaker name and pronouns
 - Email
