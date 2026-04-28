@@ -17,17 +17,19 @@ of Texas and beyond.
 
 ## Upcoming PyTexas Meetups
 
-### April Meetup - April 7, 2026
+### May Meetup - May 5, 2026
 
-**Disentangling Formatted Strings with t-strings** - Simon Merrick
+**Micro Posts, Macro Impact: My Journey Building a Python + GenAI Social Platform** - Satyam Mittal & Ishita Malhotra
 
-In October 2025, Python 3.14 was released and with it a cool new way to create t-strings, which promise to help python developers write better, and safer python code. While on the surface, they share a similar name to f-strings, the way we use them is quite different. This talk explores what they are, how they work, who they are for and how they will help python developers write safer code.
+This talk is the story of how a small idea grew into a real, working social platform built around tiny 300-character posts. We built it mostly out of curiosity- using Python, a bit of GenAI, and a lot of trial and error. Along the way, we learned what actually matters when you're building something for real people, not just for yourself.
 
 [RSVP Here :fontawesome-solid-ticket:](https://pytexas.org/meetup/join){ .md-button .md-button--primary }
 
-![Simon Merrick Headshot](assets/images/simonmerrick.jpg){: style="height:150px;width:150px" align=left}
+![Satyam Mittal Headshot](assets/images/satyam.png){: style="height:150px;width:150px" align=left}
 
-_Simon is a Senior SRE experienced in building and securing cloud native software and infrastructure in the Payments Industry. His passion is the intersection of technological and interpersonal challenges of getting code from commit to production, safely, securely and on demand - especially in regulated sectors such as Payments._
+_Satyam Mittal is a researcher by background and an AI/ML engineer at a Fortune-500 organization, where he works on large-scale generative AI systems, agentic Retrieval-Augmented Generation (RAG) pipelines, and risk-aware evaluation frameworks. He previously contributed to enterprise GenAI initiatives at a Fortune-500 automotive company, developing agent-based RAG solutions to support global manufacturing operations. He received the M.S. degree in Computer Science from California State University, Fresno, where his research introduced a new metaheuristic, Blindfolded Spider-Man Optimization, for solving non-convex, high-dimensional optimization problems. His research interests include multi-agent collaboration, intelligent retrieval systems, and scalable software design for real-world AI applications. He has participated in national-level hackathons and contributed to community education through global webinars and learning initiatives such as DOTAIZ. He is an active member of professional research societies, including INFORMS._
 
-_Simon serves as Secretary on the Committee of Python New Zealand and is part of the Kiwi PyCon core team in 2024 and 2025._
+![Ishita Malhotra Headshot](assets/images/ishita.png){: style="height:150px;width:150px" align=left}
+
+_Ishita Malhotra is a Data Strategy and Automation Manager at Goldman Sachs, where she leads work at the intersection of machine learning, business analytics, and automation strategy. She holds an M.S. from Carnegie Mellon University, where she also served as a Graduate Teaching Assistant, and a bachelor's degree from SRM Institute of Science and Technology. Her published research in IEEE Xplore spans course recommendation systems and route optimization, and she has been recognized as a Humana-Mays Healthcare Analytics Case Competition semi-finalist and Data Science Blogathon awardee._
 

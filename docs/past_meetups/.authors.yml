@@ -108,3 +108,11 @@ authors:
     name: Simon Merrick
     description: Simon is a Senior SRE experienced in building and securing cloud native software and infrastructure in the Payments Industry. He serves as Secretary on the Committee of Python New Zealand and is part of the Kiwi PyCon core team.
     avatar: assets/images/simonmerrick.jpg
+  satyammittal:
+    name: Satyam Mittal
+    description: Satyam is a researcher and AI/ML engineer at a Fortune-500 organization, working on large-scale generative AI systems, agentic RAG pipelines, and risk-aware evaluation frameworks. He holds an M.S. in Computer Science from California State University, Fresno, where his research introduced a new metaheuristic for non-convex, high-dimensional optimization problems.
+    avatar: assets/images/satyam.png
+  ishitamalhotra:
+    name: Ishita Malhotra
+    description: Ishita is a Data Strategy and Automation Manager at Goldman Sachs with expertise in machine learning, business analytics, and automation strategy. She holds an M.S. from Carnegie Mellon University, where she also served as a Graduate Teaching Assistant, and has published research in IEEE on course recommendation systems and route optimization.
+    avatar: assets/images/ishita.png
