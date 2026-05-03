@@ -33,3 +33,5 @@ _Satyam Mittal is a researcher by background and an AI/ML engineer at a Fortune-
 
 _Ishita Malhotra is a Data Strategy and Automation Manager at Goldman Sachs, where she leads work at the intersection of machine learning, business analytics, and automation strategy. She holds an M.S. from Carnegie Mellon University, where she also served as a Graduate Teaching Assistant, and a bachelor's degree from SRM Institute of Science and Technology. Her published research in IEEE Xplore spans course recommendation systems and route optimization, and she has been recognized as a Humana-Mays Healthcare Analytics Case Competition semi-finalist and Data Science Blogathon awardee._
 
+_All the views expressed are individual and do not represent those of any employer._
+
