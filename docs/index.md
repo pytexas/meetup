@@ -17,21 +17,14 @@ of Texas and beyond.
 
 ## Upcoming PyTexas Meetups
 
-### June Meetup - June 2, 2026
+### July Meetup - July 7, 2026
 
-**Mentoring, and My General Advice** - Josh Schneider
+**Summer of Lightning Talks**
 
-In the past 10 years, I've mentored several really amazing young humans. I'm also a product of a lot of informal mentoring. Let me opine on what I've learned being on both sides of the desk and my general advice to anyone, regardless of your goals. We'll talk about:
+It's July, which means it's time for our annual Lightning Talks meetup! Keeping with tradition, we're handing the mic to the community. Bring a short talk on anything Python (or Python-adjacent) and share it with the group. Talks are kept brief, so it's a great low-pressure way to present, whether it's your first talk ever or your fiftieth.
 
-- How I got here
-- My general advice and how I set the stage in the first session
-- Reputation Management
-- Social Currency
-- Being the Example
+Want to give a talk? Sign up using the form below. The sign-up form closes **Friday, July 3, 2026 at 5:00pm CST**.
 
 [RSVP Here :fontawesome-solid-ticket:](https://pytexas.org/meetup/join){ .md-button .md-button--primary }
-
-![Josh Schneider Avatar](https://github.com/dijital20.png){: style="height:150px;width:150px" align=left}
-
-_Josh Schneider is an Application Security Engineer, recovering Test Automation Engineer, movie nerd, and PyTexas organizer. When he's not hanging out with his boys, playing video games, drinking coffee, or talking comedy; he's probably talking code!_
+[Sign Up to Give a Talk :fontawesome-solid-bolt:](https://forms.gle/R4WEczqBV7g6cfCU7){ .md-button .md-button--primary }
 
