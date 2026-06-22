@@ -24,7 +24,7 @@ throughout the state. Join yours today!
 ## Austin-based Meetups
 
 * [Austin Python User Group](https://www.meetup.com/austinpython/) _(Active)_
-* [PyLadies ATX](https://www.meetup.com/pyladies-atx/) _(Inactive)_
+* [PyLadies ATX](https://www.meetup.com/pyladies-atx/) _(Active)_
 * [Austin Practical Data Science](https://www.meetup.com/austin-practical-data-science/) _(Active)_
 
 Looking for tech meetups in Austin? Join the [Austin Meetup Discord](https://discord.gg/3EyGMBd4a8)
