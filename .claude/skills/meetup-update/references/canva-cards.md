@@ -23,17 +23,19 @@ The monthly promo cards live in one Canva design per meetup season, one page per
 
 ## Adding a Month's Card
 
+Deck pages run newest first: the new month's card always goes in as page 1.
+Verify by reading the date text on page 1 before assuming.
+
+The workflow, verified end to end on the real deck on 2026-07-22:
+
 1. Find the deck with the Canva MCP (`search-designs`, query "<YYYY> Meetup Banners").
-2. Identify the most recent month's page by reading the page contents (the date text element), not by page position; deck pages are not reliably in chronological order.
-3. Copy that page as the base and fill in the talk title, speaker name, meetup date, speaker role line, and headshot.
-4. If the editing tools cannot make the change cleanly, stop and give Mason the design's edit URL plus the exact text to place; never leave a half-edited page.
-
-## Mechanics That Are Known to Work
-
-Verified end to end on 2026-07-22 with a test card:
-
-- `copy-design` with `page_numbers` copies a single page into a new design.
-- `upload-asset-from-url` imports the headshot, but needs a direct URL that returns HTTP 200; resolve redirects first (e.g. `https://github.com/<user>.png` redirects to `avatars.githubusercontent.com`, which works).
-- `replace_text` on the talk title, date, and role elements plus `update_fill` on the editable circular photo element updates the card; commit the transaction to save.
+2. Find the newest single-speaker page (usually page 1, or page 2 when page 1 is the July lightning talks card, which has no headshot slot).
+3. Upload the speaker headshot with `upload-asset-from-url`. The URL must return HTTP 200 directly; resolve redirects first (e.g. `https://github.com/<user>.png` redirects to `avatars.githubusercontent.com`, which works).
+4. Duplicate that page to the top of the same deck: `merge-designs` with `modify_existing_design`, one `insert_pages` operation sourcing the deck itself and `after_page_number: 0`. Get Mason's go-ahead before this call; it modifies the real deck.
+5. `start-editing-transaction` on the deck, then `perform-editing-operations` on page 1 only: `replace_text` for the talk title, date, speaker name, and role line, plus `update_fill` with the uploaded asset on the editable circular photo element.
+6. Show Mason the thumbnail, then commit the transaction.
+7. If any step cannot complete cleanly, cancel the transaction and give Mason the design's edit URL plus the exact text to place; never leave a half-edited page.
 
 The card layout slots: "Monthly Meetup" heading (fixed), talk title, date ("DD Month YYYY"), time ("8:00 - 9:00pm CST", fixed), "PyTexas Discord Server" (fixed), speaker name, speaker role line, circular headshot, RSVP URL (fixed).
+
+There is no delete-design tool in the MCP; any scratch designs from experiments have to be trashed by Mason in the Canva UI.
