@@ -11,8 +11,8 @@ description: >-
   command with a meetup.com URL. Runs the full monthly meetup setup:
   pulling the speaker from the CFP sheet, updating the website,
   creating the Drive month folder with the run of show and attendance
-  form, creating the Canva promo card, drafting the social media
-  email, and flagging the event listings that stay manual.
+  form, creating the Canva promo card, notifying the Discord marketing
+  channel, and flagging the event listings that stay manual.
 ---
 
 # Monthly Meetup Update
@@ -26,7 +26,7 @@ The Todoist subtasks and how this skill handles each:
 
 1. **Update Meetup Website** - automated here: archive the held meetup, add the speaker to authors, update the homepage, open a PR
 2. **Create Canva Card** - attempted via the Canva MCP; flagged with the design's edit link if editing fails
-3. **Send Social Media Assets to Kassandra** - Gmail draft created for Mason to review and send
+3. **Send Social Media Assets to Kassandra** - handled by posting to the Discord marketing channel webhook
 4. **Create Discord Event** - manual, flagged at the end
 5. **Create Network Event on Meetup** - manual, flagged at the end
 6. **Create Event on Non-network meetups (MKE)** - manual, flagged at the end
@@ -145,7 +145,8 @@ If the PR must wait on the headshot or an earlier month's speaker, mark it as a 
 
 Create the month folder, run of show doc, and attendance form in Google Drive.
 Follow `references/drive-artifacts.md` for the folder layout, template locations, and copy procedure, and `references/run-of-show.md` for the fill-in content.
-Fill what is known at setup time; roles, announcements, and the local meetups table stay as placeholders until meetup night.
+Filling the run of show includes research (the local meetups table, current announcements, next month's teaser); follow the Research section of `references/run-of-show.md`.
+Roles stay as placeholders until meetup night.
 
 ### Step 8: Create the Canva Card
 
@@ -153,10 +154,11 @@ The promo cards live in one Canva deck per season (September through August), on
 Follow `references/canva-cards.md` for picking or creating the right deck and adding the page.
 If the editing tools cannot make the change cleanly, stop and give Mason the design's edit URL with the exact text to place; do not leave a half-edited page.
 
-### Step 9: Draft the Social Media Email to Kassandra
+### Step 9: Notify the Marketing Channel
 
-Kassandra Keeton (kassandra@pytexas.org) posts the social media promotion.
-Create a Gmail draft (never send) from the template in `references/kassandra-email.md`, filling only the marked slots.
+Post the month's promo details to the marketing channel in the PyTexas Discord through the webhook, following `references/discord-webhook.md`.
+Fire it only after the Canva card exists so the message can link it.
+If the webhook URL is not configured, flag the notification as a manual step instead.
 
 ### Step 10: Flag the Event Listings
 
@@ -235,4 +237,4 @@ After drafting, remind Mason that Gmail rewrites bare URLs in API-created drafts
 - **`references/drive-artifacts.md`** - Drive folder layout and procedure for the run of show and attendance form
 - **`references/run-of-show.md`** - Exact fill-in template for the run of show doc
 - **`references/canva-cards.md`** - Canva season deck rules, naming, and card procedure
-- **`references/kassandra-email.md`** - Template for the social media assets email (proposed, pending Mason's approval)
+- **`references/discord-webhook.md`** - Marketing channel webhook setup, payload, and message template (proposed, pending Mason's approval)
