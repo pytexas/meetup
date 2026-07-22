@@ -17,17 +17,15 @@ of Texas and beyond.
 
 ## Upcoming PyTexas Meetups
 
-### April Meetup - April 7, 2026
+### August Meetup - August 4, 2026
 
-**Disentangling Formatted Strings with t-strings** - Simon Merrick
+**How to Read the AI Brain** - Shayan Ali
 
-In October 2025, Python 3.14 was released and with it a cool new way to create t-strings, which promise to help python developers write better, and safer python code. While on the surface, they share a similar name to f-strings, the way we use them is quite different. This talk explores what they are, how they work, who they are for and how they will help python developers write safer code.
+Artificial neural networks over the course of the last 5 to 6 years have grown so large and complex that humans are losing the ability to understand and interpret this artificial brain. If this continues, our society can face disastrous consequences. This talk sheds light on how these networks work and, drawing from Shayan's personal research, how we can develop that understanding for the future ahead.
 
 [RSVP Here :fontawesome-solid-ticket:](https://pytexas.org/meetup/join){ .md-button .md-button--primary }
 
-![Simon Merrick Headshot](assets/images/simonmerrick.jpg){: style="height:150px;width:150px" align=left}
+![Shayan Ali Headshot](assets/images/shayanali.jpg){: style="height:150px;width:150px" align=left}
 
-_Simon is a Senior SRE experienced in building and securing cloud native software and infrastructure in the Payments Industry. His passion is the intersection of technological and interpersonal challenges of getting code from commit to production, safely, securely and on demand - especially in regulated sectors such as Payments._
-
-_Simon serves as Secretary on the Committee of Python New Zealand and is part of the Kiwi PyCon core team in 2024 and 2025._
+_Shayan is a second-year Computer Science and Data Analysis student at Texas State University who is passionate about the AI space, wants to make a real impact in the world in terms of AI safety, and is currently working on integrating AI into workflows at his university._
 

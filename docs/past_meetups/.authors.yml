@@ -108,3 +108,7 @@ authors:
     name: Simon Merrick
     description: Simon is a Senior SRE experienced in building and securing cloud native software and infrastructure in the Payments Industry. He serves as Secretary on the Committee of Python New Zealand and is part of the Kiwi PyCon core team.
     avatar: assets/images/simonmerrick.jpg
+  shayanali:
+    name: Shayan Ali
+    description: Shayan is a second-year Computer Science and Data Analysis student at Texas State University. He is passionate about AI safety and interpretability, and works on integrating AI into workflows at his university.
+    avatar: assets/images/shayanali.jpg
