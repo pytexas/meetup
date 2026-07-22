@@ -10,8 +10,9 @@ description: >-
   CFP responses spreadsheet. Also available via the `/update-meetup`
   command with a meetup.com URL. Runs the full monthly meetup setup:
   pulling the speaker from the CFP sheet, updating the website,
-  creating the Canva promo card, drafting the social media email, and
-  flagging the event listings that stay manual.
+  creating the Drive month folder with the run of show and attendance
+  form, creating the Canva promo card, drafting the social media
+  email, and flagging the event listings that stay manual.
 ---
 
 # Monthly Meetup Update
@@ -30,8 +31,17 @@ The Todoist subtasks and how this skill handles each:
 5. **Create Network Event on Meetup** - manual, flagged at the end
 6. **Create Event on Non-network meetups (MKE)** - manual, flagged at the end
 
+Beyond the Todoist list, the skill also creates the meetup-night materials in Drive: the month folder, the run of show doc, and the attendance form.
+
 Speaker data always comes from the Google MCP first (Drive for the CFP sheet, Gmail for the booked date).
 If Todoist is connected, re-read the subtasks of "Schedule Monthly Meetup" at the start in case the checklist has changed, and follow the live list over the one above.
+
+## Template Policy
+
+Every artifact this skill produces is template-driven.
+Use the reference template verbatim and fill only the marked slots; never rewrite, paraphrase, or improvise the template prose.
+The outreach email, run of show, attendance form, Canva card, and Kassandra email each have a reference file listed at the bottom.
+If Mason changes an artifact's wording, update its template file so the next run produces the new exact version.
 
 ## Input Data
 
@@ -131,23 +141,24 @@ The Speaker Photo field sometimes says to email the speaker for the file instead
 In that case Mason requests it over email; the site references the image path before the file exists, so `mkdocs build --strict` (and CI) fails until the headshot lands.
 If the PR must wait on the headshot or an earlier month's speaker, mark it as a draft.
 
-### Step 7: Create the Canva Card
+### Step 7: Create the Drive Artifacts
 
-The monthly promo cards live in a single Canva design per year named "<year> Meetup Banners", one page per month.
-Use the Canva MCP:
+Create the month folder, run of show doc, and attendance form in Google Drive.
+Follow `references/drive-artifacts.md` for the folder layout, template locations, and copy procedure, and `references/run-of-show.md` for the fill-in content.
+Fill what is known at setup time; roles, announcements, and the local meetups table stay as placeholders until meetup night.
 
-1. Find the current year's design with `search-designs` (query "<year> Meetup Banners"). At year boundaries the design may not exist yet; ask Mason before creating one.
-2. Look at the most recent month's page to match its layout.
-3. Add the new month's page with the talk title, speaker name, date, and headshot.
-4. If the editing tools cannot make the change cleanly, stop and give Mason the design's edit URL with a list of the text to place; do not leave a half-edited page.
+### Step 8: Create the Canva Card
 
-### Step 8: Draft the Social Media Email to Kassandra
+The promo cards live in one Canva deck per season (September through August), one page per month.
+Follow `references/canva-cards.md` for picking or creating the right deck and adding the page.
+If the editing tools cannot make the change cleanly, stop and give Mason the design's edit URL with the exact text to place; do not leave a half-edited page.
+
+### Step 9: Draft the Social Media Email to Kassandra
 
 Kassandra Keeton (kassandra@pytexas.org) posts the social media promotion.
-Create a Gmail draft (never send) addressed to her with the month's meetup details (date, talk title, speaker) and a link to the Canva design or the exported card.
-If the card could not be created, say so in the draft and link the design for her to finish.
+Create a Gmail draft (never send) from the template in `references/kassandra-email.md`, filling only the marked slots.
 
-### Step 9: Flag the Event Listings
+### Step 10: Flag the Event Listings
 
 These have no MCP access and stay manual. List them for Mason at the end of the run:
 
@@ -155,7 +166,10 @@ These have no MCP access and stay manual. List them for Mason at the end of the 
 2. **Create Network Event on Meetup** (meetup.com)
 3. **Create Event on Non-network meetups** (MKE)
 
-### Step 10: Report Against the Todoist Checklist
+Meetup.com event creation is automatable through their GraphQL API once Mason obtains OAuth credentials (requested through the Meetup Pro admin account).
+Until those credentials exist and an integration is set up, treat it as manual; when they do, codify it here.
+
+### Step 11: Report Against the Todoist Checklist
 
 Finish by reporting each "Schedule Monthly Meetup" subtask as done, drafted awaiting Mason's review, or still manual.
 Do not check off subtasks in Todoist without Mason's confirmation; the website subtask in particular is not done until the PR merges and the headshot lands.
@@ -216,5 +230,9 @@ After drafting, remind Mason that Gmail rewrites bare URLs in API-created drafts
 
 ### Reference Files
 
-- **`references/file-formats.md`** - Exact file format templates for all three files that get modified
-- **`references/outreach-email.md`** - Template for the speaker date-offer email
+- **`references/file-formats.md`** - Exact file format templates for the three website files that get modified
+- **`references/outreach-email.md`** - Exact template for the speaker date-offer email
+- **`references/drive-artifacts.md`** - Drive folder layout and procedure for the run of show and attendance form
+- **`references/run-of-show.md`** - Exact fill-in template for the run of show doc
+- **`references/canva-cards.md`** - Canva season deck rules, naming, and card procedure
+- **`references/kassandra-email.md`** - Template for the social media assets email (proposed, pending Mason's approval)
