@@ -59,6 +59,25 @@ Use `just` for common tasks:
 
 ## Monthly Process
 
+### Automated with Claude Code
+
+The repo ships a Claude Code skill at `.claude/skills/meetup-update/` that runs the full monthly setup.
+Invoke it with `/meetup-update` (or ask to "schedule the monthly meetup").
+
+The skill:
+
+1. Pulls the booked speaker from the "PyTexas Meetup CFP (Responses)" sheet in Google Drive and confirms their locked-in date from the email thread
+2. Archives the held meetup, adds the speaker to `.authors.yml`, updates the homepage, and opens a PR
+3. Creates the month's Drive folder with the run of show doc and attendance form, copied from the templates in Drive
+4. Adds the month's card to the season's "Meetup Banners" deck in Canva
+5. Drafts the date-offer emails to new CFP submitters and the social media email to Kassandra (drafts only, never sends)
+6. Flags what stays manual: the speaker headshot, the Canva page title rename, the Discord event, the Meetup.com event, and the non-network listings
+
+Everything the skill writes comes from the templates in `.claude/skills/meetup-update/references/`.
+Edit those files to change what it produces.
+
+### Manual Process
+
 1. Add the upcoming meetup to the home page by modifying `index.md`
     1. When adding a new presenter, try to use a URL for the photo. Only upload a file if you must, and upload it to `assets/images`
         * **Tip**: A person's GitHub avatar is always available at `https://github.com/USERNAME.png` so use that
