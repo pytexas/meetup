@@ -39,3 +39,6 @@ The workflow, verified end to end on the real deck on 2026-07-22:
 The card layout slots: "Monthly Meetup" heading (fixed), talk title, date ("DD Month YYYY"), time ("8:00 - 9:00pm CST", fixed), "PyTexas Discord Server" (fixed), speaker name, speaker role line, circular headshot, RSVP URL (fixed).
 
 There is no delete-design tool in the MCP; any scratch designs from experiments have to be trashed by Mason in the Canva UI.
+
+Known limitation: the duplicated page inherits the source page's title label (e.g. "June 2026"), and page titles cannot be renamed through the API (confirmed via Canva's help service on 2026-07-22).
+After every card, remind Mason to rename the page title in the editor: hover the page thumbnail, ellipsis, pencil icon next to the page title.
