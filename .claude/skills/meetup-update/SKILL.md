@@ -2,39 +2,43 @@
 name: Monthly Meetup Update
 description: >-
   This skill should be used when the user asks to "update the meetup",
-  "do the monthly update", "archive the meetup", "add the next meetup",
-  "update for [month] meetup", "set up the new meetup", "prepare next
-  month's meetup", provides speaker submission data for an upcoming
-  meetup, provides a meetup.com event URL, or asks to pull a speaker's
-  submission from the Google Form / CFP responses spreadsheet. Also
-  available via the `/update-meetup` command with a meetup.com URL.
-  Guides the complete monthly transition workflow for the PyTexas
-  Meetup website including archiving the current meetup, adding the
-  new speaker, and updating the homepage.
+  "do the monthly update", "schedule the monthly meetup", "archive the
+  meetup", "add the next meetup", "update for [month] meetup", "set up
+  the new meetup", "prepare next month's meetup", provides speaker
+  submission data for an upcoming meetup, provides a meetup.com event
+  URL, or asks to pull a speaker's submission from the Google Form /
+  CFP responses spreadsheet. Also available via the `/update-meetup`
+  command with a meetup.com URL. Runs the full monthly meetup setup:
+  pulling the speaker from the CFP sheet, updating the website,
+  creating the Canva promo card, drafting the social media email, and
+  flagging the event listings that stay manual.
 ---
 
 # Monthly Meetup Update
 
-This skill handles the recurring monthly workflow for transitioning the PyTexas Meetup website
-from the current month's meetup to the next month's meetup.
+This skill runs the full monthly setup for the next PyTexas Meetup.
+It mirrors the recurring Todoist task "Schedule Monthly Meetup" (every 2nd Wednesday, in the PyTexas project), which is the checklist of record.
 
 ## Overview
 
-Each month, the website needs three updates:
+The Todoist subtasks and how this skill handles each:
 
-1. **Archive** the current meetup as a past meetup blog post
-2. **Add** the new speaker to the authors file
-3. **Update** the homepage with the upcoming meetup details
+1. **Update Meetup Website** - automated here: archive the held meetup, add the speaker to authors, update the homepage, open a PR
+2. **Create Canva Card** - attempted via the Canva MCP; flagged with the design's edit link if editing fails
+3. **Send Social Media Assets to Kassandra** - Gmail draft created for Mason to review and send
+4. **Create Discord Event** - manual, flagged at the end
+5. **Create Network Event on Meetup** - manual, flagged at the end
+6. **Create Event on Non-network meetups (MKE)** - manual, flagged at the end
 
-Additionally, one manual step is flagged for the user:
-
-- Download and save the speaker's headshot image
+Speaker data always comes from the Google MCP first (Drive for the CFP sheet, Gmail for the booked date).
+If Todoist is connected, re-read the subtasks of "Schedule Monthly Meetup" at the start in case the checklist has changed, and follow the live list over the one above.
 
 ## Input Data
 
-Input can come from three sources:
+Always pull from the Google MCP first.
+The other input options are fallbacks for when Drive is unavailable or the user hands over data directly.
 
-### Option A: CFP Responses Spreadsheet (Google Drive)
+### Primary Source: CFP Responses Spreadsheet (Google Drive)
 
 Speaker submissions land in the "PyTexas Meetup CFP (Responses)" Google Sheet.
 Search Drive for it by title; there is an older sheet with the same name from 2024, so pick the one with recent timestamps.
@@ -47,14 +51,14 @@ Relevant columns: Name, About you (bio), Speaker Photo, Presentation Title, Pres
 
 The July lightning talks have their own sheet (e.g. "PyTexas July 2026 Lightning Talks (Responses)") with a Speaker Order tab.
 
-### Option B: Meetup.com Event URL
+### Fallback A: Meetup.com Event URL
 
 When given a meetup.com URL (or invoked via `/update-meetup <url>`), use WebFetch to retrieve
 the event page and extract: event date, talk title, speaker name, talk description, speaker bio,
 and speaker headshot URL. Present the extracted data to the user for confirmation before proceeding.
 If any required fields are missing from the page, ask the user to provide them.
 
-### Option C: Raw Speaker Submission Data
+### Fallback B: Raw Speaker Submission Data
 
 The user provides speaker submission data directly containing:
 
@@ -76,13 +80,19 @@ Also check the thread for corrections to the form data, such as a different pref
 
 ## Workflow
 
-### Step 0: Sync With Main
+### Step 1: Pull Speaker Data From Google
+
+This is always the first step.
+Find the booked speaker's row in the CFP responses sheet (see Primary Source above), then confirm their locked-in date from the Gmail thread (see Confirming the Speaker's Date).
+Carry forward the talk title, description, bio, headshot source, and any corrected contact email.
+
+### Step 2: Sync With Main
 
 The site may be several months behind, and main may have moved since the local checkout.
 Fetch origin, start a feature branch from up-to-date main, and check which meetups are already archived in `docs/past_meetups/posts/` before deciding what to archive.
 Never commit to main; Mason merges PRs himself.
 
-### Step 1: Archive the Current Meetup
+### Step 3: Archive the Current Meetup
 
 Create a new file at `docs/past_meetups/posts/YYYY-MM-DD.md` where the date is the date
 of the meetup being archived (the one currently on the homepage).
@@ -90,7 +100,7 @@ of the meetup being archived (the one currently on the homepage).
 Copy the talk title, description, speaker bio, and headshot reference from `docs/index.md`
 into the new post file. Follow the format documented in `references/file-formats.md`.
 
-### Step 2: Add the New Speaker to Authors
+### Step 4: Add the New Speaker to Authors
 
 Edit `docs/past_meetups/.authors.yml` to add a new entry for the incoming speaker.
 
@@ -100,7 +110,7 @@ Edit `docs/past_meetups/.authors.yml` to add a new entry for the incoming speake
 
 See `references/file-formats.md` for the exact YAML format.
 
-### Step 3: Update the Homepage
+### Step 5: Update the Homepage
 
 Edit `docs/index.md` to replace the current meetup section with the new month's details.
 
@@ -111,15 +121,44 @@ Edit `docs/index.md` to replace the current meetup section with the new month's 
 
 See `references/file-formats.md` for the exact markdown format.
 
-### Step 4: Flag Manual Steps
+### Step 6: Flag the Headshot If Missing
 
-After completing the automated changes, remind the user of one manual task:
+After completing the website changes, remind the user of one manual task:
 
 1. **Speaker headshot**: Download from the provided link and save to `docs/assets/images/<name>.<ext>`
 
 The Speaker Photo field sometimes says to email the speaker for the file instead of giving a URL.
 In that case Mason requests it over email; the site references the image path before the file exists, so `mkdocs build --strict` (and CI) fails until the headshot lands.
 If the PR must wait on the headshot or an earlier month's speaker, mark it as a draft.
+
+### Step 7: Create the Canva Card
+
+The monthly promo cards live in a single Canva design per year named "<year> Meetup Banners", one page per month.
+Use the Canva MCP:
+
+1. Find the current year's design with `search-designs` (query "<year> Meetup Banners"). At year boundaries the design may not exist yet; ask Mason before creating one.
+2. Look at the most recent month's page to match its layout.
+3. Add the new month's page with the talk title, speaker name, date, and headshot.
+4. If the editing tools cannot make the change cleanly, stop and give Mason the design's edit URL with a list of the text to place; do not leave a half-edited page.
+
+### Step 8: Draft the Social Media Email to Kassandra
+
+Kassandra Keeton (kassandra@pytexas.org) posts the social media promotion.
+Create a Gmail draft (never send) addressed to her with the month's meetup details (date, talk title, speaker) and a link to the Canva design or the exported card.
+If the card could not be created, say so in the draft and link the design for her to finish.
+
+### Step 9: Flag the Event Listings
+
+These have no MCP access and stay manual. List them for Mason at the end of the run:
+
+1. **Create Discord Event** in the PyTexas Discord
+2. **Create Network Event on Meetup** (meetup.com)
+3. **Create Event on Non-network meetups** (MKE)
+
+### Step 10: Report Against the Todoist Checklist
+
+Finish by reporting each "Schedule Monthly Meetup" subtask as done, drafted awaiting Mason's review, or still manual.
+Do not check off subtasks in Todoist without Mason's confirmation; the website subtask in particular is not done until the PR merges and the headshot lands.
 
 ## Determining the Meetup Date
 
