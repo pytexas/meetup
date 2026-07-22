@@ -17,7 +17,7 @@ of Texas and beyond.
 
 ## Upcoming PyTexas Meetups
 
-### August Meetup - August 4, 2026
+### October Meetup - October 6, 2026
 
 **How to Read the AI Brain** - Shayan Ali
 
