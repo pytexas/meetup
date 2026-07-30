@@ -1,0 +1,12 @@
+# ABOUTME: sops creation rules -- which recipients can decrypt which files.
+# To onboard another meetup organizer, add their age public key below and run
+# `sops updatekeys secrets/*.sops.env` to re-encrypt with the new recipient list.
+
+creation_rules:
+  # Meetup automation secrets (Discord marketing webhook, future API credentials).
+  # Consumed locally by the meetup-update skill; never deployed anywhere.
+  - path_regex: ^secrets/.*\.sops\.env$
+    key_groups:
+      - age:
+          # mason -- laptop
+          - age17u5zkzgr4ca49sl9n42zk6aruq8d5xntnuxkhyjwvku80tx93afqm7a0fz
