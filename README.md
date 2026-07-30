@@ -123,6 +123,27 @@ mkdocs.yml              # Site configuration
 justfile                # Development commands
 ```
 
+## Secrets
+
+Automation secrets (currently the Discord marketing webhook) live encrypted in `secrets/meetup.sops.env`, managed with [sops](https://github.com/getsops/sops) and [age](https://github.com/FiloSottile/age).
+The encrypted file is safe to commit; only the age keys listed in `.sops.yaml` can decrypt it.
+This is the same pattern as the [infrastructure repo](https://github.com/pytexas/infrastructure).
+
+### Reading or Changing a Secret
+
+1. Install `sops` and `age`, with your age key at `~/.config/sops/age/keys.txt`
+2. Run `sops secrets/meetup.sops.env` to open the decrypted values in your editor; saving re-encrypts
+
+### Onboarding an Organizer
+
+1. Have them generate a key with `age-keygen -o ~/.config/sops/age/keys.txt` and send you the public key (starts with `age1`)
+2. Add their public key to `.sops.yaml`
+3. Run `sops updatekeys secrets/meetup.sops.env` and commit both files
+
+Adding a key to `.sops.yaml` grants nothing by itself.
+The file only decrypts for the keys it was encrypted to, and re-encrypting it for a new recipient (`sops updatekeys`) can only be done by someone who already holds a listed private key.
+A pull request that adds an unknown key to `.sops.yaml` cannot read any secrets and should simply be closed.
+
 ## Deployment
 
 The site automatically deploys to GitHub Pages via GitHub Actions when changes are pushed to the `main` branch. The deployment process includes:
