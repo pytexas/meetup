@@ -1,8 +1,9 @@
-# Temporal Dispatch Workflow (Planned)
+# Temporal Dispatch Workflow
 
-The communication and scheduling tail of the monthly process is moving into a Temporal workflow on the self-hosted cluster.
+The communication tail of the monthly process runs as the `MonthlyMeetupDispatch` workflow in the pytexas/dispatch repo (renamed from pretix-discord-middleware).
 The skill keeps the judgment work; the workflow owns the credentialed API calls.
-Status: design agreed 2026-07-30; not yet built.
+Status: built 2026-07-30 (pytexas/dispatch#3); not yet deployed (infrastructure#5 carries the rename and the deploy notes).
+The dispatch repo's README documents the exact CLI start command and input fields; use it as the source of truth for the handoff, and note the task queue is the service's configured one (default `pretix-discord`).
 
 ## Division of Labor
 
