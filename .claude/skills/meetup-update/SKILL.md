@@ -154,11 +154,11 @@ The promo cards live in one Canva deck per season (September through August), on
 Follow `references/canva-cards.md` for picking or creating the right deck and adding the page.
 If the editing tools cannot make the change cleanly, stop and give Mason the design's edit URL with the exact text to place; do not leave a half-edited page.
 
-### Step 9: Notify the Marketing Channel
+### Step 9: Notify the Discord Channels
 
-Post the month's promo details to the marketing channel in the PyTexas Discord through the webhook, following `references/discord-webhook.md`.
-Fire it only after the Canva card exists so the message can link it.
-If the webhook URL is not configured, flag the notification as a manual step instead.
+Post two messages through the webhooks in `references/discord-webhook.md`: the asset handoff to the marketing channel and the setup summary to the meetup organizers channel.
+Fire them only after the Drive artifacts and Canva card exist so every link works.
+If a webhook cannot be decrypted, flag that notification as a manual step instead.
 
 ### Step 10: Flag the Event Listings
 

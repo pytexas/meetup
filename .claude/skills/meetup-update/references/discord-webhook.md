@@ -1,23 +1,22 @@
-# Marketing Channel Webhook
+# Discord Webhooks
 
-The monthly promo notification goes to the marketing channel in the PyTexas Discord via a webhook.
-There is no emailed social media asset handoff; this post is the handoff.
+Two webhooks carry the monthly notifications, both stored encrypted in `secrets/meetup.sops.env`:
+
+- `PYTEXAS_MARKETING_WEBHOOK` posts to the marketing channel: the promo asset handoff for social posts.
+- `PYTEXAS_MEETUP_WEBHOOK` posts to the meetup organizers channel: the setup summary and outstanding manual steps.
 
 ## Configuration
 
-The webhook URL lives encrypted in `secrets/meetup.sops.env` (key `PYTEXAS_MARKETING_WEBHOOK`), following the same sops + age pattern as the pytexas/infrastructure repo.
-The encrypted file is safe to commit publicly; only the age recipients listed in `.sops.yaml` can decrypt it.
-
-- Set or rotate the URL: `sops secrets/meetup.sops.env` (opens an editor with the decrypted values).
+- Set or rotate a URL: `sops secrets/meetup.sops.env` (opens an editor with the decrypted values).
 - Onboard another organizer: add their age public key to `.sops.yaml`, then `sops updatekeys secrets/meetup.sops.env`.
-- The real webhook URL is stored and was verified with a live test post on 2026-07-30 (Discord returned 204).
+- Both webhooks were verified with live test posts on 2026-07-30 (Discord returned 204).
 
-If decryption fails (no sops, no age key), skip the post and flag it as a manual step.
+If decryption fails (no sops, no age key), skip the posts and flag them as manual steps.
 
 ## Posting
 
-Fire only after the Canva card exists so the link works.
-Show Mason the exact message in the run summary.
+Fire after the Drive artifacts and Canva card exist so every link works.
+Show Mason the exact messages in the run summary.
 
 ```bash
 sops exec-env secrets/meetup.sops.env \
@@ -25,17 +24,35 @@ sops exec-env secrets/meetup.sops.env \
 ```
 
 where `PAYLOAD` is `{"content": "<message>"}`; `sops exec-env` keeps the decrypted URL out of shell history and files.
+Same command with `$PYTEXAS_MEETUP_WEBHOOK` for the organizers message.
 
-Message template (fill only the slots):
+## Marketing Message Template
+
+Fill only the slots; use "TBD" for links that do not exist yet.
 
 ```text
-<Month> meetup is booked!
+<Month> meetup assets are ready!
 * Date: <Weekday>, <Month> <Day> at 8:00 PM Central
-* Talk: <Talk Title>
-* Speaker: <Speaker Name>
-* Card: <Canva design link>
+* Talk: <Talk Title> - <Speaker Name>
+* Promo blurb: <the 2-3 sentence talk abstract from the CFP>
+* Card (Canva): <deck link>
+* Run of Show: <Drive doc link>
+* Attendance form: <form link>
+* Questions form: <form link, or "questions in chat">
+* Meetup.com event: TBD (placeholder until API access lands)
 * RSVP: https://pytexas.org/meetup/join
 ```
 
-PROPOSED: the monthly message wording has not been used for a real announcement yet.
-Confirm it with Mason on first use, then delete this paragraph.
+## Organizers Message Template
+
+```text
+<Month> meetup setup is done.
+* <Weekday>, <Month> <Day>: <Talk Title> - <Speaker Name>
+* Run of Show: <Drive doc link>
+* Card (Canva): <deck link>
+* Website PR: <PR link>
+* Still manual: <remaining items, e.g. Canva page title rename, Discord event, Meetup.com event, headshot>
+```
+
+PROPOSED: neither message wording has been used for a real month yet.
+Confirm both with Mason on first use, then delete this paragraph.
