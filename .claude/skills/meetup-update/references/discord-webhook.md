@@ -36,12 +36,20 @@ Fill only the slots; use "TBD" for links that do not exist yet.
 * Talk: <Talk Title> - <Speaker Name>
 * Promo blurb: <the 2-3 sentence talk abstract from the CFP>
 * Card (Canva): <deck link>
+* Card image (PNG): <export link>
+* Speaker socials for tagging: <handles if provided>
 * Run of Show: <Drive doc link>
 * Attendance form: <form link>
 * Questions form: <form link, or "questions in chat">
 * Meetup.com event: TBD (placeholder until API access lands)
+* Discord event: TBD (placeholder until the bot token lands; see discord-event.md)
 * RSVP: https://pytexas.org/meetup/join
 ```
+
+Notes on the added lines:
+
+- Card image: run Canva `export-design` for the card's page right before posting; export links are signed URLs, so generate fresh rather than reusing an old one. If the export fails, drop the line and keep the deck link.
+- Speaker socials: the CFP form does not collect handles yet; Mason needs to add an optional "Social media handles" question to the form. Until then, omit the line unless the speaker volunteered handles in email.
 
 ## Organizers Message Template
 

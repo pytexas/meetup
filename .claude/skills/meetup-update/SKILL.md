@@ -162,14 +162,13 @@ If a webhook cannot be decrypted, flag that notification as a manual step instea
 
 ### Step 10: Flag the Event Listings
 
-These have no MCP access and stay manual. List them for Mason at the end of the run:
+These stay manual until their credentials land. List them for Mason at the end of the run:
 
-1. **Create Discord Event** in the PyTexas Discord
-2. **Create Network Event on Meetup** (meetup.com)
-3. **Create Event on Non-network meetups** (MKE)
+1. **Create Discord Event** in the PyTexas Discord - automatable via the bot API once the bot token is added to secrets; procedure and payload in `references/discord-event.md`
+2. **Create Network Event on Meetup** (meetup.com) - automatable through their GraphQL API once Mason obtains OAuth credentials through the Meetup Pro admin account
+3. **Create Event on Non-network meetups** (MKE) - manual, no known API path
 
-Meetup.com event creation is automatable through their GraphQL API once Mason obtains OAuth credentials (requested through the Meetup Pro admin account).
-Until those credentials exist and an integration is set up, treat it as manual; when they do, codify it here.
+When a credential lands, wire the call in and verify it live once before trusting it monthly.
 
 ### Step 11: Report Against the Todoist Checklist
 
@@ -237,4 +236,5 @@ After drafting, remind Mason that Gmail rewrites bare URLs in API-created drafts
 - **`references/drive-artifacts.md`** - Drive folder layout and procedure for the run of show and attendance form
 - **`references/run-of-show.md`** - Exact fill-in template for the run of show doc
 - **`references/canva-cards.md`** - Canva season deck rules, naming, and card procedure
-- **`references/discord-webhook.md`** - Marketing channel webhook setup, payload, and message template (proposed, pending Mason's approval)
+- **`references/discord-webhook.md`** - Both Discord webhooks: setup, payloads, and the marketing and organizer message templates
+- **`references/discord-event.md`** - Discord scheduled event API procedure, pending the bot token in secrets
