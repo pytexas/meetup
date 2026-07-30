@@ -144,6 +144,14 @@ Adding a key to `.sops.yaml` grants nothing by itself.
 The file only decrypts for the keys it was encrypted to, and re-encrypting it for a new recipient (`sops updatekeys`) can only be done by someone who already holds a listed private key.
 A pull request that adds an unknown key to `.sops.yaml` cannot read any secrets and should simply be closed.
 
+### If You Lose Your Key
+
+Back up `~/.config/sops/age/keys.txt` to the password manager now; restoring that one file on a new machine restores access.
+
+If the key is gone with no backup, the encrypted file is unrecoverable, but the secrets are not: re-obtain each one from its source (the Discord webhook URL is viewable under the channel's Integrations settings, and API tokens get re-issued by their providers).
+Then generate a fresh key with `age-keygen`, replace the old public key in `.sops.yaml`, re-create `secrets/meetup.sops.env` with the re-obtained values, and commit.
+The old blobs in git history stay permanently unreadable, which is the point.
+
 ## Deployment
 
 The site automatically deploys to GitHub Pages via GitHub Actions when changes are pushed to the `main` branch. The deployment process includes:
