@@ -10,9 +10,9 @@ The encrypted file is safe to commit publicly; only the age recipients listed in
 
 - Set or rotate the URL: `sops secrets/meetup.sops.env` (opens an editor with the decrypted values).
 - Onboard another organizer: add their age public key to `.sops.yaml`, then `sops updatekeys secrets/meetup.sops.env`.
-- The value is currently the placeholder `REPLACE_ME_WITH_WEBHOOK_URL`; Mason creates the webhook in the marketing channel (Channel Settings, Integrations, Webhooks) and pastes the real URL in.
+- The real webhook URL is stored and was verified with a live test post on 2026-07-30 (Discord returned 204).
 
-If decryption fails (no sops, no age key) or the value is still the placeholder, skip the post and flag it as a manual step.
+If decryption fails (no sops, no age key), skip the post and flag it as a manual step.
 
 ## Posting
 
@@ -37,5 +37,5 @@ Message template (fill only the slots):
 * RSVP: https://pytexas.org/meetup/join
 ```
 
-PROPOSED: the message wording has not been used yet and no webhook is configured.
-Confirm both with Mason on first use, then delete this paragraph.
+PROPOSED: the monthly message wording has not been used for a real announcement yet.
+Confirm it with Mason on first use, then delete this paragraph.
