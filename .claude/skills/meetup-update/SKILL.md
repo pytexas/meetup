@@ -27,6 +27,7 @@ Each month, the update covers four things:
 2. **Add** the new speaker to the authors file
 3. **Update** the homepage with the upcoming meetup details
 4. **Draft** the month's Mailchimp newsletter (create if missing, settings via API, copy for pasting)
+5. **Announce** to the marketing and organizers Discord channels once setup is complete (webhook script, card attached)
 
 Additionally, manual steps are flagged for the user:
 
@@ -129,6 +130,11 @@ Choose 2-4 relevant categories based on the talk topic. Common categories includ
 Python, AI, LLMs, Data, Web, DevOps, Testing, Tooling, Code Quality, Security,
 Machine Learning, Cloud, Automation.
 
+## Discord Announcements
+
+When the month's setup is done (or assets are ready for marketing), send the two channel announcements with `scripts/send_discord_announcement.py` under `sops exec-env`; message templates, card-image handling, and the link gotchas are in `references/announcements.md`.
+Always attach the card PNG rather than relying on Canva's signed export URLs, which expire within hours.
+
 ## Local Meetup Lookups
 
 When the run of show doc or the site's local-meetups page needs each network group's upcoming events, run `scripts/scrape_local_meetups.py` (see `references/local-meetups.md`).
@@ -146,3 +152,4 @@ for guidance on what to display on the homepage instead of the typical upcoming 
 - **`references/file-formats.md`** - Exact file format templates for all three files that get modified
 - **`references/newsletter.md`** - Mailchimp newsletter playbook: API access via sops, exists-check, replicate + settings, copy style per month type, and why content must be pasted in the UI
 - **`references/local-meetups.md`** - How to get real event listings from meetup.com (WebFetch can't) using `scripts/scrape_local_meetups.py`
+- **`references/announcements.md`** - Discord webhook announcements: `scripts/send_discord_announcement.py` usage, marketing/organizers message templates, Canva card-image handling
