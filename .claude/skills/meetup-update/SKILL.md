@@ -5,11 +5,13 @@ description: >-
   "do the monthly update", "archive the meetup", "add the next meetup",
   "update for [month] meetup", "set up the new meetup", "prepare next
   month's meetup", provides speaker submission data for an upcoming
-  meetup, or provides a meetup.com event URL. Also available via the
+  meetup, or provides a meetup.com event URL. Also triggers on
+  newsletter requests: "check this month's newsletter", "create the
+  newsletter", "draft the newsletter". Also available via the
   `/update-meetup` command with a meetup.com URL. Guides the complete
   monthly transition workflow for the PyTexas Meetup website including
-  archiving the current meetup, adding the new speaker, and updating
-  the homepage.
+  archiving the current meetup, adding the new speaker, updating
+  the homepage, and drafting the Mailchimp newsletter.
 ---
 
 # Monthly Meetup Update
@@ -19,15 +21,18 @@ from the current month's meetup to the next month's meetup.
 
 ## Overview
 
-Each month, the website needs three updates:
+Each month, the update covers four things:
 
 1. **Archive** the current meetup as a past meetup blog post
 2. **Add** the new speaker to the authors file
 3. **Update** the homepage with the upcoming meetup details
+4. **Draft** the month's Mailchimp newsletter (create if missing, settings via API, copy for pasting)
+5. **Announce** to the marketing and organizers Discord channels once setup is complete (webhook script, card attached)
 
-Additionally, one manual step is flagged for the user:
+Additionally, manual steps are flagged for the user:
 
 - Download and save the speaker's headshot image
+- Paste the drafted meetup copy into the Mailchimp builder and send/schedule
 
 ## Input Data
 
@@ -81,16 +86,27 @@ Edit `docs/index.md` to replace the current meetup section with the new month's 
 
 See `references/file-formats.md` for the exact markdown format.
 
-### Step 4: Flag Manual Steps
+### Step 4: Draft the Newsletter
 
-After completing the automated changes, remind the user of one manual task:
+Check whether this month's Mailchimp newsletter draft exists; create it if not.
+Full playbook with API commands, naming conventions, copy style, and the hard limits is in `references/newsletter.md`. In short:
+
+1. Check for a campaign titled `PyTexas <Month> <Year> Newsletter` (API key is `MAILCHIMP_API_KEY` in `secrets/meetup.sops.env`; call the API through `sops exec-env`)
+2. If missing, replicate the most recent sent newsletter and PATCH the title, subject line, and preview text
+3. Do NOT edit campaign content via the API; it silently breaks new-builder drafts. Draft the meetup section copy in chat for the user to paste into the builder
+4. Leave the campaign as a draft; never send or schedule it
+
+### Step 5: Flag Manual Steps
+
+After completing the automated changes, remind the user of the manual tasks:
 
 1. **Speaker headshot**: Download from the provided link and save to `docs/assets/images/<name>.<ext>`
+2. **Newsletter**: Paste the drafted meetup copy into the Mailchimp builder, check the hero image link and subject line, then send or schedule
 
 ## Determining the Meetup Date
 
-PyTexas meetups are held on the **first Tuesday of each month**. Calculate the correct date
-for the upcoming month. For example:
+PyTexas meetups are held on the **first Tuesday of each month** at **8:00pm Central**,
+in the PyTexas Discord. Calculate the correct date for the upcoming month. For example:
 
 - If the 1st of the month is a Sunday, the first Tuesday is the 3rd
 - If the 1st of the month is a Wednesday, the first Tuesday is the 7th
@@ -114,6 +130,16 @@ Choose 2-4 relevant categories based on the talk topic. Common categories includ
 Python, AI, LLMs, Data, Web, DevOps, Testing, Tooling, Code Quality, Security,
 Machine Learning, Cloud, Automation.
 
+## Discord Announcements
+
+When the month's setup is done (or assets are ready for marketing), fill in a month-data TOML, render both payloads with `scripts/build_announcements.py` (the templates live there; sessions never compose message text), and send with `scripts/send_discord_announcement.py` under `sops exec-env`; details and gotchas are in `references/announcements.md`.
+Always attach the card PNG rather than relying on Canva's signed export URLs, which expire within hours.
+
+## Local Meetup Lookups
+
+When the run of show doc or the site's local-meetups page needs each network group's upcoming events, run `scripts/scrape_local_meetups.py` (see `references/local-meetups.md`).
+Do not use WebFetch on meetup.com; it always shows "0 upcoming events" because the listings render client-side.
+
 ## Edge Cases
 
 If there is no meetup for a given month (e.g., conference month, holiday skip), ask the user
@@ -124,3 +150,6 @@ for guidance on what to display on the homepage instead of the typical upcoming 
 ### Reference Files
 
 - **`references/file-formats.md`** - Exact file format templates for all three files that get modified
+- **`references/newsletter.md`** - Mailchimp newsletter playbook: API access via sops, exists-check, replicate + settings, copy style per month type, and why content must be pasted in the UI
+- **`references/local-meetups.md`** - How to get real event listings from meetup.com (WebFetch can't) using `scripts/scrape_local_meetups.py`
+- **`references/announcements.md`** - Discord webhook announcements: `scripts/build_announcements.py` (TOML in, payloads out; templates live in the script) + `scripts/send_discord_announcement.py`, Canva card-image handling

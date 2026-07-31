@@ -70,6 +70,18 @@ This project includes a `justfile` for common development tasks:
 - Theme customizations: `overrides/main.html`
 - Navigation structure defined in `mkdocs.yml` nav section
 
+### Monthly Newsletter (Mailchimp)
+
+The monthly update also drafts the Mailchimp newsletter.
+The playbook lives in `.claude/skills/meetup-update/references/newsletter.md`; follow it rather than improvising against the API.
+Key constraints: the API key is `MAILCHIMP_API_KEY` in `secrets/meetup.sops.env` (run calls through `sops exec-env`), campaigns are created by replicating the last sent issue, and campaign content must never be edited via the API (it breaks new-builder drafts); draft copy for the user to paste instead.
+
+## Secrets
+
+`secrets/meetup.sops.env` holds webhook URLs and the Mailchimp API key, encrypted with sops + age.
+The encrypted file is safe to commit.
+Read values at call time with `sops exec-env secrets/meetup.sops.env '<command>'`; never write decrypted output to disk or print keys.
+
 ## CI/CD Pipeline
 
 The repository uses a three-stage GitHub Actions workflow:
@@ -90,6 +102,9 @@ docs/                    # Main content directory
 │   ├── images/         # Speaker photos, logos
 │   └── docs/           # Downloadable documents/slides
 overrides/              # Theme customizations
+secrets/                # sops+age encrypted env (webhooks, Mailchimp API key)
+.ai-sessions/           # Session summaries and lessons.md (BPE workflow)
+.claude/                # meetup-update skill and /update-meetup command
 mkdocs.yml              # Site configuration
 pyproject.toml          # Python project configuration
 uv.lock                 # Dependency lockfile
