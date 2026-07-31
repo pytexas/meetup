@@ -129,6 +129,11 @@ Choose 2-4 relevant categories based on the talk topic. Common categories includ
 Python, AI, LLMs, Data, Web, DevOps, Testing, Tooling, Code Quality, Security,
 Machine Learning, Cloud, Automation.
 
+## Local Meetup Lookups
+
+When the run of show doc or the site's local-meetups page needs each network group's upcoming events, run `scripts/scrape_local_meetups.py` (see `references/local-meetups.md`).
+Do not use WebFetch on meetup.com; it always shows "0 upcoming events" because the listings render client-side.
+
 ## Edge Cases
 
 If there is no meetup for a given month (e.g., conference month, holiday skip), ask the user
@@ -140,3 +145,4 @@ for guidance on what to display on the homepage instead of the typical upcoming 
 
 - **`references/file-formats.md`** - Exact file format templates for all three files that get modified
 - **`references/newsletter.md`** - Mailchimp newsletter playbook: API access via sops, exists-check, replicate + settings, copy style per month type, and why content must be pasted in the UI
+- **`references/local-meetups.md`** - How to get real event listings from meetup.com (WebFetch can't) using `scripts/scrape_local_meetups.py`

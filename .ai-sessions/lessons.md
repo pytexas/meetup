@@ -2,6 +2,7 @@
 
 ## Recent
 <!-- 10 most recent lessons, newest first -->
+- meetup.com shows "0 upcoming events" to WebFetch because listings render client-side; the raw HTML's `__NEXT_DATA__` Apollo cache has full event data. Use `scripts/scrape_local_meetups.py` in the meetup-update skill, and check for embedded JSON before declaring any Next.js site unscrapeable (2026-07-31)
 - Mailchimp's v3 API cannot edit content of new-builder (`content_type: multichannel`) campaigns; `PUT /content` looks successful but forks the draft to a legacy template shell. Replicate + PATCH settings only; paste copy in the UI (2026-07-31)
 - Don't verify an API write by GETting it back from the same API; it echoes your write. If the system of record is a UI (Mailchimp builder), the UI is the only honest check (2026-07-31)
 - Mailchimp Marketing keys end in `-usNN`; Transactional (Mandrill) keys are a separate product and format. The Transactional MCP rejects Marketing keys with "Invalid API key" (2026-07-31)
