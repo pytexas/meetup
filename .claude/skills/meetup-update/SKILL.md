@@ -216,6 +216,11 @@ Choose 2-4 relevant categories based on the talk topic. Common categories includ
 Python, AI, LLMs, Data, Web, DevOps, Testing, Tooling, Code Quality, Security,
 Machine Learning, Cloud, Automation.
 
+## Local Meetup Lookups
+
+When the run of show doc or the site's local-meetups page needs each network group's upcoming events, run `scripts/scrape_local_meetups.py` (see `references/local-meetups.md`).
+Do not use WebFetch on meetup.com; it always shows "0 upcoming events" because the listings render client-side.
+
 ## Edge Cases
 
 If there is no meetup for a given month (e.g., conference month, holiday skip), ask the user
@@ -253,3 +258,4 @@ After drafting, remind Mason that Gmail rewrites bare URLs in API-created drafts
 - **`references/canva-cards.md`** - Canva season deck rules, naming, and card procedure
 - **`references/discord-webhook.md`** - Both Discord webhooks: setup, payloads, and the marketing and organizer message templates
 - **`references/discord-event.md`** - Discord scheduled event API procedure, pending the bot token in secrets
+- **`references/local-meetups.md`** - How to get real event listings from meetup.com (WebFetch can't) using `scripts/scrape_local_meetups.py`
