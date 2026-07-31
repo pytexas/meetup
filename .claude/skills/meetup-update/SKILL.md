@@ -216,6 +216,11 @@ Choose 2-4 relevant categories based on the talk topic. Common categories includ
 Python, AI, LLMs, Data, Web, DevOps, Testing, Tooling, Code Quality, Security,
 Machine Learning, Cloud, Automation.
 
+## Discord Announcements
+
+When the month's setup is done (or assets are ready for marketing), fill in a month-data TOML, render both payloads with `scripts/build_announcements.py` (the templates live there; sessions never compose message text), and send with `scripts/send_discord_announcement.py` under `sops exec-env`; details and gotchas are in `references/announcements.md`.
+Always attach the card PNG rather than relying on Canva's signed export URLs, which expire within hours.
+
 ## Local Meetup Lookups
 
 When the run of show doc or the site's local-meetups page needs each network group's upcoming events, run `scripts/scrape_local_meetups.py` (see `references/local-meetups.md`).
@@ -259,3 +264,4 @@ After drafting, remind Mason that Gmail rewrites bare URLs in API-created drafts
 - **`references/discord-webhook.md`** - Both Discord webhooks: setup, payloads, and the marketing and organizer message templates
 - **`references/discord-event.md`** - Discord scheduled event API procedure, pending the bot token in secrets
 - **`references/local-meetups.md`** - How to get real event listings from meetup.com (WebFetch can't) using `scripts/scrape_local_meetups.py`
+- **`references/announcements.md`** - Discord webhook announcements: `scripts/build_announcements.py` (TOML in, payloads out; templates live in the script) + `scripts/send_discord_announcement.py`, Canva card-image handling
