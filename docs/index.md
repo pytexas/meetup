@@ -39,7 +39,7 @@ Artificial neural networks over the course of the last 5 to 6 years have grown s
 
 [RSVP Here :fontawesome-solid-ticket:](https://pytexas.org/meetup/join){ .md-button .md-button--primary }
 
-![Shayan Ali Headshot](assets/images/pytexas-logo.png){: style="height:150px;width:150px" align=left}
+![Shayan Ali Headshot](assets/images/shayanali.jpg){: style="height:150px;width:150px" align=left}
 
 _Shayan is a second-year Computer Science and Data Analysis student at Texas State University who is passionate about the AI space, wants to make a real impact in the world in terms of AI safety, and is currently working on integrating AI into workflows at his university._
 
