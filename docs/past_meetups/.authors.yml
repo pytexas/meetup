@@ -116,3 +116,7 @@ authors:
     name: Ishita Malhotra
     description: Ishita is a Data Strategy and Automation Manager at Goldman Sachs with expertise in machine learning, business analytics, and automation strategy. She holds an M.S. from Carnegie Mellon University, where she also served as a Graduate Teaching Assistant, and has published research in IEEE on course recommendation systems and route optimization.
     avatar: assets/images/ishita.png
+  shayanali:
+    name: Shayan Ali
+    description: Shayan is a second-year Computer Science and Data Analysis student at Texas State University. He is passionate about AI safety and interpretability, and works on integrating AI into workflows at his university.
+    avatar: assets/images/shayanali.jpg
