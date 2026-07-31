@@ -5,16 +5,21 @@ After the monthly setup is complete, two Discord channels get an announcement vi
 - `PYTEXAS_MARKETING_WEBHOOK`: the marketing channel; audience prepares social posts
 - `PYTEXAS_MEETUP_WEBHOOK`: the meetup organizers channel; audience runs the meetup
 
-Send with `scripts/send_discord_announcement.py` (never hand-roll the curl):
+The flow is two scripts; never hand-write the message text or the curl:
 
 ```bash
+# 1. Fill in a month-data TOML (field list in the script's docstring), then render both payloads
+uv run .claude/skills/meetup-update/scripts/build_announcements.py august.toml
+
+# 2. Send each payload with the card attached
 sops exec-env secrets/meetup.sops.env \
   './.claude/skills/meetup-update/scripts/send_discord_announcement.py marketing marketing.json --image card.png'
 sops exec-env secrets/meetup.sops.env \
   './.claude/skills/meetup-update/scripts/send_discord_announcement.py organizers organizers.json --image card.png'
 ```
 
-The payload file is Discord message JSON: `{"content": "..."}`, under 2000 characters.
+The message templates live in `build_announcements.py` and are the single source of truth; the data file is the only thing a session composes.
+Long URLs are rendered as markdown masked links (`[Run of Show](url)`), which Discord renders for webhook messages (verified in-channel 2026-07-31).
 
 ## Card Image Handling
 
@@ -22,39 +27,11 @@ The promo card lives in the "2026 Meetup Banners" Canva deck (design id `DAGv-Kt
 Canva export URLs are signed and expire within hours, so always attach the PNG to the message (`--image`) in addition to quoting the download link; the attachment persists in Discord after the link dies.
 Always state the link's expiry time next to it and note that re-export happens from the deck.
 
-## Message Templates
+## Message Content
 
-Marketing (bullet list, one item per line):
-
-```
-August 2026 meetup: everything is live!
-* Date: Tuesday, <Month> <D> at 8:00 PM Central
-* Talk: <Title> - <Speaker>
-* Promo blurb: <2-3 sentence hook from the talk description>
-* Card (Canva): <deck share link> (page N of 2026 Meetup Banners)
-* Card image: attached below; direct download (link expires <time>, re-export from the deck after that): <signed URL>
-* Run of Show: <Google Doc link>
-* Attendance form: <forms.gle link>
-* Questions: in chat tonight
-* Meetup.com event: <canonical event URL> (cross-posted to all network groups)
-* Discord event: <discord.com/events/... link>
-* RSVP: https://pytexas.org/meetup/join
-```
-
-Organizers (shorter; logistics only):
-
-```
-<Month> <Year> meetup setup is done.
-* Tuesday, <Month> <D> at 8:00 PM Central: <Title> - <Speaker>
-* Run of Show: <Google Doc link>
-* Card (Canva): <deck share link> (page N); image attached, direct download (link expires <time>): <signed URL>
-* Discord event: <link>
-* Meetup.com event: <link>
-* Attendance form: <forms.gle link>
-* Website PR: <link> (merged | pending merge)
-```
-
-If any step is still manual/incomplete, end the organizers message with a `Still manual:` line listing them; drop the line entirely once everything is done.
+Both messages are rendered by `build_announcements.py`; edit the templates there, not here.
+Marketing gets the full asset rundown (date, talk, blurb, card, run of show, forms, event links, RSVP); organizers gets the logistics-only subset plus the website PR status.
+Populate `still_manual` in the data file with any incomplete steps and the organizers message ends with a `Still manual:` line; leave it empty (or omit it) once everything is done.
 
 ## Gotchas Learned the Hard Way
 

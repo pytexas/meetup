@@ -18,7 +18,8 @@ Mason declined to pay for Transactional, so the MCP is slated for removal.
 - Codified the entire newsletter workflow into the `meetup-update` skill: new `references/newsletter.md` playbook, Step 4 in SKILL.md, updated frontmatter triggers, and a matching step in the `/update-meetup` command.
 - Verified the codified exists-check end to end using `sops exec-env`; found the August draft already scheduled by Mason.
 - Added `scripts/scrape_local_meetups.py` and `references/local-meetups.md` to the skill: meetup.com listings render client-side (WebFetch sees zero events), but the `__NEXT_DATA__` Apollo cache in the raw HTML has everything; verified live against all seven network groups.
-- Sent updated August announcements to the marketing and organizers Discord channels (manual section removed, Discord/meetup.com event links added, fresh Canva card export attached since signed export URLs expire within hours), then codified the flow as `scripts/send_discord_announcement.py` plus `references/announcements.md` with the message templates.
+- Sent updated August announcements to the marketing and organizers Discord channels (manual section removed, Discord/meetup.com event links added, fresh Canva card export attached since signed export URLs expire within hours), then codified the flow as `scripts/send_discord_announcement.py` plus `references/announcements.md`.
+- Verified Discord webhooks render markdown masked links (in-channel test), then made the announcements fully deterministic: `scripts/build_announcements.py` renders both channel payloads with masked links from a month-data TOML; templates live in the script, sessions only compose the data file.
 
 ## Prompt Inventory
 

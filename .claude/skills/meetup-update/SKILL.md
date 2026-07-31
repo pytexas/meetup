@@ -132,7 +132,7 @@ Machine Learning, Cloud, Automation.
 
 ## Discord Announcements
 
-When the month's setup is done (or assets are ready for marketing), send the two channel announcements with `scripts/send_discord_announcement.py` under `sops exec-env`; message templates, card-image handling, and the link gotchas are in `references/announcements.md`.
+When the month's setup is done (or assets are ready for marketing), fill in a month-data TOML, render both payloads with `scripts/build_announcements.py` (the templates live there; sessions never compose message text), and send with `scripts/send_discord_announcement.py` under `sops exec-env`; details and gotchas are in `references/announcements.md`.
 Always attach the card PNG rather than relying on Canva's signed export URLs, which expire within hours.
 
 ## Local Meetup Lookups
@@ -152,4 +152,4 @@ for guidance on what to display on the homepage instead of the typical upcoming 
 - **`references/file-formats.md`** - Exact file format templates for all three files that get modified
 - **`references/newsletter.md`** - Mailchimp newsletter playbook: API access via sops, exists-check, replicate + settings, copy style per month type, and why content must be pasted in the UI
 - **`references/local-meetups.md`** - How to get real event listings from meetup.com (WebFetch can't) using `scripts/scrape_local_meetups.py`
-- **`references/announcements.md`** - Discord webhook announcements: `scripts/send_discord_announcement.py` usage, marketing/organizers message templates, Canva card-image handling
+- **`references/announcements.md`** - Discord webhook announcements: `scripts/build_announcements.py` (TOML in, payloads out; templates live in the script) + `scripts/send_discord_announcement.py`, Canva card-image handling
