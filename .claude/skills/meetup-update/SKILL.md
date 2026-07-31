@@ -7,12 +7,15 @@ description: >-
   the new meetup", "prepare next month's meetup", provides speaker
   submission data for an upcoming meetup, provides a meetup.com event
   URL, or asks to pull a speaker's submission from the Google Form /
-  CFP responses spreadsheet. Also available via the `/update-meetup`
-  command with a meetup.com URL. Runs the full monthly meetup setup:
-  pulling the speaker from the CFP sheet, updating the website,
-  creating the Drive month folder with the run of show and attendance
-  form, creating the Canva promo card, notifying the Discord marketing
-  channel, and flagging the event listings that stay manual.
+  CFP responses spreadsheet. Also triggers on newsletter requests:
+  "check this month's newsletter", "create the newsletter", "draft the
+  newsletter". Also available via the `/update-meetup` command with a
+  meetup.com URL. Runs the full monthly meetup setup: pulling the
+  speaker from the CFP sheet, updating the website, drafting the
+  Mailchimp newsletter, creating the Drive month folder with the run of
+  show and attendance form, creating the Canva promo card, notifying
+  the Discord marketing channel, and flagging the event listings that
+  stay manual.
 ---
 
 # Monthly Meetup Update
@@ -31,7 +34,7 @@ The Todoist subtasks and how this skill handles each:
 5. **Create Network Event on Meetup** - manual, flagged at the end
 6. **Create Event on Non-network meetups (MKE)** - manual, flagged at the end
 
-Beyond the Todoist list, the skill also creates the meetup-night materials in Drive: the month folder, the run of show doc, and the attendance form.
+Beyond the Todoist list, the skill also drafts the month's Mailchimp newsletter and creates the meetup-night materials in Drive: the month folder, the run of show doc, and the attendance form.
 
 Speaker data always comes from the Google MCP first (Drive for the CFP sheet, Gmail for the booked date).
 If Todoist is connected, re-read the subtasks of "Schedule Monthly Meetup" at the start in case the checklist has changed, and follow the live list over the one above.
@@ -131,36 +134,47 @@ Edit `docs/index.md` to replace the current meetup section with the new month's 
 
 See `references/file-formats.md` for the exact markdown format.
 
-### Step 6: Flag the Headshot If Missing
+### Step 6: Draft the Newsletter
 
-After completing the website changes, remind the user of one manual task:
+Check whether this month's Mailchimp newsletter draft exists; create it if not.
+Full playbook with API commands, naming conventions, copy style, and the hard limits is in `references/newsletter.md`. In short:
+
+1. Check for a campaign titled `PyTexas <Month> <Year> Newsletter` (API key is `MAILCHIMP_API_KEY` in `secrets/meetup.sops.env`; call the API through `sops exec-env`)
+2. If missing, replicate the most recent sent newsletter and PATCH the title, subject line, and preview text
+3. Do NOT edit campaign content via the API; it silently breaks new-builder drafts. Draft the meetup section copy in chat for the user to paste into the builder
+4. Leave the campaign as a draft; never send or schedule it
+
+### Step 7: Flag Manual Steps
+
+After completing the website and newsletter changes, remind the user of the manual tasks:
 
 1. **Speaker headshot**: Download from the provided link and save to `docs/assets/images/<name>.<ext>`
+2. **Newsletter**: Paste the drafted meetup copy into the Mailchimp builder, check the hero image link and subject line, then send or schedule
 
 The Speaker Photo field sometimes says to email the speaker for the file instead of giving a URL.
 In that case Mason requests it over email; the site references the image path before the file exists, so `mkdocs build --strict` (and CI) fails until the headshot lands.
 If the PR must wait on the headshot or an earlier month's speaker, mark it as a draft.
 
-### Step 7: Create the Drive Artifacts
+### Step 8: Create the Drive Artifacts
 
 Create the month folder, run of show doc, and attendance form in Google Drive.
 Follow `references/drive-artifacts.md` for the folder layout, template locations, and copy procedure, and `references/run-of-show.md` for the fill-in content.
 Filling the run of show includes research (the local meetups table, current announcements, next month's teaser); follow the Research section of `references/run-of-show.md`.
 Roles stay as placeholders until meetup night.
 
-### Step 8: Create the Canva Card
+### Step 9: Create the Canva Card
 
 The promo cards live in one Canva deck per season (September through August), one page per month.
 Follow `references/canva-cards.md` for picking or creating the right deck and adding the page.
 If the editing tools cannot make the change cleanly, stop and give Mason the design's edit URL with the exact text to place; do not leave a half-edited page.
 
-### Step 9: Notify the Discord Channels
+### Step 10: Notify the Discord Channels
 
 Post two messages through the webhooks in `references/discord-webhook.md`: the asset handoff to the marketing channel and the setup summary to the meetup organizers channel.
 Fire them only after the Drive artifacts and Canva card exist so every link works.
 If a webhook cannot be decrypted, flag that notification as a manual step instead.
 
-### Step 10: Flag the Event Listings
+### Step 11: Flag the Event Listings
 
 These stay manual until their credentials land. List them for Mason at the end of the run:
 
@@ -170,15 +184,15 @@ These stay manual until their credentials land. List them for Mason at the end o
 
 When a credential lands, wire the call in and verify it live once before trusting it monthly.
 
-### Step 11: Report Against the Todoist Checklist
+### Step 12: Report Against the Todoist Checklist
 
 Finish by reporting each "Schedule Monthly Meetup" subtask as done, drafted awaiting Mason's review, or still manual.
 Do not check off subtasks in Todoist without Mason's confirmation; the website subtask in particular is not done until the PR merges and the headshot lands.
 
 ## Determining the Meetup Date
 
-PyTexas meetups are held on the **first Tuesday of each month**. Calculate the correct date
-for the upcoming month. For example:
+PyTexas meetups are held on the **first Tuesday of each month** at **8:00pm Central**,
+in the PyTexas Discord. Calculate the correct date for the upcoming month. For example:
 
 - If the 1st of the month is a Sunday, the first Tuesday is the 3rd
 - If the 1st of the month is a Wednesday, the first Tuesday is the 7th
@@ -232,6 +246,7 @@ After drafting, remind Mason that Gmail rewrites bare URLs in API-created drafts
 ### Reference Files
 
 - **`references/file-formats.md`** - Exact file format templates for the three website files that get modified
+- **`references/newsletter.md`** - Mailchimp newsletter playbook: API access via sops, exists-check, replicate + settings, copy style per month type, and why content must be pasted in the UI
 - **`references/outreach-email.md`** - Exact template for the speaker date-offer email
 - **`references/drive-artifacts.md`** - Drive folder layout and procedure for the run of show and attendance form
 - **`references/run-of-show.md`** - Exact fill-in template for the run of show doc

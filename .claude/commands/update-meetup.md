@@ -20,5 +20,6 @@ Once confirmed, use the "meetup-update" skill to execute the full monthly update
 1. Archive the current meetup from the homepage into a past meetup post
 2. Add the new speaker to the authors file
 3. Update the homepage with the new meetup details
+4. Check for this month's Mailchimp newsletter draft; create it and draft the meetup copy if missing
 
 If any required information is missing from the meetup.com page (e.g., speaker bio, headshot), ask the user to provide it before continuing with the update.
