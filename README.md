@@ -59,6 +59,25 @@ Use `just` for common tasks:
 
 ## Monthly Process
 
+### Automated with Claude Code
+
+The repo ships a Claude Code skill at `.claude/skills/meetup-update/` that runs the full monthly setup.
+Invoke it with `/meetup-update` (or ask to "schedule the monthly meetup").
+
+The skill:
+
+1. Pulls the booked speaker from the "PyTexas Meetup CFP (Responses)" sheet in Google Drive and confirms their locked-in date from the email thread
+2. Archives the held meetup, adds the speaker to `.authors.yml`, updates the homepage, and opens a PR
+3. Creates the month's Drive folder with the run of show doc and attendance form, copied from the templates in Drive
+4. Adds the month's card to the season's "Meetup Banners" deck in Canva
+5. Drafts the date-offer emails to new CFP submitters (drafts only, never sends) and posts the promo notification to the Discord marketing channel webhook
+6. Flags what stays manual: the speaker headshot, the Canva page title rename, the Discord event, the Meetup.com event, and the non-network listings
+
+Everything the skill writes comes from the templates in `.claude/skills/meetup-update/references/`.
+Edit those files to change what it produces.
+
+### Manual Process
+
 1. Add the upcoming meetup to the home page by modifying `index.md`
     1. When adding a new presenter, try to use a URL for the photo. Only upload a file if you must, and upload it to `assets/images`
         * **Tip**: A person's GitHub avatar is always available at `https://github.com/USERNAME.png` so use that
@@ -103,6 +122,35 @@ docs/                    # Main content
 mkdocs.yml              # Site configuration
 justfile                # Development commands
 ```
+
+## Secrets
+
+Automation secrets (currently the Discord marketing webhook) live encrypted in `secrets/meetup.sops.env`, managed with [sops](https://github.com/getsops/sops) and [age](https://github.com/FiloSottile/age).
+The encrypted file is safe to commit; only the age keys listed in `.sops.yaml` can decrypt it.
+This is the same pattern as the [infrastructure repo](https://github.com/pytexas/infrastructure).
+
+### Reading or Changing a Secret
+
+1. Install `sops` and `age`, with your age key at `~/.config/sops/age/keys.txt`
+2. Run `sops secrets/meetup.sops.env` to open the decrypted values in your editor; saving re-encrypts
+
+### Onboarding an Organizer
+
+1. Have them generate a key with `age-keygen -o ~/.config/sops/age/keys.txt` and send you the public key (starts with `age1`)
+2. Add their public key to `.sops.yaml`
+3. Run `sops updatekeys secrets/meetup.sops.env` and commit both files
+
+Adding a key to `.sops.yaml` grants nothing by itself.
+The file only decrypts for the keys it was encrypted to, and re-encrypting it for a new recipient (`sops updatekeys`) can only be done by someone who already holds a listed private key.
+A pull request that adds an unknown key to `.sops.yaml` cannot read any secrets and should simply be closed.
+
+### If You Lose Your Key
+
+Back up `~/.config/sops/age/keys.txt` to the password manager now; restoring that one file on a new machine restores access.
+
+If the key is gone with no backup, the encrypted file is unrecoverable, but the secrets are not: re-obtain each one from its source (the Discord webhook URL is viewable under the channel's Integrations settings, and API tokens get re-issued by their providers).
+Then generate a fresh key with `age-keygen`, replace the old public key in `.sops.yaml`, re-create `secrets/meetup.sops.env` with the re-obtained values, and commit.
+The old blobs in git history stay permanently unreadable, which is the point.
 
 ## Deployment
 
