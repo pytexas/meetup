@@ -2,6 +2,7 @@
 
 ## Recent
 <!-- 10 most recent lessons, newest first -->
+- `str.format(**ctx)` does not re-parse braces inside the substituted values, so a data field like `"Understanding {} in Python"` renders literally and never raises; verify any "format-injection crash" claim empirically before fixing (2026-08-14)
 - Squash-merged branches look "not in main" by commit ancestry (`merge-base --is-ancestor` fails) because their commits were rewritten; confirm merged-vs-stale by content: a diff dominated by deletions that re-adds older text means main is ahead and the branch is stale (2026-08-14)
 - When resolving an add/add conflict in a sops-encrypted file, take the side that is the plaintext superset (its MAC already covers the full key set) and verify by actually running `sops --decrypt`; a hand-stitched ciphertext would fail MAC validation (2026-08-14)
 - Canva share/export links 403 to link checkers (bot-blocked, not broken); add `canva.com` to `.lycheeignore` rather than editing the reference doc (2026-08-14)
@@ -10,6 +11,8 @@
 - Mailchimp's v3 API cannot edit content of new-builder (`content_type: multichannel`) campaigns; `PUT /content` looks successful but forks the draft to a legacy template shell. Replicate + PATCH settings only; paste copy in the UI (2026-07-31)
 - Don't verify an API write by GETting it back from the same API; it echoes your write. If the system of record is a UI (Mailchimp builder), the UI is the only honest check (2026-07-31)
 - Mailchimp Marketing keys end in `-usNN`; Transactional (Mandrill) keys are a separate product and format. The Transactional MCP rejects Marketing keys with "Invalid API key" (2026-07-31)
+
+## Secrets
 - `sops set file '["KEY"]' '"value"'` adds a key to a sops dotenv without a decrypt/edit/re-encrypt round trip (2026-07-31)
 - Run secret-bearing commands via `sops exec-env secrets/meetup.sops.env '...'` so keys never hit disk or the transcript in plaintext (2026-07-31)
 

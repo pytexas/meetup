@@ -59,9 +59,14 @@ def main() -> None:
     }
     if args.image is not None:
         suffix = args.image.suffix.lstrip(".").lower() or "png"
-        files["files[0]"] = (args.image.name, args.image.read_bytes(), f"image/{suffix}")
+        # .jpg/.jpeg both map to the IANA type image/jpeg; image/jpg is invalid.
+        mime_subtype = "jpeg" if suffix in ("jpg", "jpeg") else suffix
+        files["files[0]"] = (args.image.name, args.image.read_bytes(), f"image/{mime_subtype}")
 
-    response = httpx.post(f"{webhook_url}?wait=true", files=files, timeout=30)
+    # Merge wait=true onto any existing query string instead of concatenating a
+    # second "?", which would malform a webhook URL that already carries params.
+    post_url = httpx.URL(webhook_url).copy_merge_params({"wait": "true"})
+    response = httpx.post(post_url, files=files, timeout=30)
     response.raise_for_status()
     message = response.json()
     attachment_names = [attachment["filename"] for attachment in message.get("attachments", [])]

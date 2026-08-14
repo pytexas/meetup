@@ -99,7 +99,9 @@ def main() -> None:
     context = dict(data, deck_url=DECK_URL, deck_name=DECK_NAME, rsvp_url=RSVP_URL)
 
     organizers_text = ORGANIZERS_TEMPLATE.format(**context)
-    still_manual: list[str] = data.get("still_manual", [])
+    still_manual = data.get("still_manual", [])
+    if not isinstance(still_manual, list):
+        sys.exit(f"still_manual must be a list of strings, got {type(still_manual).__name__}")
     if still_manual:
         organizers_text += "\n* Still manual: " + "; ".join(still_manual)
 
@@ -107,9 +109,12 @@ def main() -> None:
         "marketing": MARKETING_TEMPLATE.format(**context),
         "organizers": organizers_text,
     }
+    # Check every message before writing any, so an oversize one never leaves a
+    # partial set of payloads on disk for a later send step to pick up.
     for channel, content in messages.items():
         if len(content) > DISCORD_CONTENT_LIMIT:
             sys.exit(f"{channel} message is {len(content)} chars, over Discord's {DISCORD_CONTENT_LIMIT}")
+    for channel, content in messages.items():
         output_path = args.data_file.parent / f"{channel}.json"
         output_path.write_text(json.dumps({"content": content}) + "\n")
         print(f"wrote {output_path} ({len(content)} chars)")

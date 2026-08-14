@@ -123,7 +123,7 @@ def main() -> None:
                 continue
             matching_events = group_events(state, month_prefixes)
             for date_time, title, venue, event_url in matching_events:
-                cross_post = "  [PyTexas cross-post]" if "PyTexas" in title else ""
+                cross_post = "  [PyTexas cross-post]" if "pytexas" in title.lower() else ""
                 print(f"  {date_time} | {title} | {venue} | {event_url}{cross_post}")
             if not matching_events:
                 print("  no matching events listed")

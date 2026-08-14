@@ -16,6 +16,7 @@
 - Semantic-merged `.claude/skills/meetup-update/SKILL.md`: kept main's fuller 11-step workflow, inserted the newsletter as Step 6, renumbered to 1-12, merged the reference-file list, and kept the branch's new `## Discord Announcements` / `## Local Meetup Lookups` sections.
 - Force-pushed the rebased branch; PR #49 went from CONFLICTING to MERGEABLE.
 - Fixed the one link-check failure (a Canva share link 403s to bots) by adding `canva.com` to `.lycheeignore`; verified locally with lychee.
+- Ran `/code-review` on PR #49 (6 findings, all in the 3 new scripts). Verified the top finding (`.format` brace crash) was a false positive: `str.format` inserts replacement values literally without re-parsing braces. Fixed the 5 real ones: `.jpg`->`image/jpeg` MIME, oversize-check-before-write (no partial payloads), `wait=true` via `copy_merge_params` (preserves existing query), `still_manual` list validation, case-insensitive PyTexas cross-post match.
 
 ## Prompt Inventory
 
