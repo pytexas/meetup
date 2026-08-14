@@ -124,3 +124,7 @@ authors:
     name: Nishanth Sirikonda
     description: Nishanth is a Cloud Solutions Architect with over 10 years of experience designing scalable, secure HCM solutions, with expertise in AI/ML, cybersecurity, and cloud computing. He is an active IEEE member and technology community contributor focused on bridging human potential with machine intelligence.
     avatar: assets/images/nishanthsirikonda.jpg
+  pavankota:
+    name: Chakra Pavan Kumar Kota
+    description: Pavan is a Senior Software Engineer at Jack in the Box with over 11 years of combined academic and industry research experience. He holds a Master's degree from the University of Missouri-Kansas City and is pursuing a Ph.D. in Artificial Intelligence and Data Science at the University of the Cumberlands, with expertise in AI, machine learning, cybersecurity, and cloud computing.
+    avatar: assets/images/pavankota.png

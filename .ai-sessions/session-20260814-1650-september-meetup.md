@@ -16,6 +16,8 @@
 - Created the Mailchimp September draft `f994b84fab` by replicating August `bac126a2a4`, then PATCHed title/subject/preview. Content left for Mason to paste.
 - Created the Drive artifacts: month folder `2026-09-01`, `Run of Show 2026-09-01` (new Doc from HTML, filled with scraped local meetups + PyTexas 2027 news + anniversary note), and copied the attendance form.
 - Located the new "2027 Meetup Banners" Canva deck (`DAHSTYLUIFo`); it holds one placeholder template page Mason designed for season 4.
+- Built the September card on the 2027 deck (duplicated the template to page 1, filled it, shrank the long title to two lines, put the date on one line), committed it, and exported the PNG.
+- Follow-up: Mason asked to list every booked month, so added November (Chakra Pavan Kumar Kota, "Security Is a Design Habit") to the homepage with his authors entry and headshot. Confirmed via Gmail that only Sept/Oct/Nov are booked; December is open (Sridhar Irujolla was offered but never replied).
 
 ## Prompt Inventory
 
