@@ -17,19 +17,17 @@ of Texas and beyond.
 
 ## Upcoming PyTexas Meetups
 
-### August Meetup - August 4, 2026
+### September Meetup - September 1, 2026
 
-**Cutting Through the Slop: Lessons Learned from a Year of Claude Code** - Mason Egger
+**Architecture Beyond the Diagram: Governing Python Systems People Can Actually Change** - Nishanth Sirikonda
 
-Code is cheaper than it's ever been, and it will never be this expensive again. Every few decades a technology flips the table on a profession, and software engineering is having that moment right now. The noise around it makes the moment hard to read, and most developers either haven't tried these tools at all or got slop and quit.
-
-I spent the last year learning, building, and refining damn near everything with Claude Code, to unbelievable success. This is what survived contact with the work. The principles that held no matter which model was ahead that week, the tools I run on anything worth doing properly, and an honest accounting of which customizations earned their keep and which ones only ate my evenings. This presentation is for both of those people, plus anyone already using these tools who wants to compare notes.
+Architecture diagrams can explain what a system looks like, but they rarely explain how teams should evolve it safely. Python systems often grow through rapid iteration, integration needs, and team-specific decisions, and over time the challenge becomes less about drawing the right diagram and more about creating governance that helps people make better changes. This talk reframes software architecture as a living decision system, built around decision records, ownership boundaries, integration contracts, stakeholder alignment, and change readiness.
 
 [RSVP Here :fontawesome-solid-ticket:](https://pytexas.org/meetup/join){ .md-button .md-button--primary }
 
-![Mason Egger Headshot](https://github.com/masonegger.png){: style="height:150px;width:150px" align=left}
+![Nishanth Sirikonda Headshot](assets/images/nishanthsirikonda.jpg){: style="height:150px;width:150px" align=left}
 
-_Mason is currently a Senior Solutions Architect at Temporal Technologies, where he works with customers to architect and implement durable execution solutions. He specializes in Python, distributed systems, building community, and creating developer-focused educational content. He has held roles in the Developer Relations departments at Temporal, Gretel, and DigitalOcean. Prior to moving to Developer Relations, he held engineering roles at Forcepoint (Raytheon) and Vrbo (Expedia). He's an avid programmer, speaker, educator, and writer/blogger. He is President of the PyTexas Foundation, Conference Chair of the PyTexas Conference, and a founding organizer of the PyTexas Meetup. He was made a PSF Fellow in October 2025._
+_Nishanth Sirikonda is a Cloud Solutions Architect with over 10 years of experience designing and implementing scalable, secure, and user-focused HCM solutions. He brings deep expertise in the core areas of Artificial Intelligence/Machine Learning, Cybersecurity, and Cloud Computing. He collaborates closely with stakeholders to deliver impactful, future-ready solutions that streamline operations and elevate workforce experiences. He is an active IEEE member and technology community contributor, he is passionate about bridging human potential with machine intelligence to create future-ready, resilient organizations._
 
 ### October Meetup - October 6, 2026
 
