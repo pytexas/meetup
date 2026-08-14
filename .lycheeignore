@@ -1,1 +1,3 @@
 localhost
+# Canva bot-blocks link checkers (returns 403 to non-browser clients)
+canva.com
