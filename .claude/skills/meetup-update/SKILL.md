@@ -34,7 +34,7 @@ The Todoist subtasks and how this skill handles each:
 5. **Create Network Event on Meetup** - manual, flagged at the end
 6. **Create Event on Non-network meetups (MKE)** - manual, flagged at the end
 
-Beyond the Todoist list, the skill also drafts the month's Mailchimp newsletter and creates the meetup-night materials in Drive: the month folder, the run of show doc, and the attendance form.
+Beyond the Todoist list, the skill also drafts the month's Mailchimp newsletter and creates the meetup-night materials in Drive: the month folder, the run of show doc, and the attendance and questions forms.
 
 Speaker data always comes from the Google MCP first (Drive for the CFP sheet, Gmail for the booked date).
 If Todoist is connected, re-read the subtasks of "Schedule Monthly Meetup" at the start in case the checklist has changed, and follow the live list over the one above.
@@ -157,10 +157,12 @@ If the PR must wait on the headshot or an earlier month's speaker, mark it as a 
 
 ### Step 8: Create the Drive Artifacts
 
-Create the month folder, run of show doc, and attendance form in Google Drive.
+Create the month folder, run of show doc, and the attendance and questions forms in Google Drive.
+Verify the Drive connector is on the PyTexas account before creating anything (see `references/drive-artifacts.md`); it can silently reconnect to a personal account, which looks like data loss.
 Follow `references/drive-artifacts.md` for the folder layout, template locations, and copy procedure, and `references/run-of-show.md` for the fill-in content.
+Build the run of show as markdown uploaded with conversion (not HTML), and copy both forms from the "Meetup Forms Template" folder.
 Filling the run of show includes research (the local meetups table, current announcements, next month's teaser); follow the Research section of `references/run-of-show.md`.
-Roles stay as placeholders until meetup night.
+Roles and the form responder links stay as `FILL_ME_IN` placeholders in a HUMAN REQUIRED TASKS block until meetup night.
 
 ### Step 9: Create the Canva Card
 
@@ -258,7 +260,7 @@ After drafting, remind Mason that Gmail rewrites bare URLs in API-created drafts
 - **`references/file-formats.md`** - Exact file format templates for the three website files that get modified
 - **`references/newsletter.md`** - Mailchimp newsletter playbook: API access via sops, exists-check, replicate + settings, copy style per month type, and why content must be pasted in the UI
 - **`references/outreach-email.md`** - Exact template for the speaker date-offer email
-- **`references/drive-artifacts.md`** - Drive folder layout and procedure for the run of show and attendance form
+- **`references/drive-artifacts.md`** - Drive account check, folder layout, and procedure for the run of show and the attendance and questions forms
 - **`references/run-of-show.md`** - Exact fill-in template for the run of show doc
 - **`references/canva-cards.md`** - Canva season deck rules, naming, and card procedure
 - **`references/discord-webhook.md`** - Both Discord webhooks: setup, payloads, and the marketing and organizer message templates
