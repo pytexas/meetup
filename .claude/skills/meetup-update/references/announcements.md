@@ -23,7 +23,7 @@ Long URLs are rendered as markdown masked links (`[Run of Show](url)`), which Di
 
 ## Card Image Handling
 
-The promo card lives in the "2026 Meetup Banners" Canva deck (design id `DAGv-Ktk4IM`, share link <https://www.canva.com/d/aiHt9RXm1DY_dI7>), one page per month.
+The promo card lives in the "2027 Meetup Banners" Canva deck (design id `DAHSTYLUIFo`, share link <https://www.canva.com/d/hGlBZzZ_f4mQMUV>), one page per month. A new season deck is made each September; update `DECK_URL`/`DECK_NAME` in `build_announcements.py` when it rolls over.
 Canva export URLs are signed and expire within hours, so always attach the PNG to the message (`--image`) in addition to quoting the download link; the attachment persists in Discord after the link dies.
 Always state the link's expiry time next to it and note that re-export happens from the deck.
 
