@@ -30,11 +30,11 @@ The Todoist subtasks and how this skill handles each:
 1. **Update Meetup Website** - automated here: archive the held meetup, add the speaker to authors, update the homepage, open a PR
 2. **Create Canva Card** - attempted via the Canva MCP; flagged with the design's edit link if editing fails
 3. **Send Social Media Assets to Kassandra** - handled by posting to the Discord marketing channel webhook
-4. **Create Discord Event** - manual, flagged at the end
+4. **Create Discord Event** - automated via `scripts/create_discord_event.py`
 5. **Create Network Event on Meetup** - automated via `scripts/create_meetup_event.py`
 6. **Create Event on Non-network meetups (MKE)** - manual, flagged at the end
 
-Beyond the Todoist list, the skill also drafts the month's Mailchimp newsletter and creates the meetup-night materials in Drive: the month folder, the run of show doc, and the attendance form.
+Beyond the Todoist list, the skill also drafts the month's Mailchimp newsletter and creates the meetup-night materials in Drive: the month folder, the run of show doc, and the attendance and questions forms.
 
 Speaker data always comes from the Google MCP first (Drive for the CFP sheet, Gmail for the booked date).
 If Todoist is connected, re-read the subtasks of "Schedule Monthly Meetup" at the start in case the checklist has changed, and follow the live list over the one above.
@@ -157,10 +157,12 @@ If the PR must wait on the headshot or an earlier month's speaker, mark it as a 
 
 ### Step 8: Create the Drive Artifacts
 
-Create the month folder, run of show doc, and attendance form in Google Drive.
+Create the month folder, run of show doc, and the attendance and questions forms in Google Drive.
+Verify the Drive connector is on the PyTexas account before creating anything (see `references/drive-artifacts.md`); it can silently reconnect to a personal account, which looks like data loss.
 Follow `references/drive-artifacts.md` for the folder layout, template locations, and copy procedure, and `references/run-of-show.md` for the fill-in content.
+Build the run of show as markdown uploaded with conversion (not HTML), and copy both forms from the "Meetup Forms Template" folder.
 Filling the run of show includes research (the local meetups table, current announcements, next month's teaser); follow the Research section of `references/run-of-show.md`.
-Roles stay as placeholders until meetup night.
+Roles and the form responder links stay as `FILL_ME_IN` placeholders in a HUMAN REQUIRED TASKS block until meetup night.
 
 ### Step 9: Create the Canva Card
 
@@ -174,15 +176,13 @@ Post two messages through the webhooks in `references/discord-webhook.md`: the a
 Fire them only after the Drive artifacts and Canva card exist so every link works.
 If a webhook cannot be decrypted, flag that notification as a manual step instead.
 
-### Step 11: Flag the Event Listings
+### Step 11: The Event Listings
 
-These stay manual until their credentials land. List them for Mason at the end of the run:
+1. **Create Discord Event** in the PyTexas Discord - automated. Run `scripts/create_discord_event.py` with the month TOML and `--image <card.png>` under `sops exec-env`; procedure in `references/discord-event.md`.
+2. **Create Network Event on Meetup** (meetup.com) - automated (create-and-draft). Run `scripts/create_meetup_event.py` with the month TOML and `--image <card.png>` under `sops exec-env`; procedure in `references/meetup-event.md`. Publishing the network event stays manual (the API publish cancels network propagation).
+3. **Create Event on Non-network meetups** (MKE) - manual, no known API path.
 
-1. **Create Discord Event** in the PyTexas Discord - automatable via the bot API once the bot token is added to secrets; procedure and payload in `references/discord-event.md`
-2. **Create Network Event on Meetup** (meetup.com) - automated. Run `scripts/create_meetup_event.py` with the month TOML and `--image <card.png>` under `sops exec-env`; procedure in `references/meetup-event.md`.
-3. **Create Event on Non-network meetups** (MKE) - manual, no known API path
-
-When a credential lands, wire the call in and verify it live once before trusting it monthly.
+MKE stays manual (no known API). For meetup.com, only the publish step is manual; the create-and-draft is scripted.
 
 ### Step 12: Report Against the Todoist Checklist
 
@@ -258,11 +258,11 @@ After drafting, remind Mason that Gmail rewrites bare URLs in API-created drafts
 - **`references/file-formats.md`** - Exact file format templates for the three website files that get modified
 - **`references/newsletter.md`** - Mailchimp newsletter playbook: API access via sops, exists-check, replicate + settings, copy style per month type, and why content must be pasted in the UI
 - **`references/outreach-email.md`** - Exact template for the speaker date-offer email
-- **`references/drive-artifacts.md`** - Drive folder layout and procedure for the run of show and attendance form
+- **`references/drive-artifacts.md`** - Drive account check, folder layout, and procedure for the run of show and the attendance and questions forms
 - **`references/run-of-show.md`** - Exact fill-in template for the run of show doc
 - **`references/canva-cards.md`** - Canva season deck rules, naming, and card procedure
 - **`references/discord-webhook.md`** - Both Discord webhooks: setup, payloads, and the marketing and organizer message templates
-- **`references/discord-event.md`** - Discord scheduled event API procedure, pending the bot token in secrets
+- **`references/discord-event.md`** - Discord scheduled event procedure via `scripts/create_discord_event.py` (bot token wired, banner attached)
 - **`references/meetup-event.md`** - meetup.com network event via `scripts/create_meetup_event.py` (OAuth refresh token, network filterId, JPEG photo requirement, topic picking, draft then publish)
 - **`references/local-meetups.md`** - How to get real event listings from meetup.com (WebFetch can't) using `scripts/scrape_local_meetups.py`
 - **`references/announcements.md`** - Discord webhook announcements: `scripts/build_announcements.py` (TOML in, payloads out; templates live in the script) + `scripts/send_discord_announcement.py`, Canva card-image handling
