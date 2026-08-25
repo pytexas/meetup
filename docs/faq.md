@@ -11,7 +11,7 @@ description: Answers to some frequently asked questions
 
 ???+ question "Where do y'all meet?"
 
-    The PyTexas Meetup is a virtual meetup. We currently meet in the voice channel #meetup-room in the [PyTexas Discord](https://discord.gg/jNPAbcNukj)
+    The PyTexas Meetup is a virtual meetup. We currently meet in the voice channel #meetup-room in the [PyTexas Discord](https://discord.gg/pytexas)
 
 ???+ question "Why are y'all virtual?"
 

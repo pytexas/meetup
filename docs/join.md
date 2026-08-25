@@ -6,7 +6,7 @@ description: Join the PyTexas Discord server to get access to the meetup
 # Join the PyTexas Meetup
 
 The PyTexas Meetup is open to _anyone_, not just Texans! We hold our meetings in
-a Discord Stage in the [PyTexas Discord Server](https://discord.gg/jNPAbcNukj). 
+a Discord Stage in the [PyTexas Discord Server](https://discord.gg/pytexas). 
 We usually join a voice channel 15 minutes prior to the start of a meetup to
 chat with anyone who wants to join and then move to the stage. After the meetup
 we hangout in a voice channel again for anyone who wants to chat and network.
@@ -15,16 +15,16 @@ we hangout in a voice channel again for anyone who wants to chat and network.
 
 You can join the PyTexas Meetup by joining our Discord server!
 
-[Join the Discord :fontawesome-brands-discord:](https://discord.gg/jNPAbcNukj){ .md-button .md-button--primary}
+[Join the Discord :fontawesome-brands-discord:](https://discord.gg/pytexas){ .md-button .md-button--primary}
 
 ## How Do I Get Notified When There is a New Meetup?
 
 There are a few ways to be notified when there is a meetup. We announce every 
 meetup in the Discord server, so pay attention to the `#announcements` channel.
 
-You can also join our Meetup groups on [meetup.com](https://meetup.com/pro/pytexas)
+You can also join our Meetup groups on meetup.com.
 
-[Join our Meetup Group :fontawesome-brands-meetup:](https://discord.gg/jNPAbcNukj){ .md-button .md-button--primary}
+[Join our Meetup Group :fontawesome-brands-meetup:](https://meetup.com/pro/pytexas){ .md-button .md-button--primary}
 
 If you're a resident of Texas we ask that you join the PyTexas Meetup group
 associated with the nearest major city that we have a group for (Austin,
