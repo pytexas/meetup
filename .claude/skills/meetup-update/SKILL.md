@@ -30,7 +30,7 @@ The Todoist subtasks and how this skill handles each:
 1. **Update Meetup Website** - automated here: archive the held meetup, add the speaker to authors, update the homepage, open a PR
 2. **Create Canva Card** - attempted via the Canva MCP; flagged with the design's edit link if editing fails
 3. **Send Social Media Assets to Kassandra** - handled by posting to the Discord marketing channel webhook
-4. **Create Discord Event** - manual, flagged at the end
+4. **Create Discord Event** - automated via `scripts/create_discord_event.py`
 5. **Create Network Event on Meetup** - manual, flagged at the end
 6. **Create Event on Non-network meetups (MKE)** - manual, flagged at the end
 
@@ -176,15 +176,13 @@ Post two messages through the webhooks in `references/discord-webhook.md`: the a
 Fire them only after the Drive artifacts and Canva card exist so every link works.
 If a webhook cannot be decrypted, flag that notification as a manual step instead.
 
-### Step 11: Flag the Event Listings
+### Step 11: The Event Listings
 
-These stay manual until their credentials land. List them for Mason at the end of the run:
+1. **Create Discord Event** in the PyTexas Discord - automated. Run `scripts/create_discord_event.py` with the month TOML and `--image <card.png>` under `sops exec-env`; procedure in `references/discord-event.md`.
+2. **Create Network Event on Meetup** (meetup.com) - still manual; automatable through their API once Mason's meetup.com key lands.
+3. **Create Event on Non-network meetups** (MKE) - manual, no known API path.
 
-1. **Create Discord Event** in the PyTexas Discord - automatable via the bot API once the bot token is added to secrets; procedure and payload in `references/discord-event.md`
-2. **Create Network Event on Meetup** (meetup.com) - automatable through their GraphQL API once Mason obtains OAuth credentials through the Meetup Pro admin account
-3. **Create Event on Non-network meetups** (MKE) - manual, no known API path
-
-When a credential lands, wire the call in and verify it live once before trusting it monthly.
+For the two still-manual listings: when a credential lands, wire the call in and verify it live once before trusting it monthly.
 
 ### Step 12: Report Against the Todoist Checklist
 
@@ -264,6 +262,6 @@ After drafting, remind Mason that Gmail rewrites bare URLs in API-created drafts
 - **`references/run-of-show.md`** - Exact fill-in template for the run of show doc
 - **`references/canva-cards.md`** - Canva season deck rules, naming, and card procedure
 - **`references/discord-webhook.md`** - Both Discord webhooks: setup, payloads, and the marketing and organizer message templates
-- **`references/discord-event.md`** - Discord scheduled event API procedure, pending the bot token in secrets
+- **`references/discord-event.md`** - Discord scheduled event procedure via `scripts/create_discord_event.py` (bot token wired, banner attached)
 - **`references/local-meetups.md`** - How to get real event listings from meetup.com (WebFetch can't) using `scripts/scrape_local_meetups.py`
 - **`references/announcements.md`** - Discord webhook announcements: `scripts/build_announcements.py` (TOML in, payloads out; templates live in the script) + `scripts/send_discord_announcement.py`, Canva card-image handling
