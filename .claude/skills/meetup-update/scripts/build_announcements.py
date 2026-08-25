@@ -24,7 +24,6 @@ Example data file:
     card_expiry = "4:38 PM Central today"
     run_of_show_url = "https://docs.google.com/document/d/.../edit"
     attendance_url = "https://forms.gle/..."
-    meetup_event_url = "https://www.meetup.com/pytexas-virtual-meetup-austin/events/.../"
     discord_event_url = "https://discord.com/events/.../..."
     website_pr_url = "https://github.com/pytexas/meetup/pull/47"
     website_pr_status = "merged"
@@ -37,8 +36,8 @@ import pathlib
 import sys
 import tomllib
 
-DECK_URL = "https://www.canva.com/d/aiHt9RXm1DY_dI7"
-DECK_NAME = "2026 Meetup Banners"
+DECK_URL = "https://www.canva.com/d/hGlBZzZ_f4mQMUV"
+DECK_NAME = "2027 Meetup Banners"
 RSVP_URL = "https://pytexas.org/meetup/join"
 DISCORD_CONTENT_LIMIT = 2000
 
@@ -55,7 +54,6 @@ REQUIRED_FIELDS = (
     "card_expiry",
     "run_of_show_url",
     "attendance_url",
-    "meetup_event_url",
     "discord_event_url",
     "website_pr_url",
     "website_pr_status",
@@ -70,7 +68,6 @@ MARKETING_TEMPLATE = """\
 * [Run of Show]({run_of_show_url})
 * [Attendance form]({attendance_url})
 * Questions: in chat tonight
-* [Meetup.com event]({meetup_event_url}) (cross-posted to all network groups)
 * [Discord event]({discord_event_url})
 * [RSVP]({rsvp_url})"""
 
@@ -80,7 +77,6 @@ ORGANIZERS_TEMPLATE = """\
 * [Run of Show]({run_of_show_url})
 * Card: [{deck_name}, page {deck_page}]({deck_url}); image attached, or [download the PNG]({card_download_url}) (link expires {card_expiry})
 * [Discord event]({discord_event_url})
-* [Meetup.com event]({meetup_event_url})
 * [Attendance form]({attendance_url})
 * [Website PR]({website_pr_url}) ({website_pr_status})"""
 
