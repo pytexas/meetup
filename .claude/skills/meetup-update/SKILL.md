@@ -31,7 +31,7 @@ The Todoist subtasks and how this skill handles each:
 2. **Create Canva Card** - attempted via the Canva MCP; flagged with the design's edit link if editing fails
 3. **Send Social Media Assets to Kassandra** - handled by posting to the Discord marketing channel webhook
 4. **Create Discord Event** - manual, flagged at the end
-5. **Create Network Event on Meetup** - manual, flagged at the end
+5. **Create Network Event on Meetup** - automated via `scripts/create_meetup_event.py`
 6. **Create Event on Non-network meetups (MKE)** - manual, flagged at the end
 
 Beyond the Todoist list, the skill also drafts the month's Mailchimp newsletter and creates the meetup-night materials in Drive: the month folder, the run of show doc, and the attendance form.
@@ -179,7 +179,7 @@ If a webhook cannot be decrypted, flag that notification as a manual step instea
 These stay manual until their credentials land. List them for Mason at the end of the run:
 
 1. **Create Discord Event** in the PyTexas Discord - automatable via the bot API once the bot token is added to secrets; procedure and payload in `references/discord-event.md`
-2. **Create Network Event on Meetup** (meetup.com) - automatable through their GraphQL API once Mason obtains OAuth credentials through the Meetup Pro admin account
+2. **Create Network Event on Meetup** (meetup.com) - automated. Run `scripts/create_meetup_event.py` with the month TOML and `--image <card.png>` under `sops exec-env`; procedure in `references/meetup-event.md`.
 3. **Create Event on Non-network meetups** (MKE) - manual, no known API path
 
 When a credential lands, wire the call in and verify it live once before trusting it monthly.
@@ -263,5 +263,6 @@ After drafting, remind Mason that Gmail rewrites bare URLs in API-created drafts
 - **`references/canva-cards.md`** - Canva season deck rules, naming, and card procedure
 - **`references/discord-webhook.md`** - Both Discord webhooks: setup, payloads, and the marketing and organizer message templates
 - **`references/discord-event.md`** - Discord scheduled event API procedure, pending the bot token in secrets
+- **`references/meetup-event.md`** - meetup.com network event via `scripts/create_meetup_event.py` (OAuth refresh token, network filterId, JPEG photo requirement, topic picking, draft then publish)
 - **`references/local-meetups.md`** - How to get real event listings from meetup.com (WebFetch can't) using `scripts/scrape_local_meetups.py`
 - **`references/announcements.md`** - Discord webhook announcements: `scripts/build_announcements.py` (TOML in, payloads out; templates live in the script) + `scripts/send_discord_announcement.py`, Canva card-image handling
