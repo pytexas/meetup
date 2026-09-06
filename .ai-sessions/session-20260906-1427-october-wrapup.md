@@ -12,6 +12,8 @@
 - Confirmed what was still missing: September archive post, October Mailchimp draft, Drive month folder, October Canva card, Discord scheduled event, meetup.com draft event, webhook announcements
 - Archived the September 1 meetup (Nishanth Sirikonda) to `docs/past_meetups/posts/2026-09-01.md` and removed the September section from `docs/index.md`
 - Verified `mkdocs build` passes; `--strict` fails on clean main too (missing `site_url`), so plain build is the honest check
+- Created the October Mailchimp draft (4ec4ba2653), Drive month folder with run of show and both forms, the October Canva card (2027 deck page 1), the Discord scheduled event, and the meetup.com DRAFT network event (316447876); the meetup runs rotated `MEETUP_REFRESH_TOKEN` in sops (committed on this branch)
+- Drafted date-offer emails in Gmail for the two un-acked CFP candidates (Sridhar Irujolla, Kriti Faujdar)
 
 ## Prompt Inventory
 
