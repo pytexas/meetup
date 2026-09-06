@@ -57,6 +57,7 @@ REQUIRED_FIELDS = (
     "discord_event_url",
     "website_pr_url",
     "website_pr_status",
+    "meetup_event_url",
 )
 
 MARKETING_TEMPLATE = """\
@@ -69,6 +70,7 @@ MARKETING_TEMPLATE = """\
 * [Attendance form]({attendance_url})
 * Questions: in chat tonight
 * [Discord event]({discord_event_url})
+* [Meetup.com event]({meetup_event_url})
 * [RSVP]({rsvp_url})"""
 
 ORGANIZERS_TEMPLATE = """\
@@ -77,6 +79,7 @@ ORGANIZERS_TEMPLATE = """\
 * [Run of Show]({run_of_show_url})
 * Card: [{deck_name}, page {deck_page}]({deck_url}); image attached, or [download the PNG]({card_download_url}) (link expires {card_expiry})
 * [Discord event]({discord_event_url})
+* [Meetup.com event]({meetup_event_url})
 * [Attendance form]({attendance_url})
 * [Website PR]({website_pr_url}) ({website_pr_status})"""
 
