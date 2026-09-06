@@ -2,6 +2,8 @@
 
 ## Recent
 <!-- 10 most recent lessons, newest first -->
+- `mkdocs build --strict` (and `just validate`) fail on this repo even on clean main because `site_url` is unset; CI deploys via `gh-deploy` without strict, so validate changes with a plain `mkdocs build` (2026-09-06)
+- On a rerun of the monthly update, audit artifact existence first (Mailchimp campaign list, Drive title search, Canva deck page-1 thumbnail, Discord scheduled-events API) instead of walking the skill's from-scratch order (2026-09-06)
 - A speaker headshot that arrives as a Google Drive link: download it via the Drive MCP and commit it to `docs/assets/images/` so `mkdocs build --strict` and CI are not blocked; the pushed branch's `raw.githubusercontent.com` URL then doubles as the public source for the Canva `upload-asset-from-url` (a private Drive file is not fetchable by Canva) (2026-08-14)
 - The Drive MCP `download_file_content` returns base64 that overruns the tool-result token cap for a ~700KB image; it gets saved to a file instead, so decode the `content` field from that saved JSON with Python rather than expecting it inline (2026-08-14)
 - The CFP sheet's `Acked` column lags reality; a speaker can be booked (per the Gmail "Speak at PyTexas Meetup" thread) while their row still says FALSE. Treat the email thread as the booking source of truth, not the sheet (2026-08-14)
@@ -10,7 +12,6 @@
 - When resolving an add/add conflict in a sops-encrypted file, take the side that is the plaintext superset (its MAC already covers the full key set) and verify by actually running `sops --decrypt`; a hand-stitched ciphertext would fail MAC validation (2026-08-14)
 - Canva share/export links 403 to link checkers (bot-blocked, not broken); add `canva.com` to `.lycheeignore` rather than editing the reference doc (2026-08-14)
 - Canva export URLs are signed and expire within hours; for Discord announcements attach the PNG to the webhook message (`files[0]` multipart) so the image outlives the link, and state the link's expiry next to it (2026-07-31)
-- meetup.com shows "0 upcoming events" to WebFetch because listings render client-side; the raw HTML's `__NEXT_DATA__` Apollo cache has full event data. Use `scripts/scrape_local_meetups.py` in the meetup-update skill, and check for embedded JSON before declaring any Next.js site unscrapeable (2026-07-31)
 
 ## Secrets
 - `sops set file '["KEY"]' '"value"'` adds a key to a sops dotenv without a decrypt/edit/re-encrypt round trip (2026-07-31)
@@ -24,4 +25,5 @@
 - Mailchimp Marketing keys end in `-usNN`; Transactional (Mandrill) keys are a separate product and format. The Transactional MCP rejects Marketing keys with "Invalid API key" (2026-07-31)
 
 ## Workflow
+- meetup.com shows "0 upcoming events" to WebFetch because listings render client-side; the raw HTML's `__NEXT_DATA__` Apollo cache has full event data. Use `scripts/scrape_local_meetups.py` in the meetup-update skill, and check for embedded JSON before declaring any Next.js site unscrapeable (2026-07-31)
 - The meetup-update skill's `references/newsletter.md` is the canonical newsletter playbook; follow it over memory or improvisation (2026-07-31)
