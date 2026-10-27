@@ -1,8 +1,8 @@
 # Session Summary: November 2026 Meetup Setup
 
 **Date**: 2026-10-27
-**Duration**: ~25 minutes
-**Conversation Turns**: 3 (one `/meetup-update` invocation)
+**Duration**: ~40 minutes
+**Conversation Turns**: 4 (`/meetup-update`, then "Canva is updated. Try again.")
 **Estimated Cost**: moderate (MCP-heavy status checks, Drive and Mailchimp writes, site edits)
 **Model**: Claude Fable 5.1
 
@@ -14,7 +14,8 @@
 - Created the Drive month folder `2026-11-03`, copied both forms from the template folder, and uploaded the run of show as markdown (converted cleanly; FILL_ME_IN markers and the table survived).
 - Wrote the month TOML in the scratchpad and dry-ran both event scripts; picked meetup.com topics via `suggestTopics` (Cybersecurity 152026, Application Security 50280, Software Security 447162, plus Python and AI).
 - Canva: the connector is on Mason's personal account (search shows personal designs; the banners deck returns "Not allowed to access design"). Card flagged as manual with the deck link and exact text.
-- Held the Discord event, meetup.com draft, and both webhook announcements until the card PNG exists, since every one of them attaches it.
+- After Mason reconnected the Canva connector: uploaded the headshot, duplicated the October page to the top of the 2027 deck, filled title/date/name/role/headshot, widened the name box so the long name stays on one line, committed, and exported the PNG.
+- Created the Discord scheduled event (1564647667966152817) and the meetup.com DRAFT network event (317161034) with the card attached; both announcement payloads rendered but held until the forms are published.
 - Drafted (not sent) the date-offer email to Kriti Faujdar for Dec 1 / Jan 5 / Feb 2. Sridhar Irujolla was offered dates on 7/22 and never replied; left for Mason to decide.
 
 ## Prompt Inventory
