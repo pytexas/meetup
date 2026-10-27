@@ -17,7 +17,7 @@ These cannot be done through the API. Both form edit links are right here so you
 
 1. **PUBLISH BOTH FORMS.** Open each form above, click Publish/Send, then paste the forms.gle responder links into the Links and Announcements sections below.
 2. **UPDATE EACH FORM'S INTERNAL TITLE AND DESCRIPTION.** The attendance form still reads "&lt;DATE&gt;" and the questions form still reads "&lt;SPEAKER&gt;" inside the form itself. Edit the on-screen title and description to the meetup date and the speaker name. The Drive file names are already correct; only the form content needs it.
-3. **MAKE THE RESPONSE SHEETS.** In each form's Responses tab, click Link to Sheets, then paste each sheet link into the Links section.
+3. **MAKE THE RESPONSE SHEETS.** In each form's Responses tab, click Link to Sheets, then send both sheet links back to Claude (or paste them into the Links section yourself).
 4. **FILL IN THE ROLES.** Host, Moderators, and Winner below are marked FILL_ME_IN.
 
 ## Schedule

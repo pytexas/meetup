@@ -24,6 +24,7 @@ Example data file:
     card_expiry = "4:38 PM Central today"
     run_of_show_url = "https://docs.google.com/document/d/.../edit"
     attendance_url = "https://forms.gle/..."
+    questions_url = "https://forms.gle/..."
     discord_event_url = "https://discord.com/events/.../..."
     website_pr_url = "https://github.com/pytexas/meetup/pull/47"
     website_pr_status = "merged"
@@ -54,6 +55,7 @@ REQUIRED_FIELDS = (
     "card_expiry",
     "run_of_show_url",
     "attendance_url",
+    "questions_url",
     "discord_event_url",
     "website_pr_url",
     "website_pr_status",
@@ -68,7 +70,7 @@ MARKETING_TEMPLATE = """\
 * Card: [{deck_name}, page {deck_page}]({deck_url}); image attached below, or [download the PNG]({card_download_url}) (link expires {card_expiry}; re-export from the deck after that)
 * [Run of Show]({run_of_show_url})
 * [Attendance form]({attendance_url})
-* Questions: in chat tonight
+* [Questions form]({questions_url})
 * [Discord event]({discord_event_url})
 * [Meetup.com event]({meetup_event_url})
 * [RSVP]({rsvp_url})"""
@@ -81,6 +83,7 @@ ORGANIZERS_TEMPLATE = """\
 * [Discord event]({discord_event_url})
 * [Meetup.com event]({meetup_event_url})
 * [Attendance form]({attendance_url})
+* [Questions form]({questions_url})
 * [Website PR]({website_pr_url}) ({website_pr_status})"""
 
 

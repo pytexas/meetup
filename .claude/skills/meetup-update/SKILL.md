@@ -9,8 +9,7 @@ description: >-
   URL, or asks to pull a speaker's submission from the Google Form /
   CFP responses spreadsheet. Also triggers on newsletter requests:
   "check this month's newsletter", "create the newsletter", "draft the
-  newsletter". Also available via the `/update-meetup` command with a
-  meetup.com URL. Runs the full monthly meetup setup: pulling the
+  newsletter". Runs the full monthly meetup setup: pulling the
   speaker from the CFP sheet, updating the website, drafting the
   Mailchimp newsletter, creating the Drive month folder with the run of
   show and attendance form, creating the Canva promo card, notifying
@@ -31,7 +30,7 @@ The Todoist subtasks and how this skill handles each:
 2. **Create Canva Card** - attempted via the Canva MCP; flagged with the design's edit link if editing fails
 3. **Send Social Media Assets to Kassandra** - handled by posting to the Discord marketing channel webhook
 4. **Create Discord Event** - automated via `scripts/create_discord_event.py`
-5. **Create Network Event on Meetup** - automated via `scripts/create_meetup_event.py`
+5. **Create Network Event on Meetup** - manual by default: the skill hands Mason a paste block and he creates it in the pro dashboard (see `references/meetup-event.md`)
 6. **Create Event on Non-network meetups (MKE)** - manual, flagged at the end
 
 Beyond the Todoist list, the skill also drafts the month's Mailchimp newsletter and creates the meetup-night materials in Drive: the month folder, the run of show doc, and the attendance and questions forms.
@@ -64,12 +63,21 @@ Relevant columns: Name, About you (bio), Speaker Photo, Presentation Title, Pres
 
 The July lightning talks have their own sheet (e.g. "PyTexas July 2026 Lightning Talks (Responses)") with a Speaker Order tab.
 
-### Fallback A: Meetup.com Event URL
+### Fallback A: Meetup.com Event URL (Manual Mode)
 
-When given a meetup.com URL (or invoked via `/update-meetup <url>`), use WebFetch to retrieve
-the event page and extract: event date, talk title, speaker name, talk description, speaker bio,
-and speaker headshot URL. Present the extracted data to the user for confirmation before proceeding.
-If any required fields are missing from the page, ask the user to provide them.
+When the user hands over a meetup.com event URL instead of pointing at the CFP sheet, run in manual mode.
+Use WebFetch to retrieve the event page and extract:
+
+- Event date
+- Talk title
+- Speaker name
+- Talk description (full text)
+- Speaker bio, if the page has one
+- Speaker headshot URL, if the page has one
+
+Present the extracted data to the user and wait for confirmation before touching any files.
+If a required field is missing from the page (bio and headshot are the usual gaps), ask the user to supply it before continuing.
+Once confirmed, skip Step 1 and continue the workflow from Step 2 with the confirmed data.
 
 ### Fallback B: Raw Speaker Submission Data
 
@@ -155,6 +163,27 @@ The Speaker Photo field sometimes says to email the speaker for the file instead
 In that case Mason requests it over email; the site references the image path before the file exists, so `mkdocs build --strict` (and CI) fails until the headshot lands.
 If the PR must wait on the headshot or an earlier month's speaker, mark it as a draft.
 
+### The Handoff Banner
+
+Whenever the run stops because something only Mason can do stands between the artifacts and the Discord announcements, end the report with this banner, verbatim heading included, so it is not buried in the recap:
+
+```text
+=====================================================================
+I NEED YOU TO DO THESE THINGS, THEN I'LL PUBLISH TO DISCORD
+=====================================================================
+1. Publish both Google Forms with Responders set to "Anyone with the link"
+   and send me both forms.gle links.
+2. In each form's Responses tab click Link to Sheets, and send me both
+   sheet links.
+3. Create the meetup.com network event from the paste block above
+   (title, description, time, topics, card PNG) and send me its URL.
+4. <anything else blocking the sends, e.g. reconnect the Canva connector>
+=====================================================================
+```
+
+When the links come back: verify each one anonymously, recreate the run of show with every link filled in (there is no in-place edit), trash the old doc, then build both announcements and show them to Mason.
+Never send the announcements with a `TBD` or an unpublished link in them, and never send without the explicit go-ahead described in Step 10.
+
 ### Step 8: Create the Drive Artifacts
 
 Create the month folder, run of show doc, and the attendance and questions forms in Google Drive.
@@ -173,16 +202,28 @@ If the editing tools cannot make the change cleanly, stop and give Mason the des
 ### Step 10: Notify the Discord Channels
 
 Post two messages through the webhooks in `references/discord-webhook.md`: the asset handoff to the marketing channel and the setup summary to the meetup organizers channel.
-Fire them only after the Drive artifacts and Canva card exist so every link works.
+Fire them only after the Drive artifacts and Canva card exist and both forms are published, so every link works; until then, stop and show the handoff banner from Step 7.
+Both messages carry the attendance and questions form links; the month TOML needs `attendance_url` and `questions_url`.
+
+**Discord sends need Mason's explicit go-ahead, every time.**
+Webhook messages cannot be edited or deleted by the bot, so a bad send is permanent until Mason cleans it up by hand.
+The gate, in order:
+
+1. Verify every link in both payloads with an unauthenticated fetch (forms, run of show, events, PR). Any failure, `TBD`, or placeholder means stop; do not send either message.
+2. Show Mason both rendered messages in full, the verification results, and anything still manual.
+3. Send only after Mason replies with a clear yes to those exact payloads. "Try again", "looks good", or silence is not consent to send; a go-ahead on an earlier payload does not cover a changed one.
+4. If anything goes wrong after a send (a wrong line, a regenerated doc, a dead link), do not post a correction or follow-up on your own. Report it and wait for Mason to decide between a follow-up and deleting the originals.
+
+This gate was added on 2026-10-27 after a month where the first sends carried a hard-coded line and a doc link that changed minutes later, and the fixes went out as unasked follow-ups; Mason deleted all of them.
 If a webhook cannot be decrypted, flag that notification as a manual step instead.
 
 ### Step 11: The Event Listings
 
 1. **Create Discord Event** in the PyTexas Discord - automated. Run `scripts/create_discord_event.py` with the month TOML and `--image <card.png>` under `sops exec-env`; procedure in `references/discord-event.md`.
-2. **Create Network Event on Meetup** (meetup.com) - automated (create-and-draft). Run `scripts/create_meetup_event.py` with the month TOML and `--image <card.png>` under `sops exec-env`; procedure in `references/meetup-event.md`. Publishing the network event stays manual (the API publish cancels network propagation).
+2. **Create Network Event on Meetup** (meetup.com) - manual by default. Render the paste block in `references/meetup-event.md` (title, description, date and time, topics, card PNG path), put it in the handoff banner, and wait for Mason to create the event in the pro dashboard and send back its URL for `meetup_event_url`. Do not run `scripts/create_meetup_event.py` unless Mason asks for it that month; the API path cancels network propagation and its photo upload is not processed (2026-10-27).
 3. **Create Event on Non-network meetups** (MKE) - manual, no known API path.
 
-MKE stays manual (no known API). For meetup.com, only the publish step is manual; the create-and-draft is scripted.
+MKE and meetup.com are both manual; the skill supplies the exact text for each.
 
 ### Step 12: Report Against the Todoist Checklist
 
@@ -263,6 +304,6 @@ After drafting, remind Mason that Gmail rewrites bare URLs in API-created drafts
 - **`references/canva-cards.md`** - Canva season deck rules, naming, and card procedure
 - **`references/discord-webhook.md`** - Both Discord webhooks: setup, payloads, and the marketing and organizer message templates
 - **`references/discord-event.md`** - Discord scheduled event procedure via `scripts/create_discord_event.py` (bot token wired, banner attached)
-- **`references/meetup-event.md`** - meetup.com network event via `scripts/create_meetup_event.py` (OAuth refresh token, network filterId, JPEG photo requirement, topic picking, draft then publish)
+- **`references/meetup-event.md`** - meetup.com network event: the paste block Mason creates it from (default), plus the opt-in script path and why it is not the default
 - **`references/local-meetups.md`** - How to get real event listings from meetup.com (WebFetch can't) using `scripts/scrape_local_meetups.py`
 - **`references/announcements.md`** - Discord webhook announcements: `scripts/build_announcements.py` (TOML in, payloads out; templates live in the script) + `scripts/send_discord_announcement.py`, Canva card-image handling

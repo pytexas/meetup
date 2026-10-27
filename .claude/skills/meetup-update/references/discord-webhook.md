@@ -16,7 +16,8 @@ If decryption fails (no sops, no age key), skip the posts and flag them as manua
 ## Posting
 
 Fire after the Drive artifacts and Canva card exist so every link works.
-Show Mason the exact messages in the run summary.
+Show Mason the exact messages and wait for his explicit yes before sending; the full gate is in SKILL.md Step 10.
+Never send a correction or follow-up message on your own initiative; a sent message cannot be edited or deleted through the webhook, so Mason decides how to clean up.
 
 ```bash
 sops exec-env secrets/meetup.sops.env \
@@ -40,9 +41,9 @@ Fill only the slots; use "TBD" for links that do not exist yet.
 * Speaker socials for tagging: <handles if provided>
 * Run of Show: <Drive doc link>
 * Attendance form: <form link>
-* Questions form: <form link, or "questions in chat">
-* Meetup.com event: TBD (placeholder until API access lands)
-* Discord event: TBD (placeholder until the bot token lands; see discord-event.md)
+* Questions form: <questions form responder link>
+* Meetup.com event: <draft event link from create_meetup_event.py>
+* Discord event: <event link from create_discord_event.py>
 * RSVP: https://pytexas.org/meetup/join
 ```
 
@@ -58,9 +59,10 @@ Notes on the added lines:
 * <Weekday>, <Month> <Day>: <Talk Title> - <Speaker Name>
 * Run of Show: <Drive doc link>
 * Card (Canva): <deck link>
+* Attendance form: <form link>
+* Questions form: <form link>
 * Website PR: <PR link>
-* Still manual: <remaining items, e.g. Canva page title rename, Discord event, Meetup.com event, headshot>
+* Still manual: <remaining items, e.g. Canva page title rename, meetup.com publish, PR merge>
 ```
 
-PROPOSED: neither message wording has been used for a real month yet.
-Confirm both with Mason on first use, then delete this paragraph.
+These are sketches; `scripts/build_announcements.py` holds the exact wording and is the source of truth (in use since August 2026).
