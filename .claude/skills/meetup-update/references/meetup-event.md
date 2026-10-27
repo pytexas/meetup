@@ -1,7 +1,48 @@
 # Meetup.com Network Event
 
-The monthly meetup.com event is created by `scripts/create_meetup_event.py` as a
-network event that propagates to all PyTexas groups, with the promo card as its photo.
+**Default: Mason creates the event in the pro dashboard from a paste block the skill
+renders.** Set on 2026-10-27 after the API path cost more debugging than it saved: a
+network event created through `createEvent` with `proNetworkEvents` now arrives with
+its network record CANCELLED, `publishEventDraft` makes the event ACTIVE on the origin
+group but does not revive the record (no fan-out to the other nine groups), editing and
+publishing from the dashboard did not revive it either, and the script's JPEG photo
+upload was accepted but never processed by the photoscaler (403 forever), so the card
+did not show. The script below still exists for the parts that worked (title, body,
+time, topics) and for whenever Meetup fixes this; use it only when Mason asks.
+
+## Default: The Paste Block
+
+Render the event fields with the script's dry run, which performs no API calls and
+needs no token:
+
+```bash
+uv run .claude/skills/meetup-update/scripts/create_meetup_event.py november.toml --dry-run
+```
+
+Then put this block in the handoff banner (SKILL.md Step 7), filled from the dry-run
+output and the month TOML. Topic names come from the ids in `topics` (see Topics
+below for the common ones).
+
+```text
+meetup.com network event (create in the pro dashboard, group: PyTexas Virtual Meetup)
+Title:       <meetup_title>
+Date/time:   <Weekday>, <Month> <Day>, <Year>, 8:00 PM - 9:00 PM Central
+Location:    Online; event link https://discord.gg/pytexas
+Topics:      <topic names, up to 5, Python first>
+Photo:       <absolute path to the month's card PNG; also attached in the Discord payload>
+Network:     use the all-groups network filter so it fans out to every PyTexas group
+
+Description (paste as-is):
+<the "description" field from the dry run, verbatim>
+```
+
+When the URL comes back, put it in `meetup_event_url` in the month TOML; both Discord
+announcements link it.
+
+## Script Path (Opt-In Only)
+
+Everything below describes `scripts/create_meetup_event.py`, kept for the day the API
+behaves. As of 2026-10-27 it creates a usable single-group event and nothing more.
 
 ## Running It
 
@@ -100,8 +141,23 @@ Meetup allows 5 topic tags; fill all 5 when you can. Pick per talk:
 
 ## Publishing
 
-The script leaves the event as DRAFT. After review, publish with the `publishEventDraft`
-mutation (`input: { eventId }`), which flips status to ACTIVE and fans it out. There is
-no delete-photo API, so avoid re-uploading a photo more than once per event (each
-attempt orphans the previous one as a broken album image); to redo an event cleanly,
-delete it (`deleteEvent`) and recreate.
+The script leaves the event as DRAFT. `publishEventDraft` (`input: { eventId }`) flips
+the event to ACTIVE on the origin group only; on 2026-10-27 the network record stayed
+CANCELLED through the publish and through a dashboard edit-and-publish, so there was
+no fan-out. There is no delete-photo API, so avoid re-uploading a photo more than once
+per event (each attempt orphans the previous one as a broken album image); to redo an
+event cleanly, delete it (`deleteEvent`) and recreate.
+
+## Reading Event State
+
+Read-only check of an event and its network record, reusing the script's auth helpers
+(each call rotates the refresh token, which the helper persists):
+
+```graphql
+{ event(id:"<id>"){ id status networkEvent { id status isAnnounced groupCount }
+  featuredEventPhoto { id highResUrl } } }
+```
+
+A healthy network event shows `networkEvent.status` ACTIVE (PAST after the date) and
+the photo's `highResUrl` returns 200. `proNetwork(urlname:"pytexas").eventsSearch`
+with an `eventDateMin`/`eventDateMax` filter lists what the network itself counts.

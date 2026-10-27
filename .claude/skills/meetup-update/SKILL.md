@@ -30,7 +30,7 @@ The Todoist subtasks and how this skill handles each:
 2. **Create Canva Card** - attempted via the Canva MCP; flagged with the design's edit link if editing fails
 3. **Send Social Media Assets to Kassandra** - handled by posting to the Discord marketing channel webhook
 4. **Create Discord Event** - automated via `scripts/create_discord_event.py`
-5. **Create Network Event on Meetup** - automated via `scripts/create_meetup_event.py`
+5. **Create Network Event on Meetup** - manual by default: the skill hands Mason a paste block and he creates it in the pro dashboard (see `references/meetup-event.md`)
 6. **Create Event on Non-network meetups (MKE)** - manual, flagged at the end
 
 Beyond the Todoist list, the skill also drafts the month's Mailchimp newsletter and creates the meetup-night materials in Drive: the month folder, the run of show doc, and the attendance and questions forms.
@@ -175,7 +175,9 @@ I NEED YOU TO DO THESE THINGS, THEN I'LL PUBLISH TO DISCORD
    and send me both forms.gle links.
 2. In each form's Responses tab click Link to Sheets, and send me both
    sheet links.
-3. <anything else blocking the sends, e.g. reconnect the Canva connector>
+3. Create the meetup.com network event from the paste block above
+   (title, description, time, topics, card PNG) and send me its URL.
+4. <anything else blocking the sends, e.g. reconnect the Canva connector>
 =====================================================================
 ```
 
@@ -218,10 +220,10 @@ If a webhook cannot be decrypted, flag that notification as a manual step instea
 ### Step 11: The Event Listings
 
 1. **Create Discord Event** in the PyTexas Discord - automated. Run `scripts/create_discord_event.py` with the month TOML and `--image <card.png>` under `sops exec-env`; procedure in `references/discord-event.md`.
-2. **Create Network Event on Meetup** (meetup.com) - automated (create-and-draft). Run `scripts/create_meetup_event.py` with the month TOML and `--image <card.png>` under `sops exec-env`; procedure in `references/meetup-event.md`. Publishing the network event stays manual (the API publish cancels network propagation).
+2. **Create Network Event on Meetup** (meetup.com) - manual by default. Render the paste block in `references/meetup-event.md` (title, description, date and time, topics, card PNG path), put it in the handoff banner, and wait for Mason to create the event in the pro dashboard and send back its URL for `meetup_event_url`. Do not run `scripts/create_meetup_event.py` unless Mason asks for it that month; the API path cancels network propagation and its photo upload is not processed (2026-10-27).
 3. **Create Event on Non-network meetups** (MKE) - manual, no known API path.
 
-MKE stays manual (no known API). For meetup.com, only the publish step is manual; the create-and-draft is scripted.
+MKE and meetup.com are both manual; the skill supplies the exact text for each.
 
 ### Step 12: Report Against the Todoist Checklist
 
@@ -302,6 +304,6 @@ After drafting, remind Mason that Gmail rewrites bare URLs in API-created drafts
 - **`references/canva-cards.md`** - Canva season deck rules, naming, and card procedure
 - **`references/discord-webhook.md`** - Both Discord webhooks: setup, payloads, and the marketing and organizer message templates
 - **`references/discord-event.md`** - Discord scheduled event procedure via `scripts/create_discord_event.py` (bot token wired, banner attached)
-- **`references/meetup-event.md`** - meetup.com network event via `scripts/create_meetup_event.py` (OAuth refresh token, network filterId, JPEG photo requirement, topic picking, draft then publish)
+- **`references/meetup-event.md`** - meetup.com network event: the paste block Mason creates it from (default), plus the opt-in script path and why it is not the default
 - **`references/local-meetups.md`** - How to get real event listings from meetup.com (WebFetch can't) using `scripts/scrape_local_meetups.py`
 - **`references/announcements.md`** - Discord webhook announcements: `scripts/build_announcements.py` (TOML in, payloads out; templates live in the script) + `scripts/send_discord_announcement.py`, Canva card-image handling
