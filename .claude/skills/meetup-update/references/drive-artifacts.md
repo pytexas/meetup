@@ -49,6 +49,8 @@ Two things that stay human tasks every time, because the MCP cannot do them:
 - **The response sheet.** It does not exist until someone opens the form's Responses tab and clicks Link to Sheets.
 
 Ask Mason for all four links (two forms.gle responder links, two sheet links) in the handoff banner (see SKILL.md Step 7), then recreate the run of show with them filled in rather than leaving him to paste.
+Collect all four before the Discord announcements go out: recreating the doc changes its URL, and a doc linked from an already-sent announcement then needs a follow-up message in both channels (November 2026).
+`update_file` is metadata only (title, folder, star, lock); it cannot touch a doc's body.
 
 ## Creating the Run of Show
 
