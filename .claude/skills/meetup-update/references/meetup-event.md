@@ -39,6 +39,20 @@ Description (paste as-is):
 When the URL comes back, put it in `meetup_event_url` in the month TOML; both Discord
 announcements link it.
 
+The MKE Python Meetup group (<https://www.meetup.com/mke-python-meetup/>) is not in the
+pro network, so the fan-out never reaches it; Mason creates a second copy there from the
+same block. Check it with a plain fetch of the group's events page and the `__NEXT_DATA__`
+parse from `local-meetups.md`; the Austin origin stays the canonical link.
+
+## What the fan-out actually does (2026-10-27)
+
+The API fan-out does create the per-group copies at creation time (their ids run
+consecutively after the origin's), but they stay hidden while the network record reads
+CANCELLED. Duplicating the event in the pro dashboard and publishing the duplicate is
+what flipped the original set live and marked it announced; the duplicate itself came
+out dated the next day and had to be deleted by hand. Also: the dashboard's duplicate
+defaults the date to tomorrow, so check the date before publishing.
+
 ## Script Path (Opt-In Only)
 
 Everything below describes `scripts/create_meetup_event.py`, kept for the day the API

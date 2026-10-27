@@ -177,6 +177,8 @@ I NEED YOU TO DO THESE THINGS, THEN I'LL PUBLISH TO DISCORD
    sheet links.
 3. Create the meetup.com network event from the paste block above
    (title, description, time, topics, card PNG) and send me its URL.
+   Then create the same event on the MKE Python Meetup group
+   (https://www.meetup.com/mke-python-meetup/), which is outside the network.
 4. <anything else blocking the sends, e.g. reconnect the Canva connector>
 =====================================================================
 ```
@@ -221,7 +223,7 @@ If a webhook cannot be decrypted, flag that notification as a manual step instea
 
 1. **Create Discord Event** in the PyTexas Discord - automated. Run `scripts/create_discord_event.py` with the month TOML and `--image <card.png>` under `sops exec-env`; procedure in `references/discord-event.md`.
 2. **Create Network Event on Meetup** (meetup.com) - manual by default. Render the paste block in `references/meetup-event.md` (title, description, date and time, topics, card PNG path), put it in the handoff banner, and wait for Mason to create the event in the pro dashboard and send back its URL for `meetup_event_url`. Do not run `scripts/create_meetup_event.py` unless Mason asks for it that month; the API path cancels network propagation and its photo upload is not processed (2026-10-27).
-3. **Create Event on Non-network meetups** (MKE) - manual, no known API path.
+3. **Create Event on Non-network meetups** (MKE) - manual, no known API path. MKE is the MKE Python Meetup group, <https://www.meetup.com/mke-python-meetup/>, which is outside the pro network and so never receives the network fan-out. Mason creates a copy there from the same paste block. Verify it the same way as the network groups: read the group's events page (`__NEXT_DATA__`, see `references/local-meetups.md`) and confirm a PyTexas-titled event on the meetup date. It has carried every monthly through September 2026; October and November 2026 were missing as of 2026-10-27.
 
 MKE and meetup.com are both manual; the skill supplies the exact text for each.
 
