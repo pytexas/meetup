@@ -9,8 +9,7 @@ description: >-
   URL, or asks to pull a speaker's submission from the Google Form /
   CFP responses spreadsheet. Also triggers on newsletter requests:
   "check this month's newsletter", "create the newsletter", "draft the
-  newsletter". Also available via the `/update-meetup` command with a
-  meetup.com URL. Runs the full monthly meetup setup: pulling the
+  newsletter". Runs the full monthly meetup setup: pulling the
   speaker from the CFP sheet, updating the website, drafting the
   Mailchimp newsletter, creating the Drive month folder with the run of
   show and attendance form, creating the Canva promo card, notifying
@@ -64,12 +63,21 @@ Relevant columns: Name, About you (bio), Speaker Photo, Presentation Title, Pres
 
 The July lightning talks have their own sheet (e.g. "PyTexas July 2026 Lightning Talks (Responses)") with a Speaker Order tab.
 
-### Fallback A: Meetup.com Event URL
+### Fallback A: Meetup.com Event URL (Manual Mode)
 
-When given a meetup.com URL (or invoked via `/update-meetup <url>`), use WebFetch to retrieve
-the event page and extract: event date, talk title, speaker name, talk description, speaker bio,
-and speaker headshot URL. Present the extracted data to the user for confirmation before proceeding.
-If any required fields are missing from the page, ask the user to provide them.
+When the user hands over a meetup.com event URL instead of pointing at the CFP sheet, run in manual mode.
+Use WebFetch to retrieve the event page and extract:
+
+- Event date
+- Talk title
+- Speaker name
+- Talk description (full text)
+- Speaker bio, if the page has one
+- Speaker headshot URL, if the page has one
+
+Present the extracted data to the user and wait for confirmation before touching any files.
+If a required field is missing from the page (bio and headshot are the usual gaps), ask the user to supply it before continuing.
+Once confirmed, skip Step 1 and continue the workflow from Step 2 with the confirmed data.
 
 ### Fallback B: Raw Speaker Submission Data
 

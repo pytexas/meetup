@@ -104,7 +104,7 @@ docs/                    # Main content directory
 overrides/              # Theme customizations
 secrets/                # sops+age encrypted env (webhooks, Mailchimp API key)
 .ai-sessions/           # Session summaries and lessons.md (BPE workflow)
-.claude/                # meetup-update skill and /update-meetup command
+.claude/                # meetup-update skill (monthly update workflow)
 mkdocs.yml              # Site configuration
 pyproject.toml          # Python project configuration
 uv.lock                 # Dependency lockfile
