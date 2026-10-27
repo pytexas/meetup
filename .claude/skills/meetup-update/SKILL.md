@@ -179,8 +179,8 @@ I NEED YOU TO DO THESE THINGS, THEN I'LL PUBLISH TO DISCORD
 =====================================================================
 ```
 
-When the links come back: verify each one anonymously, recreate the run of show with every link filled in (there is no in-place edit), trash the old doc, then build and send both announcements.
-Never send the announcements with a `TBD` or an unpublished link in them.
+When the links come back: verify each one anonymously, recreate the run of show with every link filled in (there is no in-place edit), trash the old doc, then build both announcements and show them to Mason.
+Never send the announcements with a `TBD` or an unpublished link in them, and never send without the explicit go-ahead described in Step 10.
 
 ### Step 8: Create the Drive Artifacts
 
@@ -202,6 +202,17 @@ If the editing tools cannot make the change cleanly, stop and give Mason the des
 Post two messages through the webhooks in `references/discord-webhook.md`: the asset handoff to the marketing channel and the setup summary to the meetup organizers channel.
 Fire them only after the Drive artifacts and Canva card exist and both forms are published, so every link works; until then, stop and show the handoff banner from Step 7.
 Both messages carry the attendance and questions form links; the month TOML needs `attendance_url` and `questions_url`.
+
+**Discord sends need Mason's explicit go-ahead, every time.**
+Webhook messages cannot be edited or deleted by the bot, so a bad send is permanent until Mason cleans it up by hand.
+The gate, in order:
+
+1. Verify every link in both payloads with an unauthenticated fetch (forms, run of show, events, PR). Any failure, `TBD`, or placeholder means stop; do not send either message.
+2. Show Mason both rendered messages in full, the verification results, and anything still manual.
+3. Send only after Mason replies with a clear yes to those exact payloads. "Try again", "looks good", or silence is not consent to send; a go-ahead on an earlier payload does not cover a changed one.
+4. If anything goes wrong after a send (a wrong line, a regenerated doc, a dead link), do not post a correction or follow-up on your own. Report it and wait for Mason to decide between a follow-up and deleting the originals.
+
+This gate was added on 2026-10-27 after a month where the first sends carried a hard-coded line and a doc link that changed minutes later, and the fixes went out as unasked follow-ups; Mason deleted all of them.
 If a webhook cannot be decrypted, flag that notification as a manual step instead.
 
 ### Step 11: The Event Listings

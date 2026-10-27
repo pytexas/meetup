@@ -16,7 +16,8 @@ If decryption fails (no sops, no age key), skip the posts and flag them as manua
 ## Posting
 
 Fire after the Drive artifacts and Canva card exist so every link works.
-Show Mason the exact messages in the run summary.
+Show Mason the exact messages and wait for his explicit yes before sending; the full gate is in SKILL.md Step 10.
+Never send a correction or follow-up message on your own initiative; a sent message cannot be edited or deleted through the webhook, so Mason decides how to clean up.
 
 ```bash
 sops exec-env secrets/meetup.sops.env \
