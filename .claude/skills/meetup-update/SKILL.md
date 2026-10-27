@@ -163,6 +163,25 @@ The Speaker Photo field sometimes says to email the speaker for the file instead
 In that case Mason requests it over email; the site references the image path before the file exists, so `mkdocs build --strict` (and CI) fails until the headshot lands.
 If the PR must wait on the headshot or an earlier month's speaker, mark it as a draft.
 
+### The Handoff Banner
+
+Whenever the run stops because something only Mason can do stands between the artifacts and the Discord announcements, end the report with this banner, verbatim heading included, so it is not buried in the recap:
+
+```text
+=====================================================================
+I NEED YOU TO DO THESE THINGS, THEN I'LL PUBLISH TO DISCORD
+=====================================================================
+1. Publish both Google Forms with Responders set to "Anyone with the link"
+   and send me both forms.gle links.
+2. In each form's Responses tab click Link to Sheets, and send me both
+   sheet links.
+3. <anything else blocking the sends, e.g. reconnect the Canva connector>
+=====================================================================
+```
+
+When the links come back: verify each one anonymously, recreate the run of show with every link filled in (there is no in-place edit), trash the old doc, then build and send both announcements.
+Never send the announcements with a `TBD` or an unpublished link in them.
+
 ### Step 8: Create the Drive Artifacts
 
 Create the month folder, run of show doc, and the attendance and questions forms in Google Drive.
@@ -181,7 +200,8 @@ If the editing tools cannot make the change cleanly, stop and give Mason the des
 ### Step 10: Notify the Discord Channels
 
 Post two messages through the webhooks in `references/discord-webhook.md`: the asset handoff to the marketing channel and the setup summary to the meetup organizers channel.
-Fire them only after the Drive artifacts and Canva card exist so every link works.
+Fire them only after the Drive artifacts and Canva card exist and both forms are published, so every link works; until then, stop and show the handoff banner from Step 7.
+Both messages carry the attendance and questions form links; the month TOML needs `attendance_url` and `questions_url`.
 If a webhook cannot be decrypted, flag that notification as a manual step instead.
 
 ### Step 11: The Event Listings

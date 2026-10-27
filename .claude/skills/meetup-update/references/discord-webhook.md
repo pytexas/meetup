@@ -40,9 +40,9 @@ Fill only the slots; use "TBD" for links that do not exist yet.
 * Speaker socials for tagging: <handles if provided>
 * Run of Show: <Drive doc link>
 * Attendance form: <form link>
-* Questions form: <form link, or "questions in chat">
-* Meetup.com event: TBD (placeholder until API access lands)
-* Discord event: TBD (placeholder until the bot token lands; see discord-event.md)
+* Questions form: <questions form responder link>
+* Meetup.com event: <draft event link from create_meetup_event.py>
+* Discord event: <event link from create_discord_event.py>
 * RSVP: https://pytexas.org/meetup/join
 ```
 
@@ -58,9 +58,10 @@ Notes on the added lines:
 * <Weekday>, <Month> <Day>: <Talk Title> - <Speaker Name>
 * Run of Show: <Drive doc link>
 * Card (Canva): <deck link>
+* Attendance form: <form link>
+* Questions form: <form link>
 * Website PR: <PR link>
-* Still manual: <remaining items, e.g. Canva page title rename, Discord event, Meetup.com event, headshot>
+* Still manual: <remaining items, e.g. Canva page title rename, meetup.com publish, PR merge>
 ```
 
-PROPOSED: neither message wording has been used for a real month yet.
-Confirm both with Mason on first use, then delete this paragraph.
+These are sketches; `scripts/build_announcements.py` holds the exact wording and is the source of truth (in use since August 2026).

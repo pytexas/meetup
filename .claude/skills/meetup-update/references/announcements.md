@@ -35,7 +35,8 @@ Populate `still_manual` in the data file with any incomplete steps and the organ
 
 ## Gotchas Learned the Hard Way
 
-- The attendance form link must be the published responder link (forms.gle or `/d/e/...`), never the `/d/<id>/viewform` edit-ID URL, which only works for the owner. Verify it with an unauthenticated fetch before sending.
+- The attendance and questions form links (`attendance_url`, `questions_url`, both required) must be the published responder links (forms.gle or `/d/e/...`), never the `/d/<id>/viewform` edit-ID URL, which only works for the owner. Verify each with an unauthenticated fetch before sending.
+- Every artifact the month produced should appear as a link in the payload. The questions line was hard-coded as "in chat tonight" until 2026-10-27 and hid a real form; a line that never varies with month data is a template gap.
 - The canonical meetup.com event lives on the PyTexas Virtual Meetup group (<https://www.meetup.com/pytexas-virtual-meetup-austin/>); the copies on other network groups' pages are cross-posts. Use `scripts/scrape_local_meetups.py` techniques (or that group's events page) to find it.
 - Webhook success with `?wait=true` returns HTTP 200 and the created message JSON; check the message id and attachment list rather than assuming delivery.
 - Sent messages cannot be deleted through the webhook (attempts 404). Treat every send as permanent: get the payload right first, and fix mistakes with a follow-up message or ask Mason to clean up in-channel.

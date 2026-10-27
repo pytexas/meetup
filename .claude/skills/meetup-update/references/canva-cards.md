@@ -28,6 +28,7 @@ Verify by reading the date text on page 1 before assuming.
 
 The workflow, verified end to end on the real deck on 2026-07-22:
 
+0. Check the account first. Like the Drive connector, Canva can be connected to Mason's personal account: `search-designs` for the deck returns `[]` and `read-design` on the deck id says "Not allowed to access design". Run `search-designs` sorted by `modified_descending`; if the results are not PyTexas designs, stop and ask Mason to reconnect, then retry. Do not assume the deck is gone.
 1. Find the deck with the Canva MCP (`search-designs`, query "<YYYY> Meetup Banners").
 2. Find the newest single-speaker page (usually page 1, or page 2 when page 1 is the July lightning talks card, which has no headshot slot).
 3. Upload the speaker headshot with `upload-asset-from-url`. The URL must return HTTP 200 directly; resolve redirects first (e.g. `https://github.com/<user>.png` redirects to `avatars.githubusercontent.com`, which works).
@@ -37,6 +38,9 @@ The workflow, verified end to end on the real deck on 2026-07-22:
 7. If any step cannot complete cleanly, cancel the transaction and give Mason the design's edit URL plus the exact text to place; never leave a half-edited page.
 
 The card layout slots: "Monthly Meetup" heading (fixed), talk title, date ("DD Month YYYY"), time ("8:00 - 9:00pm CST", fixed), "PyTexas Discord Server" (fixed), speaker name, speaker role line, circular headshot, RSVP URL (fixed).
+
+The name box is about 326px wide and wraps a name longer than roughly 18 characters onto the role line. For a long name, add `resize_element` (width 490) and `position_element` (left 995.4, same top) on the name element in the same transaction; that centers it on the 510px pill (used for "Chakra Pavan Kumar Kota", 2026-10-27). Always inspect the returned thumbnail for overlap before committing.
+The headshot's public URL can be the raw GitHub URL of the committed image on main, e.g. `https://raw.githubusercontent.com/pytexas/meetup/main/docs/assets/images/<file>`.
 
 There is no delete-design tool in the MCP; any scratch designs from experiments have to be trashed by Mason in the Canva UI.
 

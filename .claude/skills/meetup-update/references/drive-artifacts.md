@@ -48,6 +48,8 @@ Two things that stay human tasks every time, because the MCP cannot do them:
 - **Publishing.** The public responder link does not exist until the form is published from its Send dialog in the browser. The edit-ID `/d/<id>/viewform` URL returns 401 to the public and the published `/d/e/.../viewform` returns 404 until then. Only the edit link is knowable at setup time; the responder and `forms.gle` links get pasted in after publishing.
 - **The response sheet.** It does not exist until someone opens the form's Responses tab and clicks Link to Sheets.
 
+Ask Mason for all four links (two forms.gle responder links, two sheet links) in the handoff banner (see SKILL.md Step 7), then recreate the run of show with them filled in rather than leaving him to paste.
+
 ## Creating the Run of Show
 
 Build the run of show as a native Google Doc by writing markdown and uploading it with conversion, never as HTML.
@@ -58,7 +60,8 @@ Markdown import converts cleanly: native headings, nested bullets, bold, autolin
 1. Compose the doc content as markdown per `run-of-show.md`.
 2. Create it in the month folder titled `Run of Show YYYY-MM-DD` with `create_file`, `contentMimeType: text/markdown`, conversion left on (do not set `disableConversionToGoogleType`).
 3. Read the file back and confirm it converted: headings present, the table shows `:-:` separators, the `FILL_ME_IN` markers survived. To keep a literal `<DATE>` / `<SPEAKER>` in the body, write it as `&lt;DATE&gt;`; a raw `<...>` is dropped as an HTML tag on import.
-4. There is no in-place body edit through the MCP. To correct a doc after creation, trash it and recreate from updated markdown (trashing works when the connector is on the PyTexas account).
+4. There is no in-place body edit through the MCP. To correct a doc after creation, trash it and recreate from updated markdown (trashing works when the connector is on the PyTexas account). Read the old doc first and carry over anything Mason edited by hand.
+5. `create_file` occasionally fails with "Resource has been exhausted (e.g. check quota)". Retry once; the failed call leaves no partial file (verified 2026-10-27). List the folder afterward and trash any duplicate.
 
 Fill what is known at setup time (month, speaker, talk, bio, form edit links, the local meetups table, announcements).
 Everything a human must still do goes in the HUMAN REQUIRED TASKS block at the top of the doc and as `FILL_ME_IN` markers inline; `run-of-show.md` carries the exact structure.

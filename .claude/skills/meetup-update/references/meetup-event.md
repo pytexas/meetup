@@ -89,7 +89,12 @@ Meetup allows 5 topic tags; fill all 5 when you can. Pick per talk:
 
 1. Read the group's `activeTopics` (`groupByUrlname(urlname:"...").activeTopics`).
 2. Run `suggestTopics(query:"<talk keyword>")` to find a specific catalog topic that
-   is not in the group defaults (e.g. "Software Architecture" id 26468).
+   is not in the group defaults (e.g. "Software Architecture" id 26468). It returns a
+   connection, so select `suggestTopics(query:$q){ edges { node { id name } } }`.
+   Reuse `refresh_access_token()` and `gql()` from the script (import it by file
+   path) so the rotated refresh token is still written back to sops; every call
+   rotates it. Security talks: Cybersecurity 152026, Application Security 50280,
+   Software Security 447162.
 3. Choose the 5 most relevant ids, always including Python (1064), preferring a
    specific match over generic ones. Put them in the month TOML `topics`.
 
