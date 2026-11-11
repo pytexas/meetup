@@ -17,15 +17,14 @@ of Texas and beyond.
 
 ## Upcoming PyTexas Meetups
 
-### November Meetup - November 3, 2026
+### December Meetup - December 1, 2026
 
-**Security Is a Design Habit: Threat Modeling Python AI Applications Before They Ship** - Chakra Pavan Kumar Kota
+**Securing the AI Stack: From Models to Agents to Infrastructure** - Kriti Faujdar
 
-Security problems rarely begin as security problems. They often begin as unclear assumptions, missing boundaries, rushed integrations, or decisions made before risks are visible. As Python becomes a common foundation for AI-enabled applications, teams need practical ways to bring security thinking earlier into design conversations. This talk introduces threat modeling as a lightweight habit for Python teams building AI, data, and cloud-connected systems, focused on collaboration patterns that help developers, security teams, and product stakeholders reason together.
+A practical, layered security framework for production AI systems. This talk covers model-level risks like prompt injection and jailbreaks, agent and application risks, tool and MCP security, and infrastructure concerns such as sandboxing, secrets, and egress. Each layer comes with its threat model and concrete defensive patterns, and attendees leave with a defense-in-depth mental model and a checklist they can apply to their own AI systems.
 
 [RSVP Here :fontawesome-solid-ticket:](https://pytexas.org/meetup/join){ .md-button .md-button--primary }
 
-![Chakra Pavan Kumar Kota Headshot](assets/images/pavankota.png){: style="height:150px;width:150px" align=left}
+![Kriti Faujdar Headshot](assets/images/kritifaujdar.jpg){: style="height:150px;width:150px" align=left}
 
-_Pavan has over 11 years of combined academic and industry research experience and currently serves as a Senior Software Engineer at Jack in the Box, a technology-driven organization in the United States. He holds a Master's degree from the University of Missouri-Kansas City and is pursuing a Ph.D. in Artificial Intelligence and Data Science at the University of the Cumberlands. His professional expertise includes Artificial Intelligence, Machine Learning, Cybersecurity, and Cloud Computing._
-
+_Kriti Faujdar is a Senior Product Manager in Agentic Security at Microsoft. She focuses on applying large language models and AI technologies to cybersecurity challenges and building trustworthy AI systems. Prior to her current role, she worked on Azure AI initiatives that helped bring leading generative AI models to developers worldwide. She began her career as a research scientist at ISRO, where she spent seven years building anomaly detection and autonomous operations software for more than 20 satellite missions._
