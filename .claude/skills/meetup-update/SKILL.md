@@ -230,7 +230,7 @@ Network propagation can lag the dashboard publish by hours; the API fan-out crea
 
 Two rounds of posts on all five Buffer channels: an announcement about a week before the meetup and a "TONIGHT" post the morning of.
 Copy template, timing, modes, and the consent gate are in `references/buffer-posts.md`.
-Show Mason all ten posts first; create them as Buffer drafts by default and schedule only when he says so.
+Show Mason all ten posts first. On his yes, posts due more than 72 hours out are scheduled directly and anything closer is saved as a draft for him to approve (his rule, 2026-11-11). The card image must be a durable URL: commit it under `docs/assets/images/cards/` and use the commit-pinned raw GitHub link.
 
 ### Step 13: Report Against the Todoist Checklist
 
