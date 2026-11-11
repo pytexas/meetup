@@ -28,10 +28,10 @@ The Todoist subtasks and how this skill handles each:
 
 1. **Update Meetup Website** - automated here: archive the held meetup, add the speaker to authors, update the homepage, open a PR
 2. **Create Canva Card** - attempted via the Canva MCP; flagged with the design's edit link if editing fails
-3. **Send Social Media Assets to Kassandra** - handled by posting to the Discord marketing channel webhook
+3. **Send Social Media Assets to Kassandra** - handled by posting to the Discord marketing channel webhook, plus the Buffer posts in Step 12
 4. **Create Discord Event** - automated via `scripts/create_discord_event.py`
 5. **Create Network Event on Meetup** - manual by default: the skill hands Mason a paste block and he creates it in the pro dashboard (see `references/meetup-event.md`)
-6. **Create Event on Non-network meetups (MKE)** - manual, flagged at the end
+6. **Create Event on Non-network meetups (MKE)** - MKE Python Meetup is joining the pro network as of November 2026, so the network event should cover it; verify it like the other groups
 
 Beyond the Todoist list, the skill also drafts the month's Mailchimp newsletter and creates the meetup-night materials in Drive: the month folder, the run of show doc, and the attendance and questions forms.
 
@@ -188,6 +188,7 @@ Never send the announcements with a `TBD` or an unpublished link in them, and ne
 
 Create the month folder, run of show doc, and the attendance and questions forms in Google Drive.
 Verify the Drive connector is on the PyTexas account before creating anything (see `references/drive-artifacts.md`); it can silently reconnect to a personal account, which looks like data loss.
+The same goes for Gmail: Mason's Google accounts are separate MCP servers (the pytexas.org ones are labeled with that address), and a known thread id returning "Requested entity was not found" means the wrong account is selected.
 Follow `references/drive-artifacts.md` for the folder layout, template locations, and copy procedure, and `references/run-of-show.md` for the fill-in content.
 Build the run of show as markdown uploaded with conversion (not HTML), and copy both forms from the "Meetup Forms Template" folder.
 Filling the run of show includes research (the local meetups table, current announcements, next month's teaser); follow the Research section of `references/run-of-show.md`.
@@ -221,11 +222,17 @@ If a webhook cannot be decrypted, flag that notification as a manual step instea
 
 1. **Create Discord Event** in the PyTexas Discord - automated. Run `scripts/create_discord_event.py` with the month TOML and `--image <card.png>` under `sops exec-env`; procedure in `references/discord-event.md`.
 2. **Create Network Event on Meetup** (meetup.com) - manual by default. Render the paste block in `references/meetup-event.md` (title, description, date and time, topics, card PNG path), put it in the handoff banner, and wait for Mason to create the event in the pro dashboard and send back its URL for `meetup_event_url`. Do not run `scripts/create_meetup_event.py` unless Mason asks for it that month; the API path cancels network propagation and its photo upload is not processed (2026-10-27).
-3. **Create Event on Non-network meetups** (MKE) - manual, no known API path.
+3. **Create Event on Non-network meetups** (MKE) - the MKE Python Meetup group, <https://www.meetup.com/mke-python-meetup/>. It sat outside the pro network through November 2026 (Mason created its copy by hand each month); it is being added to the network, after which the network event's fan-out should reach it. Verify it the same way as the other groups by reading its upcoming events page (`?type=upcoming`; the default events page only carries past events in its `__NEXT_DATA__`).
 
-MKE and meetup.com are both manual; the skill supplies the exact text for each.
+Network propagation can lag the dashboard publish by hours; the API fan-out creates hidden per-group copies that go live once the network record does. If a copy is missing on meetup night, Mason creates it by hand from the same paste block.
 
-### Step 12: Report Against the Todoist Checklist
+### Step 12: Schedule the Social Posts in Buffer
+
+Two rounds of posts on all five Buffer channels: an announcement about a week before the meetup and a "TONIGHT" post the morning of.
+Copy template, timing, modes, and the consent gate are in `references/buffer-posts.md`.
+Show Mason all ten posts first. On his yes, posts due more than 72 hours out are scheduled directly and anything closer is saved as a draft for him to approve (his rule, 2026-11-11). The card image must be a durable URL: commit it under `docs/assets/images/cards/` and use the commit-pinned raw GitHub link.
+
+### Step 13: Report Against the Todoist Checklist
 
 Finish by reporting each "Schedule Monthly Meetup" subtask as done, drafted awaiting Mason's review, or still manual.
 Do not check off subtasks in Todoist without Mason's confirmation; the website subtask in particular is not done until the PR merges and the headshot lands.
@@ -239,6 +246,13 @@ in the PyTexas Discord. Calculate the correct date for the upcoming month. For e
 - If the 1st of the month is a Wednesday, the first Tuesday is the 7th
 
 ## Content Guidelines
+
+### Never Name the Speaker's Employer in Promo Copy
+
+Promotional copy written by the skill (social posts, the Canva card's role line, the newsletter intro, Discord and meetup.com descriptions, announcements) names the speaker and, where a role slot exists, their job title only. Never their company.
+Speakers often do not want their words read as representing their employer.
+The speaker's own bio, quoted verbatim on the site and in the run of show, may mention the company; that is their text, not ours.
+Rule set by Mason on 2026-11-11 after a draft read "Microsoft's Kriti Faujdar".
 
 ### Talk Description on Homepage
 
@@ -307,3 +321,4 @@ After drafting, remind Mason that Gmail rewrites bare URLs in API-created drafts
 - **`references/meetup-event.md`** - meetup.com network event: the paste block Mason creates it from (default), plus the opt-in script path and why it is not the default
 - **`references/local-meetups.md`** - How to get real event listings from meetup.com (WebFetch can't) using `scripts/scrape_local_meetups.py`
 - **`references/announcements.md`** - Discord webhook announcements: `scripts/build_announcements.py` (TOML in, payloads out; templates live in the script) + `scripts/send_discord_announcement.py`, Canva card-image handling
+- **`references/buffer-posts.md`** - The two-round social post pattern (announcement and day-of) across the five Buffer channels, copy template, timing, and the draft-first consent gate

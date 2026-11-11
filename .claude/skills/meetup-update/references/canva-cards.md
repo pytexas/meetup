@@ -38,6 +38,7 @@ The workflow, verified end to end on the real deck on 2026-07-22:
 7. If any step cannot complete cleanly, cancel the transaction and give Mason the design's edit URL plus the exact text to place; never leave a half-edited page.
 
 The card layout slots: "Monthly Meetup" heading (fixed), talk title, date ("DD Month YYYY"), time ("8:00 - 9:00pm CST", fixed), "PyTexas Discord Server" (fixed), speaker name, speaker role line, circular headshot, RSVP URL (fixed).
+The role line is the job title alone ("Senior Software Engineer", "Computer Science Student"), never "Title, Company"; see the employer rule in SKILL.md.
 
 The name box is about 326px wide and wraps a name longer than roughly 18 characters onto the role line. For a long name, add `resize_element` (width 490) and `position_element` (left 995.4, same top) on the name element in the same transaction; that centers it on the 510px pill (used for "Chakra Pavan Kumar Kota", 2026-10-27). Always inspect the returned thumbnail for overlap before committing.
 The headshot's public URL can be the raw GitHub URL of the committed image on main, e.g. `https://raw.githubusercontent.com/pytexas/meetup/main/docs/assets/images/<file>`.
