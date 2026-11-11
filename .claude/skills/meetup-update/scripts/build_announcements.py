@@ -28,6 +28,7 @@ Example data file:
     discord_event_url = "https://discord.com/events/.../..."
     website_pr_url = "https://github.com/pytexas/meetup/pull/47"
     website_pr_status = "merged"
+    social_posts = "10 scheduled in Buffer: announcement round Nov 24, day-of round Dec 1"
     still_manual = []  # optional; organizers message gets a Still manual line if non-empty
 """
 
@@ -41,6 +42,9 @@ DECK_URL = "https://www.canva.com/d/hGlBZzZ_f4mQMUV"
 DECK_NAME = "2027 Meetup Banners"
 RSVP_URL = "https://pytexas.org/meetup/join"
 DISCORD_CONTENT_LIMIT = 2000
+# Kassandra (prosperousheart), who reviews the social posts; a webhook message
+# only pings when the mention uses the user id form.
+MARKETING_REVIEWER_MENTION = "<@443784767972966401>"
 
 REQUIRED_FIELDS = (
     "month",
@@ -60,10 +64,11 @@ REQUIRED_FIELDS = (
     "website_pr_url",
     "website_pr_status",
     "meetup_event_url",
+    "social_posts",
 )
 
 MARKETING_TEMPLATE = """\
-{month} {year} meetup: everything is live!
+{reviewer_mention} {month} {year} meetup: everything is live!
 * Date: {weekday}, {month} {day} at 8:00 PM Central
 * Talk: {talk_title} - {speaker}
 * Promo blurb: {blurb}
@@ -73,7 +78,8 @@ MARKETING_TEMPLATE = """\
 * [Questions form]({questions_url})
 * [Discord event]({discord_event_url})
 * [Meetup.com event]({meetup_event_url})
-* [RSVP]({rsvp_url})"""
+* [RSVP]({rsvp_url})
+* Social posts: {social_posts}; please review them in Buffer"""
 
 ORGANIZERS_TEMPLATE = """\
 {month} {year} meetup setup is done.
@@ -98,7 +104,8 @@ def main() -> None:
     if missing_fields:
         sys.exit(f"missing fields in {args.data_file}: {', '.join(missing_fields)}")
 
-    context = dict(data, deck_url=DECK_URL, deck_name=DECK_NAME, rsvp_url=RSVP_URL)
+    context = dict(data, deck_url=DECK_URL, deck_name=DECK_NAME, rsvp_url=RSVP_URL,
+                   reviewer_mention=MARKETING_REVIEWER_MENTION)
 
     organizers_text = ORGANIZERS_TEMPLATE.format(**context)
     still_manual = data.get("still_manual", [])
