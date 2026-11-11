@@ -128,3 +128,7 @@ authors:
     name: Chakra Pavan Kumar Kota
     description: Pavan is a Senior Software Engineer at Jack in the Box with over 11 years of combined academic and industry research experience. He holds a Master's degree from the University of Missouri-Kansas City and is pursuing a Ph.D. in Artificial Intelligence and Data Science at the University of the Cumberlands, with expertise in AI, machine learning, cybersecurity, and cloud computing.
     avatar: assets/images/pavankota.png
+  kritifaujdar:
+    name: Kriti Faujdar
+    description: Kriti is a Senior Product Manager in Agentic Security at Microsoft, applying large language models and AI to cybersecurity challenges and building trustworthy AI systems. She previously worked on Azure AI initiatives and began her career as a research scientist at ISRO, building anomaly detection and autonomous operations software for more than 20 satellite missions.
+    avatar: assets/images/kritifaujdar.jpg
