@@ -30,7 +30,8 @@ Always state the link's expiry time next to it and note that re-export happens f
 ## Message Content
 
 Both messages are rendered by `build_announcements.py`; edit the templates there, not here.
-Marketing gets the full asset rundown (date, talk, blurb, card, run of show, forms, event links, RSVP); organizers gets the logistics-only subset plus the website PR status.
+Marketing gets the full asset rundown (date, talk, blurb, card, run of show, forms, event links, RSVP, social posts); organizers gets the logistics-only subset plus the website PR status.
+The marketing message opens by pinging Kassandra (`prosperousheart`, Discord user id in `MARKETING_REVIEWER_MENTION`; only the `<@id>` form pings from a webhook) and closes with the `social_posts` line, which says what is scheduled in Buffer and asks her to review it rather than schedule it (Mason, 2026-11-11).
 Populate `still_manual` in the data file with any incomplete steps and the organizers message ends with a `Still manual:` line; leave it empty (or omit it) once everything is done.
 
 ## Gotchas Learned the Hard Way
