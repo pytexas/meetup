@@ -247,6 +247,13 @@ in the PyTexas Discord. Calculate the correct date for the upcoming month. For e
 
 ## Content Guidelines
 
+### Never Name the Speaker's Employer in Promo Copy
+
+Promotional copy written by the skill (social posts, the Canva card's role line, the newsletter intro, Discord and meetup.com descriptions, announcements) names the speaker and, where a role slot exists, their job title only. Never their company.
+Speakers often do not want their words read as representing their employer.
+The speaker's own bio, quoted verbatim on the site and in the run of show, may mention the company; that is their text, not ours.
+Rule set by Mason on 2026-11-11 after a draft read "Microsoft's Kriti Faujdar".
+
 ### Talk Description on Homepage
 
 Use only the first paragraph or a concise summary of the talk description on the homepage.

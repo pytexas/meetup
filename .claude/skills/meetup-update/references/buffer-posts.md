@@ -27,7 +27,7 @@ Every post:
 
 Three parts, separated by blank lines:
 
-1. **Hook.** One or two sentences from the abstract, trimmed, with `#PyTexas` and `#Python` worked in and one topic hashtag (`#ThreatModeling`, `#SoftwareEngineering`). The speaker's name appears when it reads naturally ("Nishanth Sirikonda reframes architecture as...").
+1. **Hook.** One or two sentences from the abstract, trimmed, with `#PyTexas` and `#Python` worked in and one topic hashtag (`#ThreatModeling`, `#SoftwareEngineering`). The speaker's name appears when it reads naturally ("Nishanth Sirikonda reframes architecture as..."). Name only, never the employer (SKILL.md Content Guidelines).
 2. **Call to action.** Announcement: `Join us <Mon D> @ 8p CST in our Discord to learn more!` Day-of: `Join us TONIGHT @ 8p CST in our Discord to learn more!`
 3. **Link.** `http://pytexas.org/meetup` on its own line.
 

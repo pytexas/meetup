@@ -85,7 +85,7 @@ Sections in order; only the meetup announcement changes month to month:
 ### Speaker Month (model: June 2026, campaign `065684fea1`)
 
 - **Heading:** benefit-phrased, e.g. "Learn to become a better mentor at this month's Meetup"
-- **Intro:** `Join us on M/D/YYYY at 8:00pm CST for our monthly PyTexas Meetup. <role/affiliation> <speaker name> joins us to <one-line topic hook>.`
+- **Intro:** `Join us on M/D/YYYY at 8:00pm CST for our monthly PyTexas Meetup. <role> <speaker name> joins us to <one-line topic hook>.` Role is the job title only, never the employer (SKILL.md Content Guidelines).
 - **Body:** the talk abstract, speaker's own words (first person is fine)
 - **Closer:** `We'll see you in the Discord server for chat and the meetup!`
 
